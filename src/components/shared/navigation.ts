@@ -1,0 +1,106 @@
+"use client";
+
+import { cartPaths } from "@/features/cart";
+import { productPaths } from "@/features/products";
+import { useI18n } from "@/lib/i18n/I18nProvider";
+
+export type NavLink = {
+  key: string;
+  label: string;
+  href: string;
+};
+
+export function usePrimaryNav(): NavLink[] {
+  const { dict } = useI18n();
+
+  return [
+    { key: "home", label: dict.nav.home, href: "/" },
+    { key: "shop", label: dict.nav.shop, href: productPaths.list },
+    {
+      key: "categories",
+      label: dict.nav.categories,
+      href: `${productPaths.list}?category=pure-extractions`,
+    },
+    {
+      key: "atelier",
+      label: dict.nav.atelier,
+      href: `${productPaths.list}?category=atelier-oils`,
+    },
+  ];
+}
+
+export function useFooterNav(): { title: string; links: NavLink[] }[] {
+  const { dict } = useI18n();
+
+  return [
+    {
+      title: dict.footer.collections,
+      links: [
+        {
+          key: "la-maison",
+          label: dict.footer.laMaison,
+          href: `${productPaths.list}?category=pure-extractions`,
+        },
+        {
+          key: "private-reserve",
+          label: dict.footer.privateReserve,
+          href: `${productPaths.list}?category=private-reserve`,
+        },
+        {
+          key: "candles",
+          label: dict.footer.scentedCandles,
+          href: `${productPaths.list}?category=atelier-oils`,
+        },
+        {
+          key: "discovery",
+          label: dict.footer.discoverySets,
+          href: `${productPaths.list}?category=discovery-vault`,
+        },
+      ],
+    },
+    {
+      title: dict.footer.customerCare,
+      links: [
+        {
+          key: "consultation",
+          label: dict.footer.consultation,
+          href: productPaths.list,
+        },
+        {
+          key: "shipping",
+          label: dict.footer.shipping,
+          href: productPaths.list,
+        },
+        {
+          key: "appointments",
+          label: dict.footer.appointments,
+          href: productPaths.list,
+        },
+        { key: "care", label: dict.footer.careGuide, href: productPaths.list },
+      ],
+    },
+    {
+      title: dict.footer.aboutUs,
+      links: [
+        {
+          key: "philosophy",
+          label: dict.footer.philosophy,
+          href: productPaths.list,
+        },
+        {
+          key: "sourcing",
+          label: dict.footer.sourcing,
+          href: productPaths.list,
+        },
+        {
+          key: "sustainability",
+          label: dict.footer.sustainability,
+          href: productPaths.list,
+        },
+        { key: "journal", label: dict.footer.journal, href: productPaths.list },
+      ],
+    },
+  ];
+}
+
+export const utilityNav = { cart: cartPaths.cart } as const;
