@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CheckIcon } from "@/components/icons";
+import { showToast } from "@/components/ui/toast";
 import { useCart } from "@/features/cart/hooks/useCart";
 import type { AddToCartInput } from "@/features/cart/types/cart.types";
 import { useI18n } from "@/lib/i18n/I18nProvider";
@@ -28,6 +29,16 @@ export function AddToCartButton({
   function handleClick() {
     addItem(input);
     setAdded(true);
+    showToast({
+      title: dict.product.added,
+      message: `${input.name} (${input.variantLabel})`,
+      image: input.image,
+      type: "success",
+      action: {
+        label: dict.nav.cart,
+        href: "/cart",
+      },
+    });
     clearTimeout(timeout.current);
     timeout.current = setTimeout(() => setAdded(false), 2200);
   }

@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { CheckIcon } from "@/components/icons";
+import { showToast } from "@/components/ui/toast";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/utils/cn";
 
@@ -17,6 +18,11 @@ export function NewsletterSection() {
     }
     // No backend yet — the address is acknowledged locally only.
     setJoined(true);
+    showToast({
+      title: dict.home.newsletterDone,
+      message: email,
+      type: "success",
+    });
     setEmail("");
   }
 

@@ -11,6 +11,7 @@ import {
   TikTokIcon,
   WhatsAppIcon,
 } from "@/components/icons";
+import { showToast } from "@/components/ui/toast";
 import { productPaths } from "@/features/products";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
@@ -140,8 +141,20 @@ export function ContactHubView() {
                 <p className="mt-2 text-[13px] leading-[1.6] text-muted text-start">
                   {dict.footer.officialEmailDesc}
                 </p>
-                <p dir="ltr" className="mt-2 inline-block font-mono text-[12px] text-ink/80 select-all text-start">
-                  {EMAIL}
+                <p
+                  dir="ltr"
+                  onClick={() => {
+                    navigator.clipboard.writeText(EMAIL);
+                    showToast({
+                      title: dict.footer.copiedEmailToast,
+                      message: EMAIL,
+                      type: "info",
+                    });
+                  }}
+                  title="Click to copy"
+                  className="mt-2 inline-block cursor-pointer font-mono text-[12px] text-ink/80 hover:text-gold transition-colors select-all text-start"
+                >
+                  {EMAIL} 📋
                 </p>
               </div>
             </div>
@@ -170,8 +183,20 @@ export function ContactHubView() {
                 <p className="mt-2 text-[13px] leading-[1.6] text-muted text-start">
                   {dict.footer.workingHoursDetails}
                 </p>
-                <p dir="ltr" className="mt-2 inline-block font-mono text-[14px] font-semibold text-ink select-all text-start">
-                  {PHONE_NUMBER}
+                <p
+                  dir="ltr"
+                  onClick={() => {
+                    navigator.clipboard.writeText(PHONE_NUMBER);
+                    showToast({
+                      title: dict.footer.copiedPhoneToast,
+                      message: PHONE_NUMBER,
+                      type: "info",
+                    });
+                  }}
+                  title="Click to copy"
+                  className="mt-2 inline-block cursor-pointer font-mono text-[14px] font-semibold text-ink hover:text-gold transition-colors select-all text-start"
+                >
+                  {PHONE_NUMBER} 📋
                 </p>
               </div>
             </div>
