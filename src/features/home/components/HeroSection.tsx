@@ -24,7 +24,7 @@ export function HeroSection() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.02]"
       />
 
       {/*

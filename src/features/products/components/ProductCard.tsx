@@ -26,10 +26,10 @@ export function ProductCard({ product }: ProductCardProps) {
   const available = isPurchasable(product, variant);
 
   return (
-    <article className="group flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch rounded-lg bg-surface p-3 sm:gap-4 sm:p-4 transition-shadow duration-500 hover:shadow-[0_12px_40px_-24px_rgba(26,26,26,0.45)]">
+    <article className="group relative flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch rounded-xl border border-line/60 bg-surface p-3 sm:gap-4 sm:p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[0_20px_40px_-20px_rgba(197,168,128,0.25)]">
       <Link
         href={productPaths.detail(product.id)}
-        className="relative h-[200px] w-full shrink-0 overflow-hidden rounded sm:h-[280px] lg:h-[320px]"
+        className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-lg sm:h-[280px] lg:h-[320px]"
       >
         {image ? (
           <Image
