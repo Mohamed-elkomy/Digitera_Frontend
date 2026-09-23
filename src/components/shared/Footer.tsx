@@ -99,16 +99,16 @@ export function Footer() {
 
           <div className="grid w-full gap-10 sm:grid-cols-3 lg:w-auto lg:gap-20">
             {columns.map((column) => (
-              <nav key={column.title} aria-label={column.title}>
-                <h2 className="text-[12px] font-bold text-gold uppercase">
+              <nav key={column.title} aria-label={column.title} className="text-start">
+                <h2 className="text-[12px] font-bold text-gold uppercase text-start">
                   {column.title}
                 </h2>
-                <ul className="mt-5 flex flex-col gap-5">
+                <ul className="mt-5 flex flex-col gap-5 text-start">
                   {column.links.map((link) => (
-                    <li key={link.key}>
+                    <li key={link.key} className="text-start">
                       <Link
                         href={link.href}
-                        className="text-[13px] text-on-night opacity-70 transition-opacity duration-300 hover:opacity-100"
+                        className="inline-block text-[13px] text-on-night opacity-70 transition-opacity duration-300 hover:opacity-100 text-start"
                       >
                         {link.label}
                       </Link>
