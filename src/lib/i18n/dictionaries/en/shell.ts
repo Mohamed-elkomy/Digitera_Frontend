@@ -13,7 +13,7 @@ export const shell = {
     announcements: [
       "Complimentary signature gift wrapping on all orders",
       "Complimentary delivery on orders above 500 EGP",
-      "24/7 Dedicated Concierge & WhatsApp Ordering: +20 127 278 2474",
+      "24/7 Dedicated Concierge & WhatsApp Express Ordering",
     ],
     home: "Home",
     shop: "Shop",
