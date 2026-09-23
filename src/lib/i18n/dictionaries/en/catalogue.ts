@@ -1,33 +1,4 @@
-/** Source of truth for every user-facing string. Copy follows the Figma file. */
-export const en = {
-  common: {
-    brand: "O D O R A T U S",
-    skipToContent: "Skip to content",
-    loading: "Loading",
-    retry: "Try again",
-    browseAll: "Browse all fragrances",
-    from: "from",
-  },
-  nav: {
-    announcement:
-      "Complimentary signature gift wrapping on all orders above $150",
-    home: "Home",
-    shop: "Shop",
-    categories: "Categories",
-    atelier: "The Atelier",
-    searchPlaceholder: "Search fragrances...",
-    searchLabel: "Search fragrances",
-    account: "Account",
-    cart: "Cart",
-    cartEmpty: "Cart, empty",
-    cartCount: "Cart, {count} item(s)",
-    openMenu: "Open menu",
-    closeMenu: "Close menu",
-    language: "Language",
-    theme: "Theme",
-    switchToDark: "Switch to dark mode",
-    switchToLight: "Switch to light mode",
-  },
+export const catalogue = {
   home: {
     heroTitle: "Narrative In A Glass",
     heroBody:
@@ -52,38 +23,6 @@ export const en = {
     newsletterDone:
       "You are on the list. Watch your inbox for the next chronicle.",
     emailLabel: "Email address",
-  },
-  listing: {
-    title: "All Fragrances",
-    subtitle: "Cultivated formulations curated to command atmospheric space.",
-    resultsFor: "Results for “{term}”",
-    available: "{count} fragrances available",
-    availableOne: "1 fragrance available",
-    sortBy: "Sort by:",
-    sortLabel: "Sort products",
-    sortPriceDesc: "Price: High to Low",
-    sortPriceAsc: "Price: Low to High",
-    sortNameAsc: "Name: A to Z",
-    sortNameDesc: "Name: Z to A",
-    filters: "Filters",
-    filtersPanel: "Product filters",
-    clearAll: "Clear all ({count})",
-    category: "Category",
-    scentFamily: "Scent Family",
-    occasion: "Occasion",
-    priceRange: "Price Range",
-    minPrice: "Minimum price",
-    maxPrice: "Maximum price",
-    previousPage: "Previous page",
-    nextPage: "Next page",
-    pageOf: "Page {page} of {count}",
-    emptyFiltered: "No fragrances match your selection",
-    emptyFilteredBody:
-      "Try widening the price range or removing a scent family to see more of the collection.",
-    emptyCatalogue: "The library is being restocked",
-    emptyCatalogueBody:
-      "New compositions are decanted every season. Please check back shortly.",
-    clearFilters: "Clear all filters",
   },
   product: {
     breadcrumbHome: "Home",
@@ -121,6 +60,38 @@ export const en = {
     bottleAlt: "{name} fragrance bottle",
     noImages: "No product images yet",
   },
+  listing: {
+    title: "All Fragrances",
+    subtitle: "Cultivated formulations curated to command atmospheric space.",
+    resultsFor: "Results for “{term}”",
+    available: "{count} fragrances available",
+    availableOne: "1 fragrance available",
+    sortBy: "Sort by:",
+    sortLabel: "Sort products",
+    sortPriceDesc: "Price: High to Low",
+    sortPriceAsc: "Price: Low to High",
+    sortNameAsc: "Name: A to Z",
+    sortNameDesc: "Name: Z to A",
+    filters: "Filters",
+    filtersPanel: "Product filters",
+    clearAll: "Clear all ({count})",
+    category: "Category",
+    scentFamily: "Scent Family",
+    occasion: "Occasion",
+    priceRange: "Price Range",
+    minPrice: "Minimum price",
+    maxPrice: "Maximum price",
+    previousPage: "Previous page",
+    nextPage: "Next page",
+    pageOf: "Page {page} of {count}",
+    emptyFiltered: "No fragrances match your selection",
+    emptyFilteredBody:
+      "Try widening the price range or removing a scent family to see more of the collection.",
+    emptyCatalogue: "The library is being restocked",
+    emptyCatalogueBody:
+      "New compositions are decanted every season. Please check back shortly.",
+    clearFilters: "Clear all filters",
+  },
   availability: {
     "in-stock": "Available in Atelier",
     "made-to-order": "Made to Order",
@@ -148,40 +119,4 @@ export const en = {
     each: "${price} each",
     signatureWrapping: "Signature gift wrapping",
   },
-  footer: {
-    description:
-      "An independent olfactory house cultivating slow-luxury liquid narratives. Every bottle is hand-poured in small batches using sustainably sourced botanicals.",
-    collections: "Collections",
-    customerCare: "Customer Care",
-    aboutUs: "About Us",
-    laMaison: "La Maison",
-    privateReserve: "Private Reserve",
-    scentedCandles: "Scented Candles",
-    discoverySets: "Discovery Sets",
-    consultation: "Olfactory Consultation",
-    shipping: "Shipping & Returns",
-    appointments: "Atelier Appointments",
-    careGuide: "Care Guide",
-    philosophy: "Our Philosophy",
-    sourcing: "Sourcing Standards",
-    sustainability: "Sustainability Commitments",
-    journal: "Journal",
-    rights: "© {year} Odoratus. All rights reserved.",
-    securedVia: "Secured checkout via",
-  },
-  errors: {
-    pageNotFound: "Page not found",
-    pageNotFoundBody:
-      "The page you are looking for has been moved or no longer exists.",
-    generic: "Something went wrong",
-    genericBody: "We could not display this page. Please try again.",
-    preparing: "Preparing the atelier",
-  },
-};
-
-/** Same shape as `en`, but every leaf widened to `string`. */
-export type Dictionary = {
-  [Section in keyof typeof en]: {
-    [Key in keyof (typeof en)[Section]]: string;
-  };
-};
+} as const;

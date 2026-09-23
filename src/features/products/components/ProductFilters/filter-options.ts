@@ -24,4 +24,5 @@ export const OCCASIONS: FilterOption[] = [
   { id: "birthday", label: "Birthday" },
 ];
 
-export const PRICE_BOUNDS = { min: 80, max: 320 } as const;
+/** The slider ends, as drawn in the Figma file. */
+export const PRICE_BOUNDS = { min: 100, max: 400 } as const;

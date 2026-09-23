@@ -42,7 +42,10 @@ export function CartItem({
 
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <h2 className="font-serif text-[20px] text-ink">{name}</h2>
-        <p className="text-[11px] tracking-[0.12em] text-muted uppercase">
+        <p
+          dir="ltr"
+          className="text-[11px] tracking-[0.12em] text-muted uppercase rtl:text-end"
+        >
           {line.variantLabel}
         </p>
         {line.giftWrapping ? (

@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CloseIcon, MenuIcon, SearchIcon, UserIcon } from "@/components/icons";
+import { CloseIcon, MenuIcon } from "@/components/icons";
 import { AnnouncementBar } from "@/components/shared/AnnouncementBar";
+import { AccountMenu } from "@/components/shared/AccountMenu";
 import { HeaderSearch } from "@/components/shared/HeaderSearch";
+import { SearchOverlay } from "@/components/shared/SearchOverlay";
 import { LocaleToggle } from "@/components/shared/LocaleToggle";
+import { MobileAccountLinks } from "@/components/shared/MobileAccountLinks";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { usePrimaryNav } from "@/components/shared/navigation";
 import { useScrolled } from "@/components/shared/useScrolled";
@@ -59,7 +62,7 @@ export function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             className={cn(iconButton, "lg:hidden")}
           >
-            {menuOpen ? <MenuIcon /> : <MenuIcon />}
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
 
           <nav
@@ -106,22 +109,10 @@ export function Header() {
 
           <div className="flex min-w-0 flex-1 items-center justify-end gap-0.5 sm:gap-2">
             <HeaderSearch className="hidden xl:flex" />
-            <Link
-              href="/products"
-              aria-label={dict.nav.searchLabel}
-              className={cn(iconButton, "hidden sm:flex xl:hidden")}
-            >
-              <SearchIcon size={18} />
-            </Link>
+            <SearchOverlay className={cn(iconButton, "xl:hidden")} />
             <LocaleToggle className={iconButton} />
             <ThemeToggle className={iconButton} />
-            <Link
-              href="/products"
-              aria-label={dict.nav.account}
-              className={cn(iconButton, "hidden sm:flex")}
-            >
-              <UserIcon size={20} />
-            </Link>
+            <AccountMenu className={cn(iconButton, "hidden sm:flex")} />
             <CartNavLink />
           </div>
         </div>
@@ -145,6 +136,7 @@ export function Header() {
           ))}
         </nav>
         <HeaderSearch className="mt-4 w-full" />
+        <MobileAccountLinks onNavigate={() => setMenuOpen(false)} />
         <button
           type="button"
           onClick={() => setMenuOpen(false)}
