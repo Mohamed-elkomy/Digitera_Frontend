@@ -35,3 +35,13 @@ export {
   MoonIcon,
   TranslateIcon,
 } from "@/components/icons/ControlIcons";
+
+export {
+  MailIcon,
+  LockIcon,
+  EyeIcon,
+  EyeOffIcon,
+  AlertIcon,
+  LogInIcon,
+  UserPlusIcon,
+} from "@/components/icons/FormIcons";

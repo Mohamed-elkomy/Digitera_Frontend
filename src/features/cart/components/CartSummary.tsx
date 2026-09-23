@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
+import { checkoutPaths } from "@/features/checkout";
 import { productPaths } from "@/features/products";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
@@ -55,7 +57,16 @@ export function CartSummary({ total, quantity }: CartSummaryProps) {
 
       <p className="mt-2 text-[11px] text-muted">{dict.cart.shippingNote}</p>
 
-      <Link href={productPaths.list} className="mt-5 block">
+      {empty ? null : (
+        <Link href={checkoutPaths.checkout} className="mt-5 block">
+          <Button variant="primary" size="lg" className="w-full">
+            {dict.checkout.placeOrder}
+            <ArrowRightIcon size={16} className="rtl:-scale-x-100" />
+          </Button>
+        </Link>
+      )}
+
+      <Link href={productPaths.list} className="mt-2.5 block">
         <Button variant="secondary" className="w-full">
           {empty ? dict.common.browseAll : dict.cart.continueShopping}
         </Button>

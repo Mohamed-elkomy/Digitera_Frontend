@@ -10,8 +10,11 @@ type ScentAnatomyProps = {
 
 /** US-04: the fragrance pyramid, described note by note. */
 export function ScentAnatomy({ product }: ScentAnatomyProps) {
-  const { dict } = useI18n();
+  const { dict, locale } = useI18n();
   const copy = useProductCopy(product);
+
+  // Arabic separates a list with a different comma than English does.
+  const separator = locale === "ar" ? "، " : ", ";
 
   const rows = [
     { key: "top", label: dict.product.topNotes },
@@ -43,7 +46,7 @@ export function ScentAnatomy({ product }: ScentAnatomyProps) {
               {row.label}
             </dt>
             <dd className="text-[13px] text-muted sm:text-end">
-              {copy.scentNotes[row.key].join("، ")}
+              {copy.scentNotes[row.key].join(separator)}
             </dd>
           </div>
         ))}
