@@ -1,21 +1,17 @@
 @import "tailwindcss";
 
-/*
-  Light theme — the palette taken from the Figma design file.
-  Dark theme values are derived from the same brand hues: the gold is kept
-  untouched, the paper tones are replaced by their charcoal counterparts.
-*/
+/* Light and dark themes derived from Figma brand hues */
 :root,
 :root[data-theme="light"] {
-  --page: #faf8f5; /* page background */
-  --surface: #ffffff; /* cards, inputs, raised panels */
-  --ink: #1a1a1a; /* primary text */
-  --muted: #605a54; /* secondary text */
-  --line: #ebe6de; /* borders and dividers */
-  --shell: #f2ede4; /* tinted band */
-  --sand: #f4f0eb; /* tinted panel */
-  --inverse: #1a1a1a; /* solid contrast fill (primary buttons) */
-  --on-inverse: #faf8f5; /* text on that fill */
+  --page: #faf8f5;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #605a54;
+  --line: #ebe6de;
+  --shell: #f2ede4;
+  --sand: #f4f0eb;
+  --inverse: #1a1a1a;
+  --on-inverse: #faf8f5;
 }
 
 :root[data-theme="dark"] {
@@ -54,76 +50,40 @@
 }
 
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -180% 0;
-  }
-  100% {
-    background-position: 180% 0;
-  }
+  0% { background-position: -180% 0; }
+  100% { background-position: 180% 0; }
 }
 
 /* Droplet falling inside the bottle loader */
 @keyframes pour {
-  0% {
-    transform: translateY(-6px) scale(0.6);
-    opacity: 0;
-  }
-  35% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(10px) scale(1);
-    opacity: 0;
-  }
+  0% { transform: translateY(-6px) scale(0.6); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translateY(10px) scale(1); opacity: 0; }
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 15px -3px rgba(197, 168, 128, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 25px 2px rgba(197, 168, 128, 0.5);
-  }
+  0%, 100% { box-shadow: 0 0 15px -3px rgba(197, 168, 128, 0.25); }
+  50% { box-shadow: 0 0 25px 2px rgba(197, 168, 128, 0.5); }
 }
 
 @keyframes gentle-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 html {
