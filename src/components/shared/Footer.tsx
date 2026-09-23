@@ -1,15 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { CircleXIcon, FacebookIcon, InstagramIcon } from "@/components/icons";
+import {
+  FacebookIcon,
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  MailIcon,
+  TikTokIcon,
+} from "@/components/icons";
 import { ContactOnWhatsApp } from "@/components/shared/ContactOnWhatsApp";
 import { useFooterNav } from "@/components/shared/navigation";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
 const socials = [
-  { label: "Instagram", Icon: InstagramIcon },
-  { label: "X", Icon: CircleXIcon },
-  { label: "Facebook", Icon: FacebookIcon },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/mohamed-magdy-elkomy/",
+    Icon: LinkedInIcon,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Mohamed-elkomy",
+    Icon: GitHubIcon,
+  },
+  {
+    label: "Instagram (Creative)",
+    href: "https://www.instagram.com/sukoon.t_74/",
+    Icon: InstagramIcon,
+  },
+  {
+    label: "Instagram (Personal)",
+    href: "https://www.instagram.com/mo.magdy_74/",
+    Icon: InstagramIcon,
+  },
+  {
+    label: "TikTok (Creative)",
+    href: "https://www.tiktok.com/@sukoon.t_74",
+    Icon: TikTokIcon,
+  },
+  {
+    label: "TikTok (Personal)",
+    href: "https://www.tiktok.com/@mo.magdy_74",
+    Icon: TikTokIcon,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/Hacker.XCom",
+    Icon: FacebookIcon,
+  },
+  {
+    label: "Email",
+    href: "mailto:mohamedmagdyelkomy53@gmail.com",
+    Icon: MailIcon,
+  },
 ];
 
 const paymentMethods = ["visa", "mastercard", "amex"];
@@ -29,26 +73,27 @@ export function Footer() {
             <p className="text-[14px] leading-[1.6] text-on-night opacity-80">
               {dict.footer.description}
             </p>
-            {/*
-              Odoratus is a fictional house with no accounts to link to, so
-              these stay as marks rather than links that go nowhere. The one
-              channel that does work sits beside them.
-            */}
-            <div className="flex flex-wrap items-center gap-4">
-              <ul className="flex items-center gap-4">
-                {socials.map(({ label, Icon }) => (
-                  <li
-                    key={label}
-                    role="img"
-                    aria-label={label}
-                    className="flex rounded-full bg-on-night/10 p-2 text-on-night opacity-60"
-                  >
-                    <Icon />
+            <div className="flex flex-col gap-4">
+              <ul className="flex flex-wrap items-center gap-2.5">
+                {socials.map(({ label, href, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="flex h-9 w-9 items-center justify-center rounded-full bg-on-night/10 text-on-night opacity-75 transition-all duration-300 hover:scale-110 hover:bg-gold/20 hover:text-gold hover:opacity-100"
+                    >
+                      <Icon size={16} />
+                    </a>
                   </li>
                 ))}
               </ul>
 
-              <ContactOnWhatsApp />
+              <div>
+                <ContactOnWhatsApp />
+              </div>
             </div>
           </div>
 
@@ -78,9 +123,22 @@ export function Footer() {
         <div className="flex flex-col gap-6">
           <div className="h-px w-full bg-on-night/[0.13]" />
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-[12px] text-on-night opacity-50">
-              {fill(dict.footer.rights, { year: new Date().getFullYear() })}
-            </p>
+            <div className="flex flex-col gap-1 text-[12px] text-on-night opacity-70">
+              <p className="opacity-75">
+                {fill(dict.footer.rights, { year: new Date().getFullYear() })}
+              </p>
+              <p className="text-[11px]">
+                {dict.footer.designedBy}{" "}
+                <a
+                  href="https://portfolio-beige-pi-ymybq0xpfb.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-gold underline underline-offset-4 opacity-90 transition-opacity hover:opacity-100"
+                >
+                  Mohamed Elkomy
+                </a>
+              </p>
+            </div>
             <div className="flex flex-wrap items-center gap-3">
               <p className="text-[11px] text-on-night uppercase opacity-40">
                 {dict.footer.securedVia}

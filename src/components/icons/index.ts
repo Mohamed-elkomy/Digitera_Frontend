@@ -29,6 +29,9 @@ export {
   CircleXIcon,
   FacebookIcon,
   WhatsAppIcon,
+  LinkedInIcon,
+  GitHubIcon,
+  TikTokIcon,
 } from "@/components/icons/BrandIcons";
 
 export {
