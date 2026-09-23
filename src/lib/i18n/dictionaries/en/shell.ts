@@ -9,7 +9,12 @@ export const shell = {
   },
   nav: {
     announcement:
-      "Complimentary signature gift wrapping on all orders above $150",
+      "Complimentary signature gift wrapping on all orders",
+    announcements: [
+      "Complimentary signature gift wrapping on all orders",
+      "Complimentary delivery on orders above 500 EGP",
+      "24/7 Dedicated Concierge & WhatsApp Ordering: +20 127 278 2474",
+    ],
     home: "Home",
     shop: "Shop",
     categories: "Categories",

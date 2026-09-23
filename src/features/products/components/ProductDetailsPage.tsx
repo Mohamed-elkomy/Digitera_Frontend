@@ -7,6 +7,7 @@ import { ProductDetails } from "@/features/products/components/ProductDetails";
 import { ProductDetailsSkeleton } from "@/features/products/components/ProductDetailsSkeleton";
 import { ProductGallery } from "@/features/products/components/ProductGallery";
 import { ProductNotFound } from "@/features/products/components/ProductNotFound";
+import { ProductShareButtons } from "@/features/products/components/ProductShareButtons";
 import { ProductVariantPicker } from "@/features/products/components/ProductVariantPicker";
 import { RelatedProducts } from "@/features/products/components/RelatedProducts";
 import { ScentAnatomy } from "@/features/products/components/ScentAnatomy";
@@ -88,6 +89,8 @@ export function ProductDetailsPage({
             setQuantity: selection.setQuantity,
             disabled,
           })}
+
+          <ProductShareButtons product={product} />
 
           <div className="h-px w-full bg-line" />
 

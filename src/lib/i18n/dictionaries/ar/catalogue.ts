@@ -57,6 +57,10 @@ export const catalogue = {
     galleryLabel: "صور {name}",
     bottleAlt: "قارورة عطر {name}",
     noImages: "لا توجد صور للمنتج بعد",
+    quickView: "نظرة سريعة",
+    share: "مشاركة",
+    shareOnWhatsApp: "مشاركة عبر واتساب",
+    linkCopied: "تم نسخ الرابط للحافظة",
   },
   listing: {
     title: "كل العطور",

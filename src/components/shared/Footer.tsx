@@ -9,6 +9,7 @@ import {
   MailIcon,
   TikTokIcon,
 } from "@/components/icons";
+import { AudioToggle } from "@/components/shared/AudioToggle";
 import { ContactOnWhatsApp } from "@/components/shared/ContactOnWhatsApp";
 import { useFooterNav } from "@/components/shared/navigation";
 import { useI18n } from "@/lib/i18n/I18nProvider";
@@ -139,19 +140,20 @@ export function Footer() {
                 </a>
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="text-[11px] text-on-night uppercase opacity-40">
-                {dict.footer.securedVia}
-              </p>
-              {paymentMethods.map((method) => (
-                <span
-                  key={method}
-                  className="rounded border border-on-night/[0.13] px-2 py-1 text-[9px] font-semibold text-on-night uppercase opacity-60"
-                >
-                  {method}
-                </span>
-              ))}
-            </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <AudioToggle />
+                <p className="text-[11px] text-on-night uppercase opacity-40">
+                  {dict.footer.securedVia}
+                </p>
+                {paymentMethods.map((method) => (
+                  <span
+                    key={method}
+                    className="rounded border border-on-night/[0.13] px-2 py-1 text-[9px] font-semibold text-on-night uppercase opacity-60"
+                  >
+                    {method}
+                  </span>
+                ))}
+              </div>
           </div>
         </div>
       </div>
