@@ -4,6 +4,7 @@ import { Instrument_Serif, Manrope } from "next/font/google";
 import { FloatingActions } from "@/components/shared/FloatingActions";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
+import { QuickViewModal } from "@/features/products/components/QuickViewModal";
 import { SkipLink } from "@/components/shared/SkipLink";
 import { Toaster } from "@/components/ui/toast";
 import { Providers } from "@/app/providers";
@@ -68,6 +69,7 @@ export default async function RootLayout({
           </main>
           <Footer />
           <FloatingActions />
+          <QuickViewModal />
           <Toaster />
         </Providers>
       </body>

@@ -15,9 +15,11 @@ export const en = {
   ...auth,
 } as const;
 
-/** Same shape as `en`, but every leaf widened to `string`. */
+/** Same shape as `en`, but leaves widened to string or readonly string[]. */
 export type Dictionary = {
   [Section in keyof typeof en]: {
-    [Key in keyof (typeof en)[Section]]: string;
+    [Key in keyof (typeof en)[Section]]: (typeof en)[Section][Key] extends readonly string[]
+      ? readonly string[]
+      : string;
   };
 };

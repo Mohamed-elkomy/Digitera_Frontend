@@ -59,6 +59,10 @@ export const catalogue = {
     galleryLabel: "{name} images",
     bottleAlt: "{name} fragrance bottle",
     noImages: "No product images yet",
+    quickView: "Quick View",
+    share: "Share",
+    shareOnWhatsApp: "Share via WhatsApp",
+    linkCopied: "Link copied to clipboard",
   },
   listing: {
     title: "All Fragrances",

@@ -7,6 +7,7 @@ import { useCart } from "@/features/cart";
 import { useProductCopy } from "@/features/products/hooks/useProductCopy";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 import { productPaths } from "@/features/products/paths";
+import { openQuickView } from "@/features/products/stores/quick-view.store";
 import type { Product } from "@/features/products/types/product.types";
 import {
   formatWholePrice,
@@ -46,6 +47,17 @@ export function ProductCard({ product }: ProductCardProps) {
             {dict.product.noImages}
           </div>
         )}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openQuickView(product);
+          }}
+          className="absolute right-3 bottom-3 left-3 flex items-center justify-center rounded-lg bg-surface/90 py-2 text-[11px] font-semibold text-ink uppercase opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100 hover:bg-gold hover:text-night"
+        >
+          {dict.product.quickView}
+        </button>
       </Link>
 
       <div className="flex w-full flex-col items-start gap-3">

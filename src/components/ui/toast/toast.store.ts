@@ -59,6 +59,13 @@ export const useToastStore = create<ToastStore>((set) => ({
   clear: () => set({ toasts: [] }),
 }));
 
+import { playSound } from "@/lib/audio/sound-effects";
+
 export function showToast(toast: Omit<Toast, "id">) {
+  if (toast.type === "success") {
+    playSound("success");
+  } else {
+    playSound("click");
+  }
   return useToastStore.getState().show(toast);
 }
