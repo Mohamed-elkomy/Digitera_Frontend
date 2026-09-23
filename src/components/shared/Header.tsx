@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { CloseIcon, MenuIcon } from "@/components/icons";
 import { AnnouncementBar } from "@/components/shared/AnnouncementBar";
 import { AccountMenu } from "@/components/shared/AccountMenu";
+import { HeaderNav } from "@/components/shared/HeaderNav";
 import { HeaderSearch } from "@/components/shared/HeaderSearch";
 import { SearchOverlay } from "@/components/shared/SearchOverlay";
 import { LocaleToggle } from "@/components/shared/LocaleToggle";
@@ -21,7 +21,6 @@ const iconButton =
   "flex size-8 shrink-0 items-center justify-center rounded-full text-ink transition-colors duration-300 hover:bg-shell hover:text-gold sm:size-9";
 
 export function Header() {
-  const pathname = usePathname();
   const { dict } = useI18n();
   const nav = usePrimaryNav();
   const scrolled = useScrolled();
@@ -65,39 +64,7 @@ export function Header() {
             {menuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
 
-          <nav
-            aria-label="Primary"
-            className="hidden flex-1 items-center gap-8 lg:flex"
-          >
-            {nav.map((link) => {
-              const base = link.href.split("?")[0];
-              const active =
-                base === "/" ? pathname === "/" : pathname.startsWith(base);
-
-              return (
-                <Link
-                  key={link.key}
-                  href={link.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "relative px-3 py-1.5 text-[13px] whitespace-nowrap uppercase tracking-wider transition-all duration-300",
-                    "rounded-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold",
-                    active
-                      ? "font-semibold text-ink bg-shell/70 shadow-xs"
-                      : "font-medium text-muted hover:text-ink hover:bg-shell/40",
-                  )}
-                >
-                  {link.label}
-                  {active && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute bottom-1 left-3 right-3 h-[1.5px] rounded-full bg-gold"
-                    />
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
+          <HeaderNav nav={nav} />
 
           <Link
             href="/"
