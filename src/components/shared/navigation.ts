@@ -63,6 +63,11 @@ export function useFooterNav(): { title: string; links: NavLink[] }[] {
       title: dict.footer.customerCare,
       links: [
         {
+          key: "contact",
+          label: dict.footer.contactUs,
+          href: "/contact",
+        },
+        {
           key: "consultation",
           label: dict.footer.consultation,
           href: contentPaths.page("consultation"),

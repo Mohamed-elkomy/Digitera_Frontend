@@ -64,6 +64,22 @@ export function ArrowLeftIcon({ size = 14, ...props }: IconProps) {
   );
 }
 
+export function ArrowUpIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      aria-hidden="true"
+      focusable="false"
+      {...iconDefaults}
+      {...props}
+    >
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  );
+}
+
 export function ArrowRightIcon({ size = 14, ...props }: IconProps) {
   return (
     <svg
