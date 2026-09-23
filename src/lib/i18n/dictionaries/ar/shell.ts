@@ -69,6 +69,8 @@ export const shell = {
     startConversation: "بدء المحادثة",
     sendAnEmail: "إرسال رسالة بريدية",
     callNow: "اتصال مباشر",
+    copiedEmailToast: "تم نسخ البريد الإلكتروني إلى الحافظة",
+    copiedPhoneToast: "تم نسخ رقم الهاتف إلى الحافظة",
   },
   errors: {
     pageNotFound: "الصفحة غير موجودة",

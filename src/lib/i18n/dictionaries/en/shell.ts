@@ -70,6 +70,8 @@ export const shell = {
     startConversation: "Start Conversation",
     sendAnEmail: "Send an Email",
     callNow: "Call Directly",
+    copiedEmailToast: "Email copied to clipboard",
+    copiedPhoneToast: "Phone number copied to clipboard",
   },
   errors: {
     pageNotFound: "Page not found",

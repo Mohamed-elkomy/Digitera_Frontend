@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { showToast } from "@/components/ui/toast";
 import { useCart } from "@/features/cart";
 import { useProductCopy } from "@/features/products/hooks/useProductCopy";
 import { useI18n } from "@/lib/i18n/I18nProvider";
@@ -80,6 +81,16 @@ export function ProductCard({ product }: ProductCardProps) {
               unitPrice: variant.price,
               giftWrapping: false,
               image,
+            });
+            showToast({
+              title: dict.product.added,
+              message: `${copy.name} (${variant.label})`,
+              image,
+              type: "success",
+              action: {
+                label: dict.nav.cart,
+                href: "/cart",
+              },
             });
           }}
         >

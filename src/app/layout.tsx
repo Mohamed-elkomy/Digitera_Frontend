@@ -5,6 +5,7 @@ import { FloatingActions } from "@/components/shared/FloatingActions";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
 import { SkipLink } from "@/components/shared/SkipLink";
+import { Toaster } from "@/components/ui/toast";
 import { Providers } from "@/app/providers";
 import { getDirection } from "@/lib/i18n/locale";
 import { readPreferences } from "@/lib/i18n/server";
@@ -67,6 +68,7 @@ export default async function RootLayout({
           </main>
           <Footer />
           <FloatingActions />
+          <Toaster />
         </Providers>
       </body>
     </html>

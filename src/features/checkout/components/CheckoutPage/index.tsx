@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { AlertIcon, ArrowRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { BottleLoader } from "@/components/ui/BottleLoader";
+import { showToast } from "@/components/ui/toast";
 import { useSession } from "@/features/auth";
 import { cartPaths, useCart } from "@/features/cart";
 import { useCartHydrated } from "@/features/cart/hooks/useCartHydrated";
@@ -86,6 +87,11 @@ export function CheckoutPage() {
     setTimeout(() => {
       placeOrder(order);
       clear();
+      showToast({
+        title: dict.checkout.confirmedTitle,
+        message: `${dict.checkout.orderNumber}: ${order.id}`,
+        type: "success",
+      });
       router.replace(checkoutPaths.order(order.id));
     }, SIMULATED_LATENCY_MS);
   }
