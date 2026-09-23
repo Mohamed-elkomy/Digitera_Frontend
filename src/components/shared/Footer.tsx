@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CircleXIcon, FacebookIcon, InstagramIcon } from "@/components/icons";
+import { ContactOnWhatsApp } from "@/components/shared/ContactOnWhatsApp";
 import { useFooterNav } from "@/components/shared/navigation";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
@@ -28,19 +29,27 @@ export function Footer() {
             <p className="text-[14px] leading-[1.6] text-on-night opacity-80">
               {dict.footer.description}
             </p>
-            <ul className="flex items-center gap-4">
-              {socials.map(({ label, Icon }) => (
-                <li key={label}>
-                  <Link
-                    href="/products"
+            {/*
+              Odoratus is a fictional house with no accounts to link to, so
+              these stay as marks rather than links that go nowhere. The one
+              channel that does work sits beside them.
+            */}
+            <div className="flex flex-wrap items-center gap-4">
+              <ul className="flex items-center gap-4">
+                {socials.map(({ label, Icon }) => (
+                  <li
+                    key={label}
+                    role="img"
                     aria-label={label}
-                    className="flex rounded-full bg-on-night/10 p-2 text-on-night transition-colors duration-300 hover:bg-gold"
+                    className="flex rounded-full bg-on-night/10 p-2 text-on-night opacity-60"
                   >
                     <Icon />
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+
+              <ContactOnWhatsApp />
+            </div>
           </div>
 
           <div className="grid w-full gap-10 sm:grid-cols-3 lg:w-auto lg:gap-20">

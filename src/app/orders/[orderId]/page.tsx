@@ -15,7 +15,7 @@ export default async function Page({
   const { orderId } = await params;
 
   return (
-    <AuthGuard requireSession redirectTo={authPaths.login}>
+    <AuthGuard requireSession rememberReturn redirectTo={authPaths.login}>
       <OrderConfirmation orderId={decodeURIComponent(orderId)} />
     </AuthGuard>
   );

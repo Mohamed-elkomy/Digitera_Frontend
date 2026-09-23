@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LockIcon, MailIcon, UserIcon, UserPlusIcon } from "@/components/icons";
+import { AcceptTermsLabel } from "@/features/auth/components/AcceptTermsLabel";
 import { AuthCheckbox } from "@/features/auth/components/AuthCheckbox";
 import { AuthDemoNotice } from "@/features/auth/components/AuthDemoNotice";
 import { AuthField } from "@/features/auth/components/AuthField";
@@ -11,6 +12,7 @@ import { AuthShell } from "@/features/auth/components/AuthShell";
 import { AuthSubmitButton } from "@/features/auth/components/AuthSubmitButton";
 import { PasswordStrengthMeter } from "@/features/auth/components/PasswordStrengthMeter";
 import { useAuthSubmit } from "@/features/auth/hooks/useAuthSubmit";
+import { useReturnPath } from "@/features/auth/hooks/useReturnPath";
 import { useSession } from "@/features/auth/hooks/useSession";
 import { authPaths } from "@/features/auth/paths";
 import type {
@@ -37,6 +39,7 @@ export function SignupPage() {
   const { dict } = useI18n();
   const router = useRouter();
   const { signIn } = useSession();
+  const returnPath = useReturnPath();
 
   const [values, setValues] = useState<SignupValues>(emptyValues);
   const [errors, setErrors] = useState<FieldErrors<SignupField>>({});
@@ -66,7 +69,7 @@ export function SignupPage() {
 
     submit(() => {
       signIn({ name: values.name.trim(), email: values.email.trim() });
-      router.replace(authPaths.account);
+      router.replace(returnPath);
     });
   }
 
@@ -141,7 +144,7 @@ export function SignupPage() {
         />
 
         <AuthCheckbox
-          label={dict.auth.acceptTerms}
+          label={<AcceptTermsLabel />}
           checked={values.acceptedTerms}
           onChange={toggleTerms}
           error={errors.acceptedTerms}

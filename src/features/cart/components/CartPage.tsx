@@ -62,7 +62,7 @@ export function CartPage() {
           )}
         </div>
 
-        <CartSummary total={total} quantity={quantity} />
+        <CartSummary lines={lines} total={total} quantity={quantity} />
       </div>
     </section>
   );

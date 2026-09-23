@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <AuthGuard requireSession redirectTo={authPaths.login}>
+    <AuthGuard requireSession rememberReturn redirectTo={authPaths.login}>
       <CheckoutPage />
     </AuthGuard>
   );

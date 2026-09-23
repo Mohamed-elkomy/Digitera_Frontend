@@ -108,3 +108,21 @@ export function FacebookIcon({ size = 16, ...props }: IconProps) {
     </svg>
   );
 }
+
+export function WhatsAppIcon({ size = 16, ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      aria-hidden="true"
+      focusable="false"
+      {...iconDefaults}
+      {...props}
+    >
+      {/* Speech bubble with a tail, plus the handset inside it. */}
+      <path d="M20 11.7a8 8 0 0 1-11.9 7L4 20l1.4-4a8 8 0 1 1 14.6-4.3z" />
+      <path d="M9.2 9.1c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .6.5l.6 1.4c.1.3 0 .5-.1.7l-.4.4c-.1.2-.2.3 0 .6a6 6 0 0 0 2.4 2c.3.1.5.1.7-.1l.5-.5c.2-.2.4-.2.6-.1l1.4.7c.3.1.4.3.4.5 0 .6-.4 1.2-1 1.4-.5.2-1.1.2-2.6-.4a9 9 0 0 1-4.3-4c-.6-1.1-.7-1.9-.6-2.4z" />
+    </svg>
+  );
+}

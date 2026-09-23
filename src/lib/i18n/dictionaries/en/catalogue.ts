@@ -111,6 +111,8 @@ export const catalogue = {
     subtotal: "Subtotal",
     giftWrapping: "Gift wrapping",
     complimentary: "Complimentary",
+    wrappingNone: "Not selected",
+    wrappingFrom: "Free above ${threshold}",
     total: "Total",
     shippingNote: "Shipping is arranged after your order is confirmed.",
     continueShopping: "Continue shopping",

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { BottleLoader } from "@/components/ui/BottleLoader";
 import { authPaths } from "@/features/auth";
 import { OrderSummaryPanel } from "@/features/checkout/components/OrderSummaryPanel";
+import { WhatsAppInvoiceButton } from "@/features/checkout/components/WhatsAppInvoiceButton";
 import { useOrders } from "@/features/checkout/hooks/useOrders";
 import {
   formatOrderDate,
@@ -120,7 +121,8 @@ export function OrderConfirmation({ orderId }: OrderConfirmationProps) {
             ) : null}
           </div>
 
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <WhatsAppInvoiceButton order={order} />
             <Link href={productPaths.list}>
               <Button variant="primary">{dict.common.browseAll}</Button>
             </Link>

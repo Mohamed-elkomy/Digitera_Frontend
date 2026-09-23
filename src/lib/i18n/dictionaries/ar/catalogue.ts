@@ -107,6 +107,8 @@ export const catalogue = {
     subtotal: "المجموع الفرعي",
     giftWrapping: "تغليف الهدايا",
     complimentary: "مجاني",
+    wrappingNone: "غير مختار",
+    wrappingFrom: "مجاني فوق ${threshold}",
     total: "الإجمالي",
     shippingNote: "يُرتَّب الشحن بعد تأكيد طلبك.",
     continueShopping: "تابع التسوق",

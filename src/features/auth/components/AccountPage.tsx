@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { LockIcon, MailIcon, UserIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { useSession } from "@/features/auth/hooks/useSession";
+import { ProfileEditor } from "@/features/auth/components/ProfileEditor";
+import type { AuthUser } from "@/features/auth/types/auth.types";
 import { getInitials } from "@/features/auth/utils/auth.identity";
 import { cartPaths } from "@/features/cart";
 import { OrderHistory } from "@/features/checkout";
@@ -12,9 +15,17 @@ import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export function AccountPage() {
   const { dict } = useI18n();
-  const { user, signOut } = useSession();
+  const { user, signIn, signOut } = useSession();
+  const [editing, setEditing] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   if (!user) return null;
+
+  function handleSave(next: AuthUser) {
+    signIn(next);
+    setEditing(false);
+    setSaved(true);
+  }
 
   const details = [
     {
@@ -51,22 +62,51 @@ export function AccountPage() {
           </div>
         </header>
 
-        <dl className="mt-8 grid gap-3 sm:grid-cols-2">
-          {details.map((detail) => (
-            <div
-              key={detail.key}
-              className="rounded border border-line bg-surface p-4"
+        {editing ? (
+          <div className="mt-8">
+            <ProfileEditor
+              user={user}
+              onSave={handleSave}
+              onCancel={() => setEditing(false)}
+            />
+          </div>
+        ) : (
+          <>
+            <dl className="mt-8 grid gap-3 sm:grid-cols-2">
+              {details.map((detail) => (
+                <div
+                  key={detail.key}
+                  className="rounded border border-line bg-surface p-4"
+                >
+                  <dt className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.16em] text-muted uppercase">
+                    <span aria-hidden="true">{detail.icon}</span>
+                    {detail.label}
+                  </dt>
+                  <dd className="mt-2 truncate text-[14px] text-ink">
+                    {detail.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <button
+              type="button"
+              onClick={() => {
+                setSaved(false);
+                setEditing(true);
+              }}
+              className="mt-3 text-[12px] font-semibold text-gold underline-offset-4 transition-colors duration-300 hover:text-ink hover:underline"
             >
-              <dt className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.16em] text-muted uppercase">
-                <span aria-hidden="true">{detail.icon}</span>
-                {detail.label}
-              </dt>
-              <dd className="mt-2 truncate text-[14px] text-ink">
-                {detail.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+              {dict.auth.editProfile}
+            </button>
+          </>
+        )}
+
+        {saved ? (
+          <p role="status" className="mt-3 text-[12px] text-success">
+            {dict.auth.profileSaved}
+          </p>
+        ) : null}
 
         <div className="mt-4">
           <OrderHistory />

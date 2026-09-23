@@ -3,6 +3,11 @@
 import Image from "next/image";
 import type { CartLine } from "@/features/cart";
 import {
+  FREE_WRAPPING_THRESHOLD,
+  countWrappedItems,
+  getWrappingFee,
+} from "@/features/cart/utils/gift-wrapping";
+import {
   FREE_SHIPPING_THRESHOLD,
   getShippingFee,
 } from "@/features/checkout/utils/order";
@@ -23,6 +28,8 @@ export function OrderSummaryPanel({
 }: OrderSummaryPanelProps) {
   const { dict, fill, locale } = useI18n();
   const shipping = getShippingFee(subtotal);
+  const wrapped = countWrappedItems(lines);
+  const wrapping = getWrappingFee(lines, subtotal);
 
   return (
     <aside
@@ -83,6 +90,18 @@ export function OrderSummaryPanel({
           <dt className="text-muted">{dict.checkout.subtotal}</dt>
           <dd className="text-ink tabular-nums">${subtotal}</dd>
         </div>
+        {wrapped > 0 ? (
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-muted">{dict.cart.giftWrapping}</dt>
+            <dd
+              className={
+                wrapping > 0 ? "text-ink tabular-nums" : "text-success"
+              }
+            >
+              {wrapping > 0 ? `$${wrapping}` : dict.cart.complimentary}
+            </dd>
+          </div>
+        ) : null}
         <div className="flex items-center justify-between">
           <dt className="text-muted">{dict.checkout.shipping}</dt>
           <dd
@@ -103,7 +122,7 @@ export function OrderSummaryPanel({
           aria-live="polite"
           className="text-[22px] font-semibold text-ink tabular-nums"
         >
-          ${subtotal + shipping}
+          ${subtotal + shipping + wrapping}
         </p>
       </div>
 
@@ -112,6 +131,12 @@ export function OrderSummaryPanel({
           {fill(dict.checkout.shippingNote, {
             threshold: FREE_SHIPPING_THRESHOLD,
           })}
+        </p>
+      ) : null}
+
+      {wrapping > 0 ? (
+        <p className="mt-1 text-[11px] text-muted">
+          {fill(dict.cart.wrappingFrom, { threshold: FREE_WRAPPING_THRESHOLD })}
         </p>
       ) : null}
 

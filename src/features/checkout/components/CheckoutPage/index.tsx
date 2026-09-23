@@ -11,8 +11,10 @@ import { cartPaths, useCart } from "@/features/cart";
 import { useCartHydrated } from "@/features/cart/hooks/useCartHydrated";
 import { OrderSummaryPanel } from "@/features/checkout/components/OrderSummaryPanel";
 import { PaymentMethodPicker } from "@/features/checkout/components/PaymentMethodPicker";
+import { buildOrder } from "@/features/checkout/components/CheckoutPage/build-order";
 import { EmptyCheckout } from "@/features/checkout/components/CheckoutPage/EmptyCheckout";
 import { ShippingFields } from "@/features/checkout/components/CheckoutPage/ShippingFields";
+import { useInvoice } from "@/features/checkout/hooks/useInvoice";
 import { useOrders } from "@/features/checkout/hooks/useOrders";
 import { checkoutPaths } from "@/features/checkout/paths";
 import type {
@@ -20,11 +22,6 @@ import type {
   CheckoutValues,
   ShippingField,
 } from "@/features/checkout/types/checkout.types";
-import {
-  createOrderId,
-  freezeLines,
-  getShippingFee,
-} from "@/features/checkout/utils/order";
 import {
   hasCheckoutErrors,
   validateCheckout,
@@ -40,6 +37,7 @@ export function CheckoutPage() {
   const { lines, total, clear } = useCart();
   const cartReady = useCartHydrated();
   const { placeOrder } = useOrders();
+  const { buildUrl } = useInvoice();
 
   // The signed-in visitor's details are the obvious starting point.
   const [values, setValues] = useState<CheckoutValues>({
@@ -71,30 +69,24 @@ export function CheckoutPage() {
     if (hasCheckoutErrors(found) || lines.length === 0) return;
 
     setPlacing(true);
-    const id = createOrderId();
+
+    const order = buildOrder({
+      lines,
+      subtotal: total,
+      values,
+      ownerEmail: user?.email ?? values.email.trim(),
+    });
+
+    // Opened here, inside the click, so the browser treats it as the visitor's
+    // own action. Moving it into the timeout below would get it blocked.
+    const invoiceUrl = buildUrl(order);
+    if (invoiceUrl) window.open(invoiceUrl, "_blank", "noopener,noreferrer");
 
     // Stands in for the network round-trip; there is no backend in this build.
     setTimeout(() => {
-      placeOrder({
-        id,
-        placedAt: new Date().toISOString(),
-        lines: freezeLines(lines),
-        subtotal: total,
-        shipping: getShippingFee(total),
-        total: total + getShippingFee(total),
-        paymentMethod: values.paymentMethod,
-        shippingAddress: {
-          fullName: values.fullName.trim(),
-          email: values.email.trim(),
-          phone: values.phone.trim(),
-          address: values.address.trim(),
-          city: values.city.trim(),
-          postalCode: values.postalCode.trim(),
-          notes: values.notes.trim(),
-        },
-      });
+      placeOrder(order);
       clear();
-      router.replace(checkoutPaths.order(id));
+      router.replace(checkoutPaths.order(order.id));
     }, SIMULATED_LATENCY_MS);
   }
 
