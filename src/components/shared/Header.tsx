@@ -80,16 +80,20 @@ export function Header() {
                   href={link.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative py-1 text-[13px] whitespace-nowrap uppercase transition-colors duration-300",
-                    "after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-gold",
-                    "after:transition-[width] after:duration-300 after:ease-[cubic-bezier(0.22,1,0.36,1)]",
-                    "hover:text-ink hover:after:w-full",
+                    "relative px-3 py-1.5 text-[13px] whitespace-nowrap uppercase tracking-wider transition-all duration-300",
+                    "rounded-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold",
                     active
-                      ? "font-semibold text-ink after:w-full"
-                      : "font-medium text-muted",
+                      ? "font-semibold text-ink bg-shell/70 shadow-xs"
+                      : "font-medium text-muted hover:text-ink hover:bg-shell/40",
                   )}
                 >
                   {link.label}
+                  {active && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-1 left-3 right-3 h-[1.5px] rounded-full bg-gold"
+                    />
+                  )}
                 </Link>
               );
             })}
