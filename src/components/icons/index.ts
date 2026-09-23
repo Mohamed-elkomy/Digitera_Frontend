@@ -16,6 +16,7 @@ export {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowUpIcon,
+  PhoneIcon,
   PlusIcon,
   MinusIcon,
   CheckIcon,
