@@ -6,7 +6,7 @@ a light and a dark theme, and every icon drawn by hand.
 
 Built for the **Digitera Frontend Engineering Bootcamp** from a Figma design.
 
-**Live:** _add your Vercel URL here after the first deploy_
+**Live:** [https://digiterafrontend.vercel.app/](https://digiterafrontend.vercel.app/)
 
 ---
 
@@ -182,7 +182,7 @@ repository, and deploy. The defaults are correct — Next.js is detected, the
 build command is `pnpm build`, and there are no environment variables, because
 there is no backend to point at.
 
-Add the resulting URL at the top of this file.
+The deployed project is available at: [https://digiterafrontend.vercel.app/](https://digiterafrontend.vercel.app/)
 
 ---
 
