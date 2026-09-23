@@ -7,6 +7,7 @@ import {
   InstagramIcon,
   LinkedInIcon,
   MailIcon,
+  PhoneIcon,
   TikTokIcon,
   WhatsAppIcon,
 } from "@/components/icons";
@@ -98,16 +99,16 @@ export function ContactHubView() {
         {/* Primary Action Cards (Direct WhatsApp, Direct Call, Direct Email) */}
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {/* Card 1: WhatsApp */}
-          <div className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:border-gold/50 hover:shadow-lg">
+          <div className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl text-start">
             <div className="flex flex-col gap-4">
               <div className="flex size-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 transition-transform duration-300 group-hover:scale-110">
                 <WhatsAppIcon size={24} />
               </div>
-              <div>
-                <h2 className="font-serif text-[20px] text-ink">
+              <div className="text-start">
+                <h2 className="font-serif text-[20px] text-ink text-start">
                   {dict.footer.instantWhatsApp}
                 </h2>
-                <p className="mt-2 text-[13px] leading-[1.6] text-muted">
+                <p className="mt-2 text-[13px] leading-[1.6] text-muted text-start">
                   {dict.footer.instantWhatsAppDesc}
                 </p>
               </div>
@@ -127,19 +128,19 @@ export function ContactHubView() {
           </div>
 
           {/* Card 2: Email */}
-          <div className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:border-gold/50 hover:shadow-lg">
+          <div className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl text-start">
             <div className="flex flex-col gap-4">
               <div className="flex size-12 items-center justify-center rounded-xl bg-gold/10 text-gold transition-transform duration-300 group-hover:scale-110">
                 <MailIcon size={22} />
               </div>
-              <div>
-                <h2 className="font-serif text-[20px] text-ink">
+              <div className="text-start">
+                <h2 className="font-serif text-[20px] text-ink text-start">
                   {dict.footer.officialEmail}
                 </h2>
-                <p className="mt-2 text-[13px] leading-[1.6] text-muted">
+                <p className="mt-2 text-[13px] leading-[1.6] text-muted text-start">
                   {dict.footer.officialEmailDesc}
                 </p>
-                <p className="mt-2 font-mono text-[12px] text-ink/80 select-all">
+                <p dir="ltr" className="mt-2 inline-block font-mono text-[12px] text-ink/80 select-all text-start">
                   {EMAIL}
                 </p>
               </div>
@@ -157,19 +158,19 @@ export function ContactHubView() {
           </div>
 
           {/* Card 3: Phone Direct */}
-          <div className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:border-gold/50 hover:shadow-lg">
+          <div className="group relative flex flex-col justify-between rounded-2xl border border-line bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl text-start">
             <div className="flex flex-col gap-4">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 transition-transform duration-300 group-hover:scale-110">
-                <WhatsAppIcon size={22} />
+              <div className="flex size-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 transition-transform duration-300 group-hover:scale-110">
+                <PhoneIcon size={22} />
               </div>
-              <div>
-                <h2 className="font-serif text-[20px] text-ink">
+              <div className="text-start">
+                <h2 className="font-serif text-[20px] text-ink text-start">
                   {dict.footer.telephoneDirect}
                 </h2>
-                <p className="mt-2 text-[13px] leading-[1.6] text-muted">
+                <p className="mt-2 text-[13px] leading-[1.6] text-muted text-start">
                   {dict.footer.workingHoursDetails}
                 </p>
-                <p className="mt-2 font-mono text-[14px] font-semibold text-ink select-all">
+                <p dir="ltr" className="mt-2 inline-block font-mono text-[14px] font-semibold text-ink select-all text-start">
                   {PHONE_NUMBER}
                 </p>
               </div>
@@ -180,6 +181,7 @@ export function ContactHubView() {
                 href={`tel:${PHONE_NUMBER.replace(/\s+/g, "")}`}
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-transparent px-4 py-3 text-[12px] font-semibold tracking-wider text-ink uppercase transition-all duration-300 hover:border-gold hover:bg-gold hover:text-night"
               >
+                <PhoneIcon size={15} />
                 {dict.footer.callNow}
               </a>
             </div>
