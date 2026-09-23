@@ -1,75 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import {
-  FacebookIcon,
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  MailIcon,
-  PhoneIcon,
-  TikTokIcon,
-  WhatsAppIcon,
-} from "@/components/icons";
+import { MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { showToast } from "@/components/ui/toast";
 import { productPaths } from "@/features/products";
 import { useI18n } from "@/lib/i18n/I18nProvider";
-
-const PHONE_NUMBER = "+20 127 278 2474";
-const RAW_PHONE = "201272782474";
-const EMAIL = "mohamedmagdyelkomy53@gmail.com";
-
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    handle: "mohamed-magdy-elkomy",
-    href: "https://www.linkedin.com/in/mohamed-magdy-elkomy/",
-    Icon: LinkedInIcon,
-    tag: "Professional",
-  },
-  {
-    name: "GitHub",
-    handle: "Mohamed-elkomy",
-    href: "https://github.com/Mohamed-elkomy",
-    Icon: GitHubIcon,
-    tag: "Source Code",
-  },
-  {
-    name: "Instagram (Creative / Video)",
-    handle: "@sukoon.t_74",
-    href: "https://www.instagram.com/sukoon.t_74/",
-    Icon: InstagramIcon,
-    tag: "Portfolio & Visuals",
-  },
-  {
-    name: "Instagram (Personal)",
-    handle: "@mo.magdy_74",
-    href: "https://www.instagram.com/mo.magdy_74/",
-    Icon: InstagramIcon,
-    tag: "Personal Profile",
-  },
-  {
-    name: "TikTok (Creative / Video)",
-    handle: "@sukoon.t_74",
-    href: "https://www.tiktok.com/@sukoon.t_74",
-    Icon: TikTokIcon,
-    tag: "Cinematic & Reels",
-  },
-  {
-    name: "TikTok (Personal)",
-    handle: "@mo.magdy_74",
-    href: "https://www.tiktok.com/@mo.magdy_74",
-    Icon: TikTokIcon,
-    tag: "Daily Clips",
-  },
-  {
-    name: "Facebook",
-    handle: "Mohamed Magdy Elkomy",
-    href: "https://www.facebook.com/Hacker.XCom",
-    Icon: FacebookIcon,
-    tag: "Social",
-  },
-];
+import {
+  EMAIL,
+  PHONE_NUMBER,
+  RAW_PHONE,
+  socialLinks,
+} from "./contact-profiles";
+import { SocialLinksGrid } from "./SocialLinksGrid";
 
 export function ContactHubView() {
   const { dict } = useI18n();
@@ -234,32 +176,7 @@ export function ContactHubView() {
             </a>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {socialLinks.map(({ name, handle, href, Icon, tag }) => (
-              <a
-                key={name}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-2xl border border-line/80 bg-surface p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:shadow-md"
-              >
-                <div className="flex items-center gap-3.5">
-                  <div className="flex size-10 items-center justify-center rounded-xl bg-night/5 text-ink transition-colors duration-300 group-hover:bg-gold group-hover:text-night">
-                    <Icon size={18} />
-                  </div>
-                  <div>
-                    <p className="text-[13px] font-medium text-ink transition-colors group-hover:text-gold">
-                      {name}
-                    </p>
-                    <p className="text-[11px] text-muted">{handle}</p>
-                  </div>
-                </div>
-                <span className="rounded-full bg-shell px-2.5 py-1 text-[10px] font-medium text-muted">
-                  {tag}
-                </span>
-              </a>
-            ))}
-          </div>
+          <SocialLinksGrid links={socialLinks} />
         </div>
 
         {/* Back to Catalogue Link */}
