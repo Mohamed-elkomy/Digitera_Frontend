@@ -49,6 +49,7 @@ export const shell = {
     sustainability: "التزامات الاستدامة",
     journal: "المدونة",
     rights: "© {year} Odoratus. جميع الحقوق محفوظة.",
+    designedBy: "تصميم وتطوير",
     securedVia: "دفع آمن عبر",
     contactUs: "تواصل معنا",
     whatsAppGreeting: "مرحبًا Odoratus — عندي استفسار عن أحد العطور.",

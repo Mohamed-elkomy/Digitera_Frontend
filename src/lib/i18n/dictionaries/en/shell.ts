@@ -50,6 +50,7 @@ export const shell = {
     sustainability: "Sustainability Commitments",
     journal: "Journal",
     rights: "© {year} Odoratus. All rights reserved.",
+    designedBy: "Designed & Developed by",
     securedVia: "Secured checkout via",
     contactUs: "Talk to us",
     whatsAppGreeting: "Hello Odoratus — I have a question about a fragrance.",
