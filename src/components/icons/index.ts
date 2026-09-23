@@ -28,6 +28,7 @@ export {
   InstagramIcon,
   CircleXIcon,
   FacebookIcon,
+  WhatsAppIcon,
 } from "@/components/icons/BrandIcons";
 
 export {

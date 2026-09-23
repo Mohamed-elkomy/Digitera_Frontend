@@ -118,11 +118,11 @@ export function Header() {
         </div>
       </div>
 
-      <div
-        id="primary-navigation"
-        hidden={!menuOpen}
-        className="mx-3 mt-2 rounded-2xl border border-line bg-surface px-4 py-4 shadow-[0_10px_40px_-24px_rgba(26,26,26,0.5)] sm:mx-5 lg:hidden"
-      >
+      {menuOpen ? (
+        <div
+          id="primary-navigation"
+          className="mx-3 mt-2 rounded-2xl border border-line bg-surface px-4 py-4 shadow-[0_10px_40px_-24px_rgba(26,26,26,0.5)] sm:mx-5 lg:hidden"
+        >
         <nav aria-label="Mobile" className="flex flex-col">
           {nav.map((link) => (
             <Link
@@ -146,6 +146,7 @@ export function Header() {
           {dict.nav.closeMenu}
         </button>
       </div>
+      ) : null}
     </header>
   );
 }

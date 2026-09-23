@@ -3,18 +3,28 @@
 import Link from "next/link";
 import { ArrowRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
+import type { CartLine } from "@/features/cart/types/cart.types";
+import {
+  countWrappedItems,
+  FREE_WRAPPING_THRESHOLD,
+  getWrappingFee,
+} from "@/features/cart/utils/gift-wrapping";
 import { checkoutPaths } from "@/features/checkout";
 import { productPaths } from "@/features/products";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
 type CartSummaryProps = {
+  lines: CartLine[];
   total: number;
   quantity: number;
 };
 
-export function CartSummary({ total, quantity }: CartSummaryProps) {
-  const { dict } = useI18n();
+export function CartSummary({ lines, total, quantity }: CartSummaryProps) {
+  const { dict, fill } = useI18n();
   const empty = quantity === 0;
+
+  const wrapped = countWrappedItems(lines);
+  const wrappingFee = getWrappingFee(lines, total);
 
   return (
     <aside
@@ -37,9 +47,23 @@ export function CartSummary({ total, quantity }: CartSummaryProps) {
           <dt className="text-muted">{dict.cart.subtotal}</dt>
           <dd className="text-ink tabular-nums">${total}</dd>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-3">
           <dt className="text-muted">{dict.cart.giftWrapping}</dt>
-          <dd className="text-success">{dict.cart.complimentary}</dd>
+          <dd
+            className={
+              wrappingFee > 0
+                ? "text-ink tabular-nums"
+                : "text-end text-success"
+            }
+          >
+            {wrapped === 0
+              ? fill(dict.cart.wrappingFrom, {
+                  threshold: FREE_WRAPPING_THRESHOLD,
+                })
+              : wrappingFee > 0
+                ? `$${wrappingFee}`
+                : dict.cart.complimentary}
+          </dd>
         </div>
       </dl>
 
@@ -51,7 +75,7 @@ export function CartSummary({ total, quantity }: CartSummaryProps) {
           aria-live="polite"
           className="text-[22px] font-semibold text-ink tabular-nums"
         >
-          ${total}
+          ${total + wrappingFee}
         </p>
       </div>
 

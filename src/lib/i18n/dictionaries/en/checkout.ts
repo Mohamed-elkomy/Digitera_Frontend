@@ -45,6 +45,10 @@ export const checkout = {
     confirmedBody:
       "Thank you, {name}. We have your order and will be in touch at {email}.",
     orderNumber: "Order number",
+    invoice: "Order invoice",
+    sendOnWhatsApp: "Send the invoice on WhatsApp",
+    whatsAppNote:
+      "There is no backend, so WhatsApp is how the order reaches the house.",
     placedOn: "Placed on",
     deliverTo: "Deliver to",
     paidWith: "Payment",

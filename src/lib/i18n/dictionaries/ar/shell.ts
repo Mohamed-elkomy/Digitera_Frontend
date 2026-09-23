@@ -50,6 +50,8 @@ export const shell = {
     journal: "المدونة",
     rights: "© {year} Odoratus. جميع الحقوق محفوظة.",
     securedVia: "دفع آمن عبر",
+    contactUs: "تواصل معنا",
+    whatsAppGreeting: "مرحبًا Odoratus — عندي استفسار عن أحد العطور.",
   },
   errors: {
     pageNotFound: "الصفحة غير موجودة",

@@ -51,6 +51,8 @@ export const shell = {
     journal: "Journal",
     rights: "© {year} Odoratus. All rights reserved.",
     securedVia: "Secured checkout via",
+    contactUs: "Talk to us",
+    whatsAppGreeting: "Hello Odoratus — I have a question about a fragrance.",
   },
   errors: {
     pageNotFound: "Page not found",

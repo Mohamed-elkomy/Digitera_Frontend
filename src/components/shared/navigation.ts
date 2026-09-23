@@ -1,6 +1,7 @@
 "use client";
 
 import { cartPaths } from "@/features/cart";
+import { contentPaths } from "@/features/content";
 import { productPaths } from "@/features/products";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
@@ -64,19 +65,23 @@ export function useFooterNav(): { title: string; links: NavLink[] }[] {
         {
           key: "consultation",
           label: dict.footer.consultation,
-          href: productPaths.list,
+          href: contentPaths.page("consultation"),
         },
         {
           key: "shipping",
           label: dict.footer.shipping,
-          href: productPaths.list,
+          href: contentPaths.page("shipping-returns"),
         },
         {
           key: "appointments",
           label: dict.footer.appointments,
-          href: productPaths.list,
+          href: contentPaths.page("appointments"),
         },
-        { key: "care", label: dict.footer.careGuide, href: productPaths.list },
+        {
+          key: "care",
+          label: dict.footer.careGuide,
+          href: contentPaths.page("care-guide"),
+        },
       ],
     },
     {
@@ -85,19 +90,23 @@ export function useFooterNav(): { title: string; links: NavLink[] }[] {
         {
           key: "philosophy",
           label: dict.footer.philosophy,
-          href: productPaths.list,
+          href: contentPaths.page("philosophy"),
         },
         {
           key: "sourcing",
           label: dict.footer.sourcing,
-          href: productPaths.list,
+          href: contentPaths.page("sourcing"),
         },
         {
           key: "sustainability",
           label: dict.footer.sustainability,
-          href: productPaths.list,
+          href: contentPaths.page("sustainability"),
         },
-        { key: "journal", label: dict.footer.journal, href: productPaths.list },
+        {
+          key: "journal",
+          label: dict.footer.journal,
+          href: contentPaths.page("journal"),
+        },
       ],
     },
   ];

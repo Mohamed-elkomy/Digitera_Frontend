@@ -10,6 +10,7 @@ import { AuthField } from "@/features/auth/components/AuthField";
 import { AuthShell } from "@/features/auth/components/AuthShell";
 import { AuthSubmitButton } from "@/features/auth/components/AuthSubmitButton";
 import { useAuthSubmit } from "@/features/auth/hooks/useAuthSubmit";
+import { useReturnPath } from "@/features/auth/hooks/useReturnPath";
 import { useSession } from "@/features/auth/hooks/useSession";
 import { authPaths } from "@/features/auth/paths";
 import type {
@@ -28,6 +29,7 @@ export function LoginPage() {
   const { dict } = useI18n();
   const router = useRouter();
   const { signIn } = useSession();
+  const returnPath = useReturnPath();
 
   const [values, setValues] = useState<LoginValues>({
     email: "",
@@ -57,7 +59,7 @@ export function LoginPage() {
     submit(() => {
       const email = values.email.trim();
       signIn({ email, name: nameFromEmail(email) });
-      router.replace(authPaths.account);
+      router.replace(returnPath);
     });
   }
 
@@ -109,7 +111,7 @@ export function LoginPage() {
             onChange={setRemember}
           />
           <Link
-            href={authPaths.login}
+            href={authPaths.resetPassword}
             className="text-[12px] text-muted underline-offset-4 transition-colors duration-300 hover:text-gold hover:underline"
           >
             {dict.auth.forgotPassword}
