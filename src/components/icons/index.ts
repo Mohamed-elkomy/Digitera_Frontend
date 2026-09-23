@@ -15,6 +15,7 @@ export {
   ChevronDownIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
+  ArrowUpIcon,
   PlusIcon,
   MinusIcon,
   CheckIcon,

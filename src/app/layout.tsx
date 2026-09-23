@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Manrope } from "next/font/google";
 
+import { FloatingActions } from "@/components/shared/FloatingActions";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
 import { SkipLink } from "@/components/shared/SkipLink";
@@ -65,6 +66,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingActions />
         </Providers>
       </body>
     </html>
