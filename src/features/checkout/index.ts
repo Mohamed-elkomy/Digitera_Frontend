@@ -7,3 +7,9 @@ export type {
   Order,
   PaymentMethod,
 } from "@/features/checkout/types/checkout.types";
+export { parseOrder } from "@/features/checkout/utils/order.parse";
+export { verifyOrder } from "@/features/checkout/utils/order.verify";
+export {
+  hasCheckoutErrors,
+  validateCheckout,
+} from "@/features/checkout/utils/checkout.validation";

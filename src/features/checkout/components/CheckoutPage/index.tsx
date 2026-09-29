@@ -27,6 +27,7 @@ import {
   hasCheckoutErrors,
   validateCheckout,
 } from "@/features/checkout/utils/checkout.validation";
+import { saveOrder } from "@/features/checkout/services/orders.service";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
 const SIMULATED_LATENCY_MS = 900;
@@ -82,6 +83,10 @@ export function CheckoutPage() {
     // own action. Moving it into the timeout below would get it blocked.
     const invoiceUrl = buildUrl(order);
     if (invoiceUrl) window.open(invoiceUrl, "_blank", "noopener,noreferrer");
+
+    // The owner's copy. WhatsApp already has the order, so a failed save must
+    // not block the customer; it is logged for the developer instead.
+    saveOrder(order).catch((error: unknown) => console.error(error));
 
     // Stands in for the network round-trip; there is no backend in this build.
     setTimeout(() => {

@@ -23,18 +23,20 @@ export function ProductShareButtons({ product }: { product: Product }) {
 
   function handleNativeShare() {
     if (typeof navigator !== "undefined" && navigator.share) {
-      navigator.share({
-        title: product.name,
-        text: shareText,
-        url: window.location.href,
-      }).catch(() => {});
+      navigator
+        .share({
+          title: product.name,
+          text: shareText,
+          url: window.location.href,
+        })
+        .catch(() => {});
     } else {
       handleCopy();
     }
   }
 
   const whatsAppShareUrl = `https://wa.me/?text=${encodeURIComponent(
-    `${shareText}\n${typeof window !== "undefined" ? window.location.href : ""}`
+    `${shareText}\n${typeof window !== "undefined" ? window.location.href : ""}`,
   )}`;
 
   return (

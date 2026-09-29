@@ -15,8 +15,6 @@ export type SocialProfile = {
   tag: string;
 };
 
-export const PHONE_NUMBER = "+20 127 278 2474";
-export const RAW_PHONE = "201272782474";
 export const EMAIL = "mohamedmagdyelkomy53@gmail.com";
 
 export const socialLinks: SocialProfile[] = [

@@ -1,0 +1,1870 @@
+{
+  "taxonomies": {
+    "category": {
+      "pure-extractions": "Pure Extractions",
+      "private-reserve": "Private Reserve",
+      "atelier-oils": "Atelier Oils",
+      "discovery-vault": "Discovery Vault"
+    },
+    "scentFamily": {
+      "floral": "Floral",
+      "woody": "Woody",
+      "oriental": "Oriental",
+      "fresh": "Fresh"
+    },
+    "occasion": {
+      "personal-use": "Personal Use",
+      "wedding": "Wedding",
+      "gift-sets": "Gift Sets",
+      "birthday": "Birthday"
+    }
+  },
+  "products": [
+    {
+      "id": "fleur-de-lune",
+      "sku": "ODORATUS-FDL",
+      "name": "Fleur de Lune",
+      "description": "Fleur de Lune settles on the skin like moonlight on linen. It opens with luminous citrus, unfolds into a jasmine heart and dries down into soft white musk.",
+      "notes": "Floral / Jasmine & White Musk",
+      "scentNotes": {
+        "top": [
+          "Calabrian Neroli",
+          "Green Mandarin"
+        ],
+        "heart": [
+          "Jasmine Sambac",
+          "Orange Blossom"
+        ],
+        "base": [
+          "White Musk",
+          "Blonde Cedarwood"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 125,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 160,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 195,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/fleur-de-lune.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "floral",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "santal-parchment",
+      "sku": "ODORATUS-SP",
+      "name": "Santal Parchment",
+      "description": "Santal Parchment wraps around the skin like vintage vellum paper. It opens with bright top notes, shifting to clean papyrus and warm, rich sandalwood that dry down into dry cardamom and amber.",
+      "notes": "Woody / Sandalwood & Cardamom",
+      "scentNotes": {
+        "top": [
+          "Sicilian Bergamot",
+          "Pink Pepper"
+        ],
+        "heart": [
+          "Egyptian Jasmine Sambac",
+          "Papyrus"
+        ],
+        "base": [
+          "West Indian Sandalwood",
+          "Cardamom",
+          "Amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 140,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 180,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 220,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/santal-parchment.webp",
+        "/images/products/santal-parchment-2.webp",
+        "/images/products/santal-parchment-3.webp",
+        "/images/products/santal-parchment-4.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "woody",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "noir-cocoon",
+      "sku": "ODORATUS-NC",
+      "name": "Noir Cocoon",
+      "description": "Noir Cocoon draws the evening close. Smoked tobacco leaf gives way to a cacao heart before resting in a long, resinous amber trail.",
+      "notes": "Oriental / Tobacco & Amber",
+      "scentNotes": {
+        "top": [
+          "Tobacco Leaf",
+          "Spiced Ginger"
+        ],
+        "heart": [
+          "Cacao Absolute",
+          "Tonka Bean"
+        ],
+        "base": [
+          "Grey Amber",
+          "Dry Woods"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 155,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 195,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 240,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/noir-cocoon.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "oriental",
+      "occasion": "wedding",
+      "availability": "in-stock"
+    },
+    {
+      "id": "sol-dor",
+      "sku": "ODORATUS-SD",
+      "name": "Sol d'Or",
+      "description": "Sol d'Or holds the last hour of daylight on the coast. Salted bergamot opens onto mineral driftwood before a sunlit amber finish.",
+      "notes": "Fresh / Bergamot & Sea Salt",
+      "scentNotes": {
+        "top": [
+          "Calabrian Bergamot",
+          "Sea Salt"
+        ],
+        "heart": [
+          "Mineral Driftwood",
+          "Orange Blossom"
+        ],
+        "base": [
+          "White Musk",
+          "Sunlit Amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 120,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 150,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 185,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/sol-dor.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "fresh",
+      "occasion": "personal-use",
+      "availability": "made-to-order"
+    },
+    {
+      "id": "atelier-oud",
+      "sku": "ODORATUS-AO",
+      "name": "Atelier Oud",
+      "description": "Atelier Oud is the house at its most concentrated. Saffron and damask rose open onto rich oud, closing on smoked leather and birch.",
+      "notes": "Woody / Rich Oud & Saffron",
+      "scentNotes": {
+        "top": [
+          "Saffron",
+          "Damask Rose"
+        ],
+        "heart": [
+          "Laotian Oud",
+          "Frankincense"
+        ],
+        "base": [
+          "Smoked Leather",
+          "Birch Tar"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 195,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 255,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 310,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/atelier-oud.webp"
+      ],
+      "category": "atelier-oils",
+      "scentFamily": "woody",
+      "occasion": "gift-sets",
+      "availability": "in-stock"
+    },
+    {
+      "id": "rose-absolute",
+      "sku": "ODORATUS-RA",
+      "name": "Rose Absolute",
+      "description": "Rose Absolute is a rose without sweetness. Dewy greens lift a damask heart that settles onto cedar and earthy patchouli.",
+      "notes": "Floral / Damask Rose & Cedar",
+      "scentNotes": {
+        "top": [
+          "Pink Pepper",
+          "Dewy Greens"
+        ],
+        "heart": [
+          "Damask Rose",
+          "Geranium"
+        ],
+        "base": [
+          "Virginia Cedarwood",
+          "Patchouli"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 130,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 170,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 205,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/rose-absolute.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "floral",
+      "occasion": "birthday",
+      "availability": "in-stock"
+    },
+    {
+      "id": "iris-cendre",
+      "sku": "ODORATUS-IC",
+      "name": "Iris Cendré",
+      "description": "Iris Cendré holds the quiet after a fire. Powdered iris sits over violet leaf and settles into cool cashmere wood.",
+      "notes": "Floral / Iris & Ash",
+      "scentNotes": {
+        "top": [
+          "Bergamot",
+          "Carrot Seed"
+        ],
+        "heart": [
+          "Florentine Iris",
+          "Violet Leaf"
+        ],
+        "base": [
+          "Cashmere Wood",
+          "Grey Musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 110,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 145,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 175,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/fleur-de-lune.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "floral",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "fleur-de-sel",
+      "sku": "ODORATUS-FDS",
+      "name": "Fleur de Sel",
+      "description": "Fleur de Sel is a coastline in late summer. Salt and bitter orange open onto fig leaf and sun-dried driftwood.",
+      "notes": "Fresh / Sea Salt & Fig",
+      "scentNotes": {
+        "top": [
+          "Sea Salt",
+          "Bitter Orange"
+        ],
+        "heart": [
+          "Fig Leaf",
+          "Mastic"
+        ],
+        "base": [
+          "Driftwood",
+          "White Musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 100,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 130,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 160,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/noir-cocoon.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "fresh",
+      "occasion": "birthday",
+      "availability": "in-stock"
+    },
+    {
+      "id": "cedre-blanc",
+      "sku": "ODORATUS-CB",
+      "name": "Cèdre Blanc",
+      "description": "Cèdre Blanc is linen dried in the open. Lemon and juniper give way to Atlas cedar over a soft orris base.",
+      "notes": "Woody / White Cedar & Iris",
+      "scentNotes": {
+        "top": [
+          "Sicilian Lemon",
+          "Juniper"
+        ],
+        "heart": [
+          "Atlas Cedar",
+          "Orris Root"
+        ],
+        "base": [
+          "Blonde Woods",
+          "Ambrette"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 120,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 155,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 190,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/noir-cocoon.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "woody",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "jardin-clos",
+      "sku": "ODORATUS-JC",
+      "name": "Jardin Clos",
+      "description": "Jardin Clos is a walled garden after rain. Green galbanum opens onto tuberose and closes on warm sandalwood.",
+      "notes": "Floral / Tuberose & Green Leaves",
+      "scentNotes": {
+        "top": [
+          "Galbanum",
+          "Green Mandarin"
+        ],
+        "heart": [
+          "Tuberose Absolute",
+          "Jasmine"
+        ],
+        "base": [
+          "Sandalwood",
+          "Tonka Bean"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 130,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 165,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 200,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/santal-parchment.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "floral",
+      "occasion": "gift-sets",
+      "availability": "in-stock"
+    },
+    {
+      "id": "muguet-d-hiver",
+      "sku": "ODORATUS-MDH",
+      "name": "Muguet d'Hiver",
+      "description": "Muguet d'Hiver is a bouquet carried indoors. Cyclamen and lily of the valley rest on soft musk and pale cedar.",
+      "notes": "Floral / Lily of the Valley & Musk",
+      "scentNotes": {
+        "top": [
+          "Green Mandarin",
+          "Cyclamen"
+        ],
+        "heart": [
+          "Lily of the Valley",
+          "White Peony"
+        ],
+        "base": [
+          "Soft Musk",
+          "Blonde Cedar"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 110,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 140,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 170,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/santal-parchment.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "floral",
+      "occasion": "wedding",
+      "availability": "in-stock"
+    },
+    {
+      "id": "neroli-dore",
+      "sku": "ODORATUS-ND",
+      "name": "Néroli Doré",
+      "description": "Néroli Doré is orange blossom at midday. Tunisian neroli and petitgrain warm into honeyed amber.",
+      "notes": "Floral / Neroli & Honeyed Amber",
+      "scentNotes": {
+        "top": [
+          "Tunisian Neroli",
+          "Petitgrain"
+        ],
+        "heart": [
+          "Orange Blossom",
+          "Honeysuckle"
+        ],
+        "base": [
+          "Honeyed Amber",
+          "Soft Musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 120,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 150,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 185,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/atelier-oud.webp"
+      ],
+      "category": "pure-extractions",
+      "scentFamily": "floral",
+      "occasion": "gift-sets",
+      "availability": "in-stock"
+    },
+    {
+      "id": "velours-noir",
+      "sku": "ODORATUS-VN",
+      "name": "Velours Noir",
+      "description": "Velours Noir falls like a curtain at the end of an evening. Cool incense opens onto brushed suede before a long labdanum close.",
+      "notes": "Oriental / Incense & Leather",
+      "scentNotes": {
+        "top": [
+          "Black Pepper",
+          "Elemi"
+        ],
+        "heart": [
+          "Frankincense",
+          "Suede"
+        ],
+        "base": [
+          "Labdanum",
+          "Patchouli"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 170,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 215,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 265,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/rose-absolute.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "oriental",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "bois-de-minuit",
+      "sku": "ODORATUS-BDM",
+      "name": "Bois de Minuit",
+      "description": "Bois de Minuit is a forest after dark. Green cardamom lifts Haitian vetiver before birch smoke draws the night in.",
+      "notes": "Woody / Vetiver & Smoke",
+      "scentNotes": {
+        "top": [
+          "Green Cardamom",
+          "Grapefruit Peel"
+        ],
+        "heart": [
+          "Haitian Vetiver",
+          "Cypress"
+        ],
+        "base": [
+          "Birch Smoke",
+          "Dry Amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 180,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 235,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 285,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/noir-cocoon.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "woody",
+      "occasion": "wedding",
+      "availability": "in-stock"
+    },
+    {
+      "id": "nuit-persane",
+      "sku": "ODORATUS-NP",
+      "name": "Nuit Persane",
+      "description": "Nuit Persane is a rose at its most opulent. Saffron and plum wrap a damask heart before an oud and benzoin close.",
+      "notes": "Oriental / Saffron & Rose",
+      "scentNotes": {
+        "top": [
+          "Saffron",
+          "Candied Plum"
+        ],
+        "heart": [
+          "Damask Rose",
+          "Turkish Rose Oil"
+        ],
+        "base": [
+          "Oud Accord",
+          "Benzoin"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 220,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 280,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 340,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/santal-parchment.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "oriental",
+      "occasion": "wedding",
+      "availability": "in-stock"
+    },
+    {
+      "id": "oud-royal",
+      "sku": "ODORATUS-OR",
+      "name": "Oud Royal",
+      "description": "Oud Royal is the house at full volume. Saffron and nutmeg open onto Cambodian oud and smoked leather.",
+      "notes": "Woody / Cambodian Oud & Leather",
+      "scentNotes": {
+        "top": [
+          "Saffron",
+          "Nutmeg"
+        ],
+        "heart": [
+          "Cambodian Oud",
+          "Smoked Leather"
+        ],
+        "base": [
+          "Agarwood",
+          "Grey Amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 255,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 325,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 395,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/fleur-de-lune.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "woody",
+      "occasion": "gift-sets",
+      "availability": "made-to-order"
+    },
+    {
+      "id": "rose-poudree",
+      "sku": "ODORATUS-RP",
+      "name": "Rose Poudrée",
+      "description": "Rose Poudrée is a rose seen through powder. May rose and violet rest on orris butter and clean musk.",
+      "notes": "Floral / Powdered Rose & Violet",
+      "scentNotes": {
+        "top": [
+          "Raspberry Leaf",
+          "Pink Pepper"
+        ],
+        "heart": [
+          "May Rose",
+          "Violet"
+        ],
+        "base": [
+          "Orris Butter",
+          "White Musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 165,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 210,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 255,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/fleur-de-lune.webp"
+      ],
+      "category": "private-reserve",
+      "scentFamily": "floral",
+      "occasion": "birthday",
+      "availability": "in-stock"
+    },
+    {
+      "id": "ambre-solaire",
+      "sku": "ODORATUS-AS",
+      "name": "Ambre Solaire",
+      "description": "Ambre Solaire keeps the last heat of the day. Blood orange melts into benzoin and a slow, golden amber trail.",
+      "notes": "Oriental / Amber & Benzoin",
+      "scentNotes": {
+        "top": [
+          "Blood Orange",
+          "Pink Pepper"
+        ],
+        "heart": [
+          "Siam Benzoin",
+          "Immortelle"
+        ],
+        "base": [
+          "Golden Amber",
+          "Vanilla Absolute"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 145,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 190,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 230,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/atelier-oud.webp"
+      ],
+      "category": "atelier-oils",
+      "scentFamily": "oriental",
+      "occasion": "gift-sets",
+      "availability": "in-stock"
+    },
+    {
+      "id": "papier-vetiver",
+      "sku": "ODORATUS-PV",
+      "name": "Papier Vétiver",
+      "description": "Papier Vétiver smells of an old library. Bergamot lifts Java vetiver over papyrus and a quiet vanilla base.",
+      "notes": "Woody / Vetiver & Paper",
+      "scentNotes": {
+        "top": [
+          "Bergamot",
+          "Pink Peppercorn"
+        ],
+        "heart": [
+          "Java Vetiver",
+          "Papyrus"
+        ],
+        "base": [
+          "Cedarwood",
+          "Vanilla Bourbon"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 135,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 170,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 210,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/rose-absolute.webp"
+      ],
+      "category": "atelier-oils",
+      "scentFamily": "woody",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "miel-fume",
+      "sku": "ODORATUS-MF",
+      "name": "Miel Fumé",
+      "description": "Miel Fumé is warmth without sweetness. Honey and tobacco leaf settle onto tonka and a dry amber base.",
+      "notes": "Oriental / Honey & Tobacco",
+      "scentNotes": {
+        "top": [
+          "Bitter Orange",
+          "Cinnamon Bark"
+        ],
+        "heart": [
+          "Honey Absolute",
+          "Tobacco Leaf"
+        ],
+        "base": [
+          "Tonka Bean",
+          "Dry Amber"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 155,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 200,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 245,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/sol-dor.webp"
+      ],
+      "category": "atelier-oils",
+      "scentFamily": "oriental",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "encens-blanc",
+      "sku": "ODORATUS-EB",
+      "name": "Encens Blanc",
+      "description": "Encens Blanc is incense without smoke. Omani frankincense and myrrh over a pale amber and sandalwood base.",
+      "notes": "Oriental / Frankincense & Myrrh",
+      "scentNotes": {
+        "top": [
+          "Elemi",
+          "Pink Pepper"
+        ],
+        "heart": [
+          "Omani Frankincense",
+          "Myrrh"
+        ],
+        "base": [
+          "White Amber",
+          "Sandalwood"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 175,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 225,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 275,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/sol-dor.webp"
+      ],
+      "category": "atelier-oils",
+      "scentFamily": "oriental",
+      "occasion": "wedding",
+      "availability": "made-to-order"
+    },
+    {
+      "id": "eau-de-brume",
+      "sku": "ODORATUS-EDB",
+      "name": "Eau de Brume",
+      "description": "Eau de Brume is morning air off the water. Yuzu and dew give way to green tea and a clean, almost weightless finish.",
+      "notes": "Fresh / Mist & Green Tea",
+      "scentNotes": {
+        "top": [
+          "Yuzu",
+          "Dew Accord"
+        ],
+        "heart": [
+          "Green Tea",
+          "White Freesia"
+        ],
+        "base": [
+          "Blonde Woods",
+          "Clean Musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 75,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 95,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 115,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/rose-absolute.webp"
+      ],
+      "category": "discovery-vault",
+      "scentFamily": "fresh",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    },
+    {
+      "id": "baie-rose",
+      "sku": "ODORATUS-BR",
+      "name": "Baie Rose",
+      "description": "Baie Rose is the first bright minute of a morning. Pink pepper and grapefruit over rhubarb and clean musk.",
+      "notes": "Fresh / Pink Pepper & Citrus",
+      "scentNotes": {
+        "top": [
+          "Pink Pepper",
+          "Blood Grapefruit"
+        ],
+        "heart": [
+          "Rhubarb",
+          "Neroli"
+        ],
+        "base": [
+          "White Musk",
+          "Light Cedar"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 80,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 100,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 125,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/atelier-oud.webp"
+      ],
+      "category": "discovery-vault",
+      "scentFamily": "fresh",
+      "occasion": "birthday",
+      "availability": "in-stock"
+    },
+    {
+      "id": "brise-marine",
+      "sku": "ODORATUS-BM",
+      "name": "Brise Marine",
+      "description": "Brise Marine is wind off open water. Sea spray and bergamot over a mineral base of driftwood and musk.",
+      "notes": "Fresh / Marine Accord & Driftwood",
+      "scentNotes": {
+        "top": [
+          "Sea Spray",
+          "Calabrian Bergamot"
+        ],
+        "heart": [
+          "Marine Accord",
+          "Rosemary"
+        ],
+        "base": [
+          "Driftwood",
+          "Mineral Musk"
+        ]
+      },
+      "variants": [
+        {
+          "id": "30ml",
+          "volume": 30,
+          "label": "30 ml",
+          "price": 85,
+          "inStock": true
+        },
+        {
+          "id": "50ml",
+          "volume": 50,
+          "label": "50 ml",
+          "price": 105,
+          "inStock": true
+        },
+        {
+          "id": "100ml",
+          "volume": 100,
+          "label": "100 ml",
+          "price": 130,
+          "inStock": true
+        }
+      ],
+      "giftWrappingAvailable": true,
+      "images": [
+        "/images/products/sol-dor.webp"
+      ],
+      "category": "discovery-vault",
+      "scentFamily": "fresh",
+      "occasion": "personal-use",
+      "availability": "in-stock"
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "fleur-de-lune-review-1",
+      "productId": "fleur-de-lune"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "fleur-de-lune-review-2",
+      "productId": "fleur-de-lune"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "santal-parchment-review-1",
+      "productId": "santal-parchment"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "santal-parchment-review-2",
+      "productId": "santal-parchment"
+    },
+    {
+      "author": "Hana R.",
+      "rating": 3,
+      "comment": "Beautiful bottle and a lovely opening, but it fades faster than I expected on me.",
+      "createdAt": "2026-06-04",
+      "id": "noir-cocoon-review-1",
+      "productId": "noir-cocoon"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "noir-cocoon-review-2",
+      "productId": "noir-cocoon"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "noir-cocoon-review-3",
+      "productId": "noir-cocoon"
+    },
+    {
+      "author": "مريم ع.",
+      "rating": 4,
+      "comment": "العطر هادي وراقي، بس كنت أتمنى يكون أقوى شوية في الأول.",
+      "createdAt": "2026-06-30",
+      "id": "sol-dor-review-1",
+      "productId": "sol-dor"
+    },
+    {
+      "author": "أحمد ف.",
+      "rating": 5,
+      "comment": "أحسن عطر اشتريته السنة دي، والتوصيل كان سريع.",
+      "createdAt": "2026-05-27",
+      "id": "sol-dor-review-2",
+      "productId": "sol-dor"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "sol-dor-review-3",
+      "productId": "sol-dor"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "sol-dor-review-4",
+      "productId": "sol-dor"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "atelier-oud-review-1",
+      "productId": "atelier-oud"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "atelier-oud-review-2",
+      "productId": "atelier-oud"
+    },
+    {
+      "author": "Omar K.",
+      "rating": 5,
+      "comment": "ريحة فخمة جداً وثباتها ممتاز، والتغليف كان هدية لوحده.",
+      "createdAt": "2026-08-02",
+      "id": "atelier-oud-review-3",
+      "productId": "atelier-oud"
+    },
+    {
+      "author": "مريم ع.",
+      "rating": 4,
+      "comment": "العطر هادي وراقي، بس كنت أتمنى يكون أقوى شوية في الأول.",
+      "createdAt": "2026-06-30",
+      "id": "atelier-oud-review-4",
+      "productId": "atelier-oud"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "rose-absolute-review-1",
+      "productId": "rose-absolute"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "rose-absolute-review-2",
+      "productId": "rose-absolute"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "rose-absolute-review-3",
+      "productId": "rose-absolute"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "rose-absolute-review-4",
+      "productId": "rose-absolute"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "iris-cendre-review-1",
+      "productId": "iris-cendre"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "iris-cendre-review-2",
+      "productId": "iris-cendre"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "iris-cendre-review-3",
+      "productId": "iris-cendre"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "iris-cendre-review-4",
+      "productId": "iris-cendre"
+    },
+    {
+      "author": "أحمد ف.",
+      "rating": 5,
+      "comment": "أحسن عطر اشتريته السنة دي، والتوصيل كان سريع.",
+      "createdAt": "2026-05-27",
+      "id": "fleur-de-sel-review-1",
+      "productId": "fleur-de-sel"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "fleur-de-sel-review-2",
+      "productId": "fleur-de-sel"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "fleur-de-sel-review-3",
+      "productId": "fleur-de-sel"
+    },
+    {
+      "author": "Hana R.",
+      "rating": 3,
+      "comment": "Beautiful bottle and a lovely opening, but it fades faster than I expected on me.",
+      "createdAt": "2026-06-04",
+      "id": "fleur-de-sel-review-4",
+      "productId": "fleur-de-sel"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "cedre-blanc-review-1",
+      "productId": "cedre-blanc"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "cedre-blanc-review-2",
+      "productId": "cedre-blanc"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "cedre-blanc-review-3",
+      "productId": "cedre-blanc"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "jardin-clos-review-1",
+      "productId": "jardin-clos"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "jardin-clos-review-2",
+      "productId": "jardin-clos"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "muguet-d-hiver-review-1",
+      "productId": "muguet-d-hiver"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "muguet-d-hiver-review-2",
+      "productId": "muguet-d-hiver"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "neroli-dore-review-1",
+      "productId": "neroli-dore"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "neroli-dore-review-2",
+      "productId": "neroli-dore"
+    },
+    {
+      "author": "Hana R.",
+      "rating": 3,
+      "comment": "Beautiful bottle and a lovely opening, but it fades faster than I expected on me.",
+      "createdAt": "2026-06-04",
+      "id": "neroli-dore-review-3",
+      "productId": "neroli-dore"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "velours-noir-review-1",
+      "productId": "velours-noir"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "velours-noir-review-2",
+      "productId": "velours-noir"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "bois-de-minuit-review-1",
+      "productId": "bois-de-minuit"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "bois-de-minuit-review-2",
+      "productId": "bois-de-minuit"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "bois-de-minuit-review-3",
+      "productId": "bois-de-minuit"
+    },
+    {
+      "author": "Omar K.",
+      "rating": 5,
+      "comment": "ريحة فخمة جداً وثباتها ممتاز، والتغليف كان هدية لوحده.",
+      "createdAt": "2026-08-02",
+      "id": "bois-de-minuit-review-4",
+      "productId": "bois-de-minuit"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "nuit-persane-review-1",
+      "productId": "nuit-persane"
+    },
+    {
+      "author": "Hana R.",
+      "rating": 3,
+      "comment": "Beautiful bottle and a lovely opening, but it fades faster than I expected on me.",
+      "createdAt": "2026-06-04",
+      "id": "nuit-persane-review-2",
+      "productId": "nuit-persane"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "nuit-persane-review-3",
+      "productId": "nuit-persane"
+    },
+    {
+      "author": "مريم ع.",
+      "rating": 4,
+      "comment": "العطر هادي وراقي، بس كنت أتمنى يكون أقوى شوية في الأول.",
+      "createdAt": "2026-06-30",
+      "id": "oud-royal-review-1",
+      "productId": "oud-royal"
+    },
+    {
+      "author": "أحمد ف.",
+      "rating": 5,
+      "comment": "أحسن عطر اشتريته السنة دي، والتوصيل كان سريع.",
+      "createdAt": "2026-05-27",
+      "id": "oud-royal-review-2",
+      "productId": "oud-royal"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "rose-poudree-review-1",
+      "productId": "rose-poudree"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "rose-poudree-review-2",
+      "productId": "rose-poudree"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "ambre-solaire-review-1",
+      "productId": "ambre-solaire"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "ambre-solaire-review-2",
+      "productId": "ambre-solaire"
+    },
+    {
+      "author": "Omar K.",
+      "rating": 5,
+      "comment": "ريحة فخمة جداً وثباتها ممتاز، والتغليف كان هدية لوحده.",
+      "createdAt": "2026-08-02",
+      "id": "ambre-solaire-review-3",
+      "productId": "ambre-solaire"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "papier-vetiver-review-1",
+      "productId": "papier-vetiver"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "papier-vetiver-review-2",
+      "productId": "papier-vetiver"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "papier-vetiver-review-3",
+      "productId": "papier-vetiver"
+    },
+    {
+      "author": "أحمد ف.",
+      "rating": 5,
+      "comment": "أحسن عطر اشتريته السنة دي، والتوصيل كان سريع.",
+      "createdAt": "2026-05-27",
+      "id": "miel-fume-review-1",
+      "productId": "miel-fume"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "miel-fume-review-2",
+      "productId": "miel-fume"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "encens-blanc-review-1",
+      "productId": "encens-blanc"
+    },
+    {
+      "author": "Hana R.",
+      "rating": 3,
+      "comment": "Beautiful bottle and a lovely opening, but it fades faster than I expected on me.",
+      "createdAt": "2026-06-04",
+      "id": "encens-blanc-review-2",
+      "productId": "encens-blanc"
+    },
+    {
+      "author": "Mostafa E.",
+      "rating": 5,
+      "comment": "My second bottle. Nothing else smells quite like it.",
+      "createdAt": "2026-04-29",
+      "id": "encens-blanc-review-3",
+      "productId": "encens-blanc"
+    },
+    {
+      "author": "Nour A.",
+      "rating": 4,
+      "comment": "Elegant and not overpowering. I wish the 30 ml came in a travel case.",
+      "createdAt": "2026-07-21",
+      "id": "encens-blanc-review-4",
+      "productId": "encens-blanc"
+    },
+    {
+      "author": "Karim S.",
+      "rating": 5,
+      "comment": "The dry-down is the best part. Warm, clean and very long-lasting.",
+      "createdAt": "2026-06-18",
+      "id": "eau-de-brume-review-1",
+      "productId": "eau-de-brume"
+    },
+    {
+      "author": "Laila T.",
+      "rating": 4,
+      "comment": "Very refined. Perfect for the office and for evenings.",
+      "createdAt": "2026-05-11",
+      "id": "eau-de-brume-review-2",
+      "productId": "eau-de-brume"
+    },
+    {
+      "author": "Omar K.",
+      "rating": 5,
+      "comment": "ريحة فخمة جداً وثباتها ممتاز، والتغليف كان هدية لوحده.",
+      "createdAt": "2026-08-02",
+      "id": "eau-de-brume-review-3",
+      "productId": "eau-de-brume"
+    },
+    {
+      "author": "مريم ع.",
+      "rating": 4,
+      "comment": "العطر هادي وراقي، بس كنت أتمنى يكون أقوى شوية في الأول.",
+      "createdAt": "2026-06-30",
+      "id": "eau-de-brume-review-4",
+      "productId": "eau-de-brume"
+    },
+    {
+      "author": "أحمد ف.",
+      "rating": 5,
+      "comment": "أحسن عطر اشتريته السنة دي، والتوصيل كان سريع.",
+      "createdAt": "2026-05-27",
+      "id": "baie-rose-review-1",
+      "productId": "baie-rose"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "baie-rose-review-2",
+      "productId": "baie-rose"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "baie-rose-review-3",
+      "productId": "baie-rose"
+    },
+    {
+      "author": "Hana R.",
+      "rating": 3,
+      "comment": "Beautiful bottle and a lovely opening, but it fades faster than I expected on me.",
+      "createdAt": "2026-06-04",
+      "id": "baie-rose-review-4",
+      "productId": "baie-rose"
+    },
+    {
+      "author": "مريم ع.",
+      "rating": 4,
+      "comment": "العطر هادي وراقي، بس كنت أتمنى يكون أقوى شوية في الأول.",
+      "createdAt": "2026-06-30",
+      "id": "brise-marine-review-1",
+      "productId": "brise-marine"
+    },
+    {
+      "author": "أحمد ف.",
+      "rating": 5,
+      "comment": "أحسن عطر اشتريته السنة دي، والتوصيل كان سريع.",
+      "createdAt": "2026-05-27",
+      "id": "brise-marine-review-2",
+      "productId": "brise-marine"
+    },
+    {
+      "author": "Salma H.",
+      "rating": 5,
+      "comment": "Lasts the whole day and I get asked about it every time. The gift wrapping was beautiful.",
+      "createdAt": "2026-08-14",
+      "id": "brise-marine-review-3",
+      "productId": "brise-marine"
+    },
+    {
+      "author": "Youssef M.",
+      "rating": 5,
+      "comment": "Bought it as a wedding gift — the WhatsApp ordering was quick and the reply came within the hour.",
+      "createdAt": "2026-07-09",
+      "id": "brise-marine-review-4",
+      "productId": "brise-marine"
+    }
+  ]
+}

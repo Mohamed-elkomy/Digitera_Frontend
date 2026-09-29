@@ -8,11 +8,10 @@ export const shell = {
     from: "from",
   },
   nav: {
-    announcement:
-      "Complimentary signature gift wrapping on all orders",
+    announcement: "Complimentary signature gift wrapping on orders above $150",
     announcements: [
-      "Complimentary signature gift wrapping on all orders",
-      "Complimentary delivery on orders above 500 EGP",
+      "Complimentary signature gift wrapping on orders above $150",
+      "Complimentary delivery on orders above $150",
       "24/7 Dedicated Concierge & WhatsApp Express Ordering",
     ],
     home: "Home",
@@ -58,19 +57,24 @@ export const shell = {
     designedBy: "Designed & Developed by",
     securedVia: "Secured checkout via",
     contactUs: "Talk to us",
-    whatsAppGreeting: "Hello Odoratus Storefront — I am contacting you from the website regarding an order / inquiry.",
+    whatsAppGreeting:
+      "Hello Odoratus Storefront — I am contacting you from the website regarding an order / inquiry.",
     scrollToTop: "Scroll to top",
     contactPageTitle: "Direct Contact & Atelier Inquiries",
     contactPageEyebrow: "Concierge & Client Care",
-    contactPageIntro: "Whether you wish to place a custom order, inquire about a fragrance formula, or speak directly with our team, we are here to assist you through our direct channels.",
+    contactPageIntro:
+      "Whether you wish to place a custom order, inquire about a fragrance formula, or speak directly with our team, we are here to assist you through our direct channels.",
     directChannels: "Direct Channels",
     socialAndPortfolios: "Social & Creative Portfolios",
     workingHours: "Working Hours",
-    workingHoursDetails: "Saturday to Thursday, 10:00 AM – 8:00 PM (Cairo Time / GMT+2)",
+    workingHoursDetails:
+      "Saturday to Thursday, 10:00 AM – 8:00 PM (Cairo Time / GMT+2)",
     instantWhatsApp: "Direct WhatsApp Message",
-    instantWhatsAppDesc: "Chat directly with our fragrance concierge for immediate orders or consultations.",
+    instantWhatsAppDesc:
+      "Chat directly with our fragrance concierge for immediate orders or consultations.",
     officialEmail: "Official Inquiries",
-    officialEmailDesc: "Send your inquiries, corporate gifting or custom formulation requests directly to our inbox.",
+    officialEmailDesc:
+      "Send your inquiries, corporate gifting or custom formulation requests directly to our inbox.",
     telephoneDirect: "Direct Phone Line",
     startConversation: "Start Conversation",
     sendAnEmail: "Send an Email",

@@ -4,9 +4,12 @@ describe("placing an order", () => {
     cy.resetState();
   });
 
-  it("sends a signed-out visitor to sign in first", () => {
+  it("lets a guest check out without an account", () => {
+    cy.visit("/products/sol-dor");
+    cy.contains("button", /add to cart/i).click();
     cy.visit("/checkout");
-    cy.location("pathname").should("eq", "/login");
+    cy.location("pathname").should("eq", "/checkout");
+    cy.get('input[name="fullName"]').should("have.value", "");
   });
 
   it("walks from a product to a confirmed order", () => {

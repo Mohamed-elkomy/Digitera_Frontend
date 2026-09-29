@@ -60,7 +60,7 @@ describe("validateCheckout", () => {
     expect(hasCheckoutErrors(validateCheckout(valid))).toBe(false);
   });
 
-  it("requires every field except the postal code and notes", () => {
+  it("requires every field except email, postal code and notes", () => {
     const errors = validateCheckout({
       ...valid,
       fullName: "",
@@ -74,7 +74,6 @@ describe("validateCheckout", () => {
 
     expect(errors).toEqual({
       fullName: "required",
-      email: "required",
       phone: "required",
       address: "required",
       city: "required",

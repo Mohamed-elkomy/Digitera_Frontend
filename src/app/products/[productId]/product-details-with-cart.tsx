@@ -3,13 +3,15 @@
 import { QuantityStepper } from "@/components/ui/QuantityStepper";
 import { AddToCartButton } from "@/features/cart";
 import { ProductDetailsPage } from "@/features/products";
+import { ProductReviews } from "@/features/reviews";
+import { WishlistButton } from "@/features/wishlist";
 
 type ProductDetailsWithCartProps = {
   productId: string;
 };
 
 /**
- * Route-level composition of the products and cart features.
+ * Route-level composition of the products, cart, wishlist and reviews features.
  * The selected variant's price is what reaches the cart.
  */
 export function ProductDetailsWithCart({
@@ -41,8 +43,16 @@ export function ProductDetailsWithCart({
             image={product.images[0]}
             disabled={disabled || !variant}
           />
+
+          <WishlistButton
+            appearance="outline"
+            productId={product.id}
+            productName={product.name}
+            className="self-start"
+          />
         </div>
       )}
+      afterDetails={(product) => <ProductReviews productId={product.id} />}
     />
   );
 }

@@ -42,6 +42,7 @@ export function ShippingFields({
         onChange={(value) => onChange("email", value)}
         placeholder={dict.checkout.emailPlaceholder}
         error={errors.email}
+        optional
       />
 
       <CheckoutField

@@ -1,0 +1,34 @@
+{
+  "name": "odoratus-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "seed": "sanity exec scripts/seed.ts --with-user-token",
+    "typecheck": "tsc --noEmit",
+    "cors": "sanity cors add http://localhost:3000 --credentials && sanity cors add https://digiterafrontend.vercel.app --credentials",
+    "token": "sanity tokens add \"Website\" --role=editor",
+    "deploy-dashboard": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/icons": "5.2.2",
+    "@sanity/vision": "^6.16.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sanity": "^6.16.0",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19.2.14",
+    "typescript": "^5.8"
+  },
+  "packageManager": "pnpm@10.28.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

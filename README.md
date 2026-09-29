@@ -4,7 +4,19 @@ A luxury perfume storefront: browse a catalogue, read a composition, choose a
 bottle size, and place an order. Bilingual (English / العربية) with full RTL,
 a light and a dark theme, and every icon drawn by hand.
 
-Built for the **Digitera Frontend Engineering Bootcamp** from a Figma design.
+Built for the **Digitera Frontend Engineering Bootcamp** (iCareer × EraaSoft)
+from a Figma design, starting from requirements gathered with the client and a
+backlog of epics and user stories.
+
+**What a customer can do:** browse, search, filter (category, occasion, scent
+family, price) and sort the catalogue · pick a bottle size and gift wrapping ·
+manage a bag · check out **as a guest** and send the order through WhatsApp ·
+save fragrances to a wishlist · read client reviews and ratings · read the FAQ
+· reach the house by WhatsApp, phone, email or the contact form.
+
+**What the owner can do** (in the Sanity dashboard, `dashboard/`): add, edit and
+remove products · change prices per size · mark products or single sizes as
+available / out of stock · manage contact-form inquiries · approve reviews.
 
 **Live:** [https://digiterafrontend.vercel.app/](https://digiterafrontend.vercel.app/)
 
@@ -14,7 +26,7 @@ Built for the **Digitera Frontend Engineering Bootcamp** from a Figma design.
 
 ```bash
 pnpm install
-cp .env.example .env.local     # then put your own WhatsApp number in it
+cp .env.example .env.local     # optional — the defaults run on mock data
 pnpm dev                       # http://localhost:3000
 ```
 
@@ -28,7 +40,7 @@ pnpm dev                       # http://localhost:3000
 | `pnpm build` / `pnpm start` | Production build and server                      |
 | `pnpm typecheck`            | `tsc --noEmit`, strict mode                      |
 | `pnpm lint`                 | ESLint, including the React Compiler rules       |
-| `pnpm test`                 | Jest — 114 unit tests                            |
+| `pnpm test`                 | Jest unit tests                                  |
 | `pnpm test:e2e`             | Cypress, headless (needs the dev server running) |
 | `pnpm format`               | Prettier over the repo                           |
 
@@ -41,6 +53,8 @@ pnpm dev                       # http://localhost:3000
 - **TanStack Query** for catalogue data, **Zustand + persist** for the bag,
   the session and the order history
 - **Jest** + Testing Library · **Cypress** for end-to-end
+- **Sanity** for the owner's dashboard — the storefront talks to it over plain
+  HTTP (`src/lib/sanity/client.ts`), so it adds no SDK to the bundle
 
 No icon library, no animation library, no component library. Every icon in
 `src/components/icons/` is hand-written SVG, and every transition is CSS.
@@ -67,6 +81,10 @@ src/
     auth/                  sign-in, registration, session, account page
     content/               the editorial pages behind the footer links
     home/                  the landing sections
+    wishlist/              saved fragrances (ids only, prices stay live)
+    reviews/               ratings and client reviews on the product page
+    faq/                   the questions page
+    inquiries/             the contact form, shared validation with the API
   lib/
     i18n/                  dictionaries, provider, server-side preference read
     theme/                 light / dark provider
@@ -74,8 +92,8 @@ src/
 ```
 
 Importing `@/features/cart/store/cart.store` from another feature is a
-violation; import from `@/features/cart` instead. `docs/AGENT_RULES.md` has the
-full set of rules the project is held to.
+violation; import from `@/features/cart` instead. `docs/FEATURE_OWNERSHIP.md` maps
+every feature and user story to the code that implements it.
 
 **No file exceeds 200 lines.** Where one would, it becomes a folder of its own
 name split into parts — see `src/features/checkout/components/CheckoutPage/`
@@ -114,8 +132,10 @@ and left exactly as specified; the other eighteen are grouped by store category.
 With no server to post to, a confirmed order would otherwise go nowhere. So
 placing one opens WhatsApp with the order laid out as an invoice — number,
 date, each line with its size and total, the charges, the delivery address and
-the payment method — addressed to the number in `NEXT_PUBLIC_WHATSAPP_NUMBER`.
-Leave that unset and the WhatsApp step disappears instead of breaking. The
+the payment method — addressed to the number in `NEXT_PUBLIC_WHATSAPP_NUMBER`. When that is unset
+it goes to a placeholder line (`ORDER_WHATSAPP_FALLBACK`), so orders placed by
+visitors testing the demo never reach a real phone. The house's public contact
+line (WhatsApp button, calls) lives in `src/config/contact.ts`. The
 window is opened inside the click handler, not after the simulated latency, or
 the browser would treat it as a pop-up and block it.
 
@@ -130,7 +150,26 @@ you land back on checkout rather than on the account page. Only same-site paths
 are honoured — `sanitiseReturnPath` rejects anything absolute or
 protocol-relative, because an unchecked redirect is a real vulnerability.
 
-**There is no backend, and the UI says so.**
+**Checkout does not need an account.**
+The brief says customers must be able to order without registering, so the
+checkout is open to guests. Signing in is optional: it prefills the form and
+keeps an order history on the account page.
+
+**One data layer, two sources.**
+`NEXT_PUBLIC_USE_MOCK_API` (default `true`) keeps the site on the in-repo
+catalogue so it runs with zero setup. Set it to `false` with a Sanity project id
+and products and reviews come from the owner's dashboard instead. Both sources
+feed the same tested filtering, sorting and paging code
+(`products.in-memory.ts`), so the listing behaves identically either way.
+
+**Orders, inquiries and reviews reach the owner; the token never reaches the browser.**
+Three route handlers in `src/app/api/` (`orders`, `inquiries`, `reviews`) accept
+the website's submissions and write them to Sanity with a server-only token.
+Nothing from the browser is trusted: an order's prices and stock are re-checked
+against the live catalogue and its totals recomputed on the server, and new
+reviews stay hidden until the owner approves them.
+
+**Only the account and payment are simulated.**
 Sign-in accepts anything, orders are written to browser storage, and no payment
 is taken. Rather than hide that, the auth and checkout screens state it plainly
 and tell people not to enter a real password. `/pages/privacy` lists everything
@@ -145,17 +184,19 @@ session cookie in a real build.
 
 ## What is covered by tests
 
-`pnpm test` — 114 unit tests over the logic that is easy to get quietly wrong:
+`pnpm test` — unit tests over the logic that is easy to get quietly wrong:
 cart maths and gift-wrapping thresholds, query parsing, filtering, sorting and
 pagination, both validation suites, price formatting, and a suite that guards
 the catalogue's shape (24 products, four full pages, unique ids and SKUs, every
 price inside the slider's range, no photograph repeated on one page), the
-invoice the WhatsApp link carries, and the return-path sanitiser.
+invoice the WhatsApp link carries, the return-path sanitiser, the wishlist
+store, review averages, contact-form validation and the mapping of dashboard
+documents onto products.
 
 `pnpm test:e2e` — Cypress specs for the journeys that matter: browsing and
 filtering, the full product → bag → checkout → confirmed order path, the
 session surviving a reload, sign-out, the guarded routes, the editorial pages,
-and switching language and theme.
+switching language and theme, the wishlist, reviews, FAQ and the contact form.
 
 ---
 
@@ -179,8 +220,13 @@ pnpm build          # verify it passes locally first
 
 Then on [vercel.com](https://vercel.com): **Add New → Project**, import this
 repository, and deploy. The defaults are correct — Next.js is detected, the
-build command is `pnpm build`, and there are no environment variables, because
-there is no backend to point at.
+build command is `pnpm build`, and no environment variables are required — the
+site runs on mock data.
+
+To make it a full live shop with a database — orders, inquiries and reviews
+saved, products managed by the owner — follow **Going live** in
+[`dashboard/README.md`](dashboard/README.md). That also publishes the owner's
+dashboard at its own address (`https://odoratus-dashboard.sanity.studio`).
 
 The deployed project is available at: [https://digiterafrontend.vercel.app/](https://digiterafrontend.vercel.app/)
 

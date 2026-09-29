@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { showToast } from "@/components/ui/toast";
 import { useCart } from "@/features/cart";
+import { WishlistButton } from "@/features/wishlist";
 import { useProductCopy } from "@/features/products/hooks/useProductCopy";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 import { productPaths } from "@/features/products/paths";
@@ -29,6 +30,12 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="group relative flex min-w-0 flex-1 flex-col items-start gap-3 self-stretch rounded-xl border border-line/60 bg-surface p-3 sm:gap-4 sm:p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[0_20px_40px_-20px_rgba(197,168,128,0.25)]">
+      {/* Outside the image link: a button may not live inside an anchor. */}
+      <WishlistButton
+        productId={product.id}
+        productName={copy.name}
+        className="absolute top-5 right-5 z-10 sm:top-6 sm:right-6 rtl:right-auto rtl:left-5 sm:rtl:left-6"
+      />
       <Link
         href={productPaths.detail(product.id)}
         className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-lg sm:h-[280px] lg:h-[320px]"

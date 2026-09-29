@@ -1,19 +1,20 @@
+import { ORDER_WHATSAPP_FALLBACK } from "@/config/contact";
 import type { Locale } from "@/lib/i18n/locale";
 import type { Order } from "@/features/checkout/types/checkout.types";
 import { formatOrderDate } from "@/features/checkout/utils/order.format";
 
 /**
  * The shop has no backend, so WhatsApp is where an order actually goes. The
- * number is read from the environment rather than committed — note that a
- * front-end can only ever hide it from the repository, not from the browser.
+ * business number comes from the environment; without one (or with a
+ * malformed one) orders go to a placeholder line, so the checkout
+ * flow always completes and no personal number is ever committed.
  */
-export function getWhatsAppNumber(): string | undefined {
-  const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim();
-  if (!raw) return undefined;
+export function getWhatsAppNumber(): string {
+  const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() ?? "";
 
   // wa.me wants digits only: no +, spaces, dashes or brackets.
   const digits = raw.replace(/\D/g, "");
-  return digits.length >= 8 ? digits : undefined;
+  return digits.length >= 8 ? digits : ORDER_WHATSAPP_FALLBACK;
 }
 
 type InvoiceLabels = {

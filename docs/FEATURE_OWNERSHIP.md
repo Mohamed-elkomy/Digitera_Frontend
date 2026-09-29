@@ -4,34 +4,46 @@ Features should own their implementation. Shared code should remain minimal and 
 
 ## Features
 
-| Feature | Primary location | Routes |
-| --- | --- | --- |
-| Product discovery | `src/features/products/` | `/products`, `/products/[productId]` |
-| Shopping cart | `src/features/cart/` | `/cart` |
+| Feature                  | Primary location             | Routes                                    |
+| ------------------------ | ---------------------------- | ----------------------------------------- |
+| Product discovery        | `src/features/products/`     | `/products`, `/products/[productId]`      |
+| Shopping cart            | `src/features/cart/`         | `/cart`                                   |
+| Checkout & orders        | `src/features/checkout/`     | `/checkout`, `/orders/[orderId]`          |
+| Wishlist                 | `src/features/wishlist/`     | `/wishlist`                               |
+| Reviews & ratings        | `src/features/reviews/`      | shown on `/products/[productId]`          |
+| FAQ                      | `src/features/faq/`          | `/faq`                                    |
+| Contact form / inquiries | `src/features/inquiries/`    | form on `/contact`, `POST /api/inquiries` |
+| Owner dashboard          | `dashboard/` (Sanity Studio) | `localhost:3333`                          |
 
 ## User stories
 
-| ID | Story | Implementation location |
-| --- | --- | --- |
-| US-01 | Browse products | `src/features/products/` — `ProductGrid`, `ProductCard`, `ProductPagination`, `useProducts`, `useProductPagination`, `products.service.ts` |
-| US-02 | Search products | `src/features/products/` — `ProductSearch`, `useProductSearch`, `product.query.ts`; site-wide entry point in `components/shared/HeaderSearch.tsx` |
-| US-03 | Filter products | `src/features/products/components/ProductFilters/`, `useProductFilters`, `product.query.ts` |
+| ID    | Story                | Implementation location                                                                                                                                                                                                         |
+| ----- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| US-01 | Browse products      | `src/features/products/` — `ProductGrid`, `ProductCard`, `ProductPagination`, `useProducts`, `useProductPagination`, `products.service.ts`                                                                                      |
+| US-02 | Search products      | `src/features/products/` — `ProductSearch`, `useProductSearch`, `product.query.ts`; site-wide entry point in `components/shared/HeaderSearch.tsx`                                                                               |
+| US-03 | Filter products      | `src/features/products/components/ProductFilters/`, `useProductFilters`, `product.query.ts`                                                                                                                                     |
 | US-04 | View product details | `src/features/products/` — `ProductDetailsPage`, `ProductDetails`, `ProductGallery`, `ProductVariantPicker`, `GiftWrappingToggle`, `ScentAnatomy`, `RelatedProducts`, `useProduct`, `useProductSelection`, `useRelatedProducts` |
 
 ## Requirements without an explicit story ID
 
-| Capability | Location |
-| --- | --- |
-| Sort products | `components/ProductSort.tsx`, `hooks/useProductSort.ts` |
-| Select bottle size | `components/ProductVariantPicker.tsx` |
-| Gift wrapping add-on | `components/GiftWrappingToggle.tsx` + `components/ui/Switch.tsx` |
-| Quantity selection | `components/ui/QuantityStepper.tsx` |
-| Add a product to the cart | `src/features/cart/components/AddToCartButton.tsx` (wired from `src/app/products/[productId]/`) |
-| View cart | `src/features/cart/components/CartPage.tsx` |
-| Change quantities | `src/features/cart/components/CartItem.tsx`, `store/cart.store.ts` |
-| Remove products | `src/features/cart/store/cart.store.ts` |
-| View cart total | `src/features/cart/components/CartSummary.tsx`, `utils/cart.utils.ts` |
-| Loading / empty / error states | `ProductDetailsSkeleton`, `ProductEmptyState`, `ProductNotFound`, `components/ui/Skeleton.tsx`, `components/ui/BottleLoader.tsx`, `app/loading.tsx`, `app/error.tsx`, `app/not-found.tsx` |
+| Capability                            | Location                                                                                                                                                                                  |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sort products                         | `components/ProductSort.tsx`, `hooks/useProductSort.ts`                                                                                                                                   |
+| Select bottle size                    | `components/ProductVariantPicker.tsx`                                                                                                                                                     |
+| Gift wrapping add-on                  | `components/GiftWrappingToggle.tsx` + `components/ui/Switch.tsx`                                                                                                                          |
+| Quantity selection                    | `components/ui/QuantityStepper.tsx`                                                                                                                                                       |
+| Add a product to the cart             | `src/features/cart/components/AddToCartButton.tsx` (wired from `src/app/products/[productId]/`)                                                                                           |
+| View cart                             | `src/features/cart/components/CartPage.tsx`                                                                                                                                               |
+| Change quantities                     | `src/features/cart/components/CartItem.tsx`, `store/cart.store.ts`                                                                                                                        |
+| Remove products                       | `src/features/cart/store/cart.store.ts`                                                                                                                                                   |
+| View cart total                       | `src/features/cart/components/CartSummary.tsx`, `utils/cart.utils.ts`                                                                                                                     |
+| Add / remove wishlist items           | `src/features/wishlist/` — `WishlistButton`, `store/wishlist.store.ts`                                                                                                                    |
+| View reviews and ratings              | `src/features/reviews/` — `ProductReviews`, `StarRating`, `reviews.service.ts`                                                                                                            |
+| View FAQs                             | `src/features/faq/` — `FaqPage`, `data/faq.en.ts`, `data/faq.ar.ts`                                                                                                                       |
+| Contact the business                  | WhatsApp / phone / email in `features/content/components/ContactHubView.tsx`; form in `src/features/inquiries/`                                                                           |
+| Owner: manage products, prices, stock | `dashboard/schemaTypes/documents/product.ts`                                                                                                                                              |
+| Owner: manage inquiries               | `dashboard/schemaTypes/documents/inquiry.ts` (New → Replied → Closed)                                                                                                                     |
+| Loading / empty / error states        | `ProductDetailsSkeleton`, `ProductEmptyState`, `ProductNotFound`, `components/ui/Skeleton.tsx`, `components/ui/BottleLoader.tsx`, `app/loading.tsx`, `app/error.tsx`, `app/not-found.tsx` |
 
 ## URL is the source of truth
 

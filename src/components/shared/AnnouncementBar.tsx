@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon, WhatsAppIcon } from "@/components/icons";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  WhatsAppIcon,
+} from "@/components/icons";
+import { STORE_PHONE_DISPLAY, storeWhatsAppHref } from "@/config/contact";
 import { useI18n } from "@/lib/i18n/I18nProvider";
-
-const RAW_PHONE = "201272782474";
 
 export function AnnouncementBar() {
   const { dict } = useI18n();
@@ -29,9 +32,7 @@ export function AnnouncementBar() {
   }
 
   const isWhatsAppItem = index === 2;
-  const whatsAppHref = `https://wa.me/${RAW_PHONE}?text=${encodeURIComponent(
-    dict.footer.whatsAppGreeting,
-  )}`;
+  const whatsAppHref = storeWhatsAppHref(dict.footer.whatsAppGreeting);
 
   return (
     <aside
@@ -66,7 +67,7 @@ export function AnnouncementBar() {
             >
               <WhatsAppIcon size={12} />
               <span dir="ltr" className="font-mono text-[11px]">
-                +20 127 278 2474
+                {STORE_PHONE_DISPLAY}
               </span>
             </a>
           )}

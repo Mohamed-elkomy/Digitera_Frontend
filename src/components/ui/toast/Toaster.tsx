@@ -19,13 +19,23 @@ export function Toaster() {
       className="pointer-events-none fixed top-5 inset-x-0 z-50 flex flex-col items-center gap-2.5 px-4 sm:top-6 sm:right-6 sm:inset-x-auto sm:items-end"
     >
       {toasts.map((toast) => (
-        <ToastItem key={toast.id} toast={toast} onDismiss={() => dismiss(toast.id)} />
+        <ToastItem
+          key={toast.id}
+          toast={toast}
+          onDismiss={() => dismiss(toast.id)}
+        />
       ))}
     </aside>
   );
 }
 
-function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: () => void }) {
+function ToastItem({
+  toast,
+  onDismiss,
+}: {
+  toast: Toast;
+  onDismiss: () => void;
+}) {
   const isSuccess = toast.type === "success" || !toast.type;
   const isWarning = toast.type === "warning";
 
@@ -35,8 +45,10 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: () => void }
       className={cn(
         "pointer-events-auto flex w-full max-w-[380px] items-center gap-3.5 rounded-2xl border bg-surface/95 p-3.5 shadow-2xl backdrop-blur-md",
         "animate-[fade-up_0.35s_cubic-bezier(0.22,1,0.36,1)_both]",
-        isSuccess && "border-gold/40 shadow-[0_12px_32px_-10px_rgba(197,168,128,0.35)]",
-        isWarning && "border-amber-500/40 shadow-[0_12px_32px_-10px_rgba(245,158,11,0.35)]",
+        isSuccess &&
+          "border-gold/40 shadow-[0_12px_32px_-10px_rgba(197,168,128,0.35)]",
+        isWarning &&
+          "border-amber-500/40 shadow-[0_12px_32px_-10px_rgba(245,158,11,0.35)]",
         toast.type === "info" && "border-line shadow-lg",
       )}
     >

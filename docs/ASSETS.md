@@ -21,32 +21,32 @@ Design file: `Digitera — Frontend Engineering Bootcamp`
 
 These are already in the repository at `public/images/products/`.
 
-| Product | File |
-| --- | --- |
-| Fleur de Lune | `fleur-de-lune.webp` |
+| Product          | File                    |
+| ---------------- | ----------------------- |
+| Fleur de Lune    | `fleur-de-lune.webp`    |
 | Santal Parchment | `santal-parchment.webp` |
-| Noir Cocoon | `noir-cocoon.webp` |
-| Sol d'Or | `sol-dor.webp` |
-| Atelier Oud | `atelier-oud.webp` |
-| Rose Absolute | `rose-absolute.webp` |
+| Noir Cocoon      | `noir-cocoon.webp`      |
+| Sol d'Or         | `sol-dor.webp`          |
+| Atelier Oud      | `atelier-oud.webp`      |
+| Rose Absolute    | `rose-absolute.webp`    |
 
 ## Home page — DONE
 
 Exported from Figma and converted to WebP in `public/images/home/`. Paths are
 wired in `src/features/home/home.content.ts`.
 
-| Figma node | File | Size |
-| --- | --- | --- |
-| `3:29` hero | `hero.webp` | 94 KB |
-| `3:85` archetype-tile | `archetype-floral.webp` | 52 KB |
-| `3:89` archetype-tile | `archetype-woody.webp` | 120 KB |
-| `3:93` archetype-tile | `archetype-oriental.webp` | 85 KB |
-| `3:97` archetype-tile | `archetype-fresh.webp` | 97 KB |
-| `3:107` occ-img | `occasion-personal-use.webp` | 4 KB |
-| `3:112` occ-img | `occasion-wedding.webp` | 18 KB |
-| `3:117` occ-img | `occasion-gift-sets.webp` | 5 KB |
-| `3:122` occ-img | `occasion-birthday.webp` | 8 KB |
-| `3:127` promo-img | `promo-solstice.webp` | 53 KB |
+| Figma node            | File                         | Size   |
+| --------------------- | ---------------------------- | ------ |
+| `3:29` hero           | `hero.webp`                  | 94 KB  |
+| `3:85` archetype-tile | `archetype-floral.webp`      | 52 KB  |
+| `3:89` archetype-tile | `archetype-woody.webp`       | 120 KB |
+| `3:93` archetype-tile | `archetype-oriental.webp`    | 85 KB  |
+| `3:97` archetype-tile | `archetype-fresh.webp`       | 97 KB  |
+| `3:107` occ-img       | `occasion-personal-use.webp` | 4 KB   |
+| `3:112` occ-img       | `occasion-wedding.webp`      | 18 KB  |
+| `3:117` occ-img       | `occasion-gift-sets.webp`    | 5 KB   |
+| `3:122` occ-img       | `occasion-birthday.webp`     | 8 KB   |
+| `3:127` promo-img     | `promo-solstice.webp`        | 53 KB  |
 
 The dark overlay on the tiles is applied in CSS, not baked into the files.
 

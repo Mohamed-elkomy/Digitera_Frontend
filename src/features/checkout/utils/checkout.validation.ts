@@ -29,9 +29,10 @@ export function validateCheckout(values: CheckoutValues): CheckoutErrors {
 
   if (!values.fullName.trim()) errors.fullName = "required";
 
+  // Optional: the brief asks only for name, phone and address. When given,
+  // it must be a real address, because the confirmation is sent to it.
   const email = values.email.trim();
-  if (!email) errors.email = "required";
-  else if (!EMAIL_PATTERN.test(email)) errors.email = "emailInvalid";
+  if (email && !EMAIL_PATTERN.test(email)) errors.email = "emailInvalid";
 
   const phone = values.phone.trim();
   if (!phone) errors.phone = "required";

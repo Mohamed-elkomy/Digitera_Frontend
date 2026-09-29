@@ -14,6 +14,7 @@ const config: Config = {
     "<rootDir>/node_modules/",
     "<rootDir>/.next/",
     "<rootDir>/cypress/",
+    "<rootDir>/dashboard/",
   ],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",

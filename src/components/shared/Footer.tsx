@@ -100,7 +100,11 @@ export function Footer() {
 
           <div className="grid w-full gap-10 sm:grid-cols-3 lg:w-auto lg:gap-20">
             {columns.map((column) => (
-              <nav key={column.title} aria-label={column.title} className="text-start">
+              <nav
+                key={column.title}
+                aria-label={column.title}
+                className="text-start"
+              >
                 <h2 className="text-[12px] font-bold text-gold uppercase text-start">
                   {column.title}
                 </h2>
@@ -140,20 +144,20 @@ export function Footer() {
                 </a>
               </p>
             </div>
-              <div className="flex flex-wrap items-center gap-3">
-                <AudioToggle />
-                <p className="text-[11px] text-on-night uppercase opacity-40">
-                  {dict.footer.securedVia}
-                </p>
-                {paymentMethods.map((method) => (
-                  <span
-                    key={method}
-                    className="rounded border border-on-night/[0.13] px-2 py-1 text-[9px] font-semibold text-on-night uppercase opacity-60"
-                  >
-                    {method}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <AudioToggle />
+              <p className="text-[11px] text-on-night uppercase opacity-40">
+                {dict.footer.securedVia}
+              </p>
+              {paymentMethods.map((method) => (
+                <span
+                  key={method}
+                  className="rounded border border-on-night/[0.13] px-2 py-1 text-[9px] font-semibold text-on-night uppercase opacity-60"
+                >
+                  {method}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

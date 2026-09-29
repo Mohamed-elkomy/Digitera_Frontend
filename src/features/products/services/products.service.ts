@@ -1,6 +1,8 @@
 import { env } from "@/config/env";
 import { httpProductsService } from "@/features/products/services/products.http";
 import { mockProductsService } from "@/features/products/services/products.mock";
+import { sanityProductsService } from "@/features/products/services/products.sanity";
+import { isSanityConfigured } from "@/lib/sanity/client";
 import type {
   Product,
   ProductId,
@@ -15,7 +17,8 @@ export type ProductsService = {
 };
 
 export function createProductsService(): ProductsService {
-  return env.useMockApi ? mockProductsService : httpProductsService;
+  if (env.useMockApi) return mockProductsService;
+  return isSanityConfigured() ? sanityProductsService : httpProductsService;
 }
 
 export const productsService = createProductsService();

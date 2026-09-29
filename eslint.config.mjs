@@ -13,6 +13,7 @@ const eslintConfig = defineConfig([
     "build/**",
     "coverage/**",
     "cypress/**",
+    "dashboard/**",
     "next-env.d.ts",
   ]),
 ]);

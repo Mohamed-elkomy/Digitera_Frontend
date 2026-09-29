@@ -14,6 +14,7 @@ import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { usePrimaryNav } from "@/components/shared/navigation";
 import { useScrolled } from "@/components/shared/useScrolled";
 import { CartNavLink } from "@/features/cart";
+import { WishlistNavLink } from "@/features/wishlist";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/utils/cn";
 
@@ -84,6 +85,7 @@ export function Header() {
             <LocaleToggle className={iconButton} />
             <ThemeToggle className={iconButton} />
             <AccountMenu className={cn(iconButton, "hidden sm:flex")} />
+            <WishlistNavLink className={iconButton} />
             <CartNavLink />
           </div>
         </div>
@@ -94,29 +96,29 @@ export function Header() {
           id="primary-navigation"
           className="mx-3 mt-2 rounded-2xl border border-line bg-surface px-4 py-4 shadow-[0_10px_40px_-24px_rgba(26,26,26,0.5)] sm:mx-5 lg:hidden"
         >
-        <nav aria-label="Mobile" className="flex flex-col">
-          {nav.map((link) => (
-            <Link
-              key={link.key}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="border-b border-line py-3 text-[13px] font-medium text-ink uppercase transition-colors last:border-0 hover:text-gold"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <HeaderSearch className="mt-4 w-full" />
-        <MobileAccountLinks onNavigate={() => setMenuOpen(false)} />
-        <button
-          type="button"
-          onClick={() => setMenuOpen(false)}
-          className="mt-4 flex items-center gap-2 text-[11px] font-semibold text-muted uppercase"
-        >
-          <CloseIcon size={14} />
-          {dict.nav.closeMenu}
-        </button>
-      </div>
+          <nav aria-label="Mobile" className="flex flex-col">
+            {nav.map((link) => (
+              <Link
+                key={link.key}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="border-b border-line py-3 text-[13px] font-medium text-ink uppercase transition-colors last:border-0 hover:text-gold"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <HeaderSearch className="mt-4 w-full" />
+          <MobileAccountLinks onNavigate={() => setMenuOpen(false)} />
+          <button
+            type="button"
+            onClick={() => setMenuOpen(false)}
+            className="mt-4 flex items-center gap-2 text-[11px] font-semibold text-muted uppercase"
+          >
+            <CloseIcon size={14} />
+            {dict.nav.closeMenu}
+          </button>
+        </div>
       ) : null}
     </header>
   );

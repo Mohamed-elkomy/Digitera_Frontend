@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { isAudioFeedbackEnabled, playSound, setAudioFeedbackEnabled } from "@/lib/audio/sound-effects";
+import {
+  isAudioFeedbackEnabled,
+  playSound,
+  setAudioFeedbackEnabled,
+} from "@/lib/audio/sound-effects";
 
 export function AudioToggle() {
   const [enabled, setEnabled] = useState(() => {

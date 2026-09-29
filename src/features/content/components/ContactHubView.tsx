@@ -3,22 +3,20 @@
 import Link from "next/link";
 import { MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { showToast } from "@/components/ui/toast";
+import { InquiryForm } from "@/features/inquiries";
 import { productPaths } from "@/features/products";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 import {
-  EMAIL,
-  PHONE_NUMBER,
-  RAW_PHONE,
-  socialLinks,
-} from "./contact-profiles";
+  STORE_PHONE_DISPLAY as PHONE_NUMBER,
+  storeWhatsAppHref,
+} from "@/config/contact";
+import { EMAIL, socialLinks } from "./contact-profiles";
 import { SocialLinksGrid } from "./SocialLinksGrid";
 
 export function ContactHubView() {
   const { dict } = useI18n();
 
-  const whatsAppHref = `https://wa.me/${RAW_PHONE}?text=${encodeURIComponent(
-    dict.footer.whatsAppGreeting,
-  )}`;
+  const whatsAppHref = storeWhatsAppHref(dict.footer.whatsAppGreeting);
 
   return (
     <div className="relative overflow-hidden px-4 py-12 sm:px-6 md:px-10 lg:px-20 lg:py-20">
@@ -153,6 +151,10 @@ export function ContactHubView() {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="mt-16">
+          <InquiryForm />
         </div>
 
         {/* Portfolios and Social Network Presence */}

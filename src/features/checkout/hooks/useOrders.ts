@@ -33,6 +33,8 @@ export function useOrders() {
     orders: hydrated ? mine : [],
     hydrated,
     placeOrder,
-    findOrder: (id: string) => mine.find((order) => order.id === id),
+    // A guest can still open the confirmation of an order placed in this browser.
+    findOrder: (id: string) =>
+      (user ? mine : stored).find((order) => order.id === id),
   };
 }

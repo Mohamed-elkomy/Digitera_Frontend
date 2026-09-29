@@ -9,7 +9,10 @@ import { useCart } from "@/features/cart";
 import { useProductCopy } from "@/features/products/hooks/useProductCopy";
 import { productPaths } from "@/features/products/paths";
 import { useQuickViewStore } from "@/features/products/stores/quick-view.store";
-import { formatWholePrice, isPurchasable } from "@/features/products/utils/product.utils";
+import {
+  formatWholePrice,
+  isPurchasable,
+} from "@/features/products/utils/product.utils";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export function QuickViewModal() {
@@ -17,7 +20,9 @@ export function QuickViewModal() {
   const { addItem } = useCart();
   const { dict } = useI18n();
   const copy = useProductCopy(product ?? ({} as never));
-  const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null);
+  const [selectedVariantId, setSelectedVariantId] = useState<string | null>(
+    null,
+  );
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -30,8 +35,9 @@ export function QuickViewModal() {
   if (!isOpen || !product) return null;
 
   const currentVariant =
-    (selectedVariantId ? product.variants.find((v) => v.id === selectedVariantId) : null) ??
-    product.variants[0];
+    (selectedVariantId
+      ? product.variants.find((v) => v.id === selectedVariantId)
+      : null) ?? product.variants[0];
   const available = isPurchasable(product, currentVariant);
   const image = product.images[0];
 
@@ -90,7 +96,9 @@ export function QuickViewModal() {
               <p className="text-[11px] font-semibold tracking-widest text-gold uppercase">
                 {product.category}
               </p>
-              <h2 className="mt-1 font-serif text-[26px] text-ink">{copy.name}</h2>
+              <h2 className="mt-1 font-serif text-[26px] text-ink">
+                {copy.name}
+              </h2>
               <p className="mt-1 text-[12px] text-gold">{copy.notes}</p>
             </div>
 

@@ -18,32 +18,28 @@ export function HeaderNav({ nav }: { nav: NavLink[] }) {
     // "shop" (المتجر) is ONLY active on /products if no specific subcategory is selected
     if (link.key === "shop") {
       return (
-        pathname === "/products" &&
-        (!currentCategory || currentCategory === "")
+        pathname === "/products" && (!currentCategory || currentCategory === "")
       );
     }
 
     // "categories" (التصنيفات) is active when category query is pure-extractions
     if (link.key === "categories") {
-      return (
-        pathname === "/products" &&
-        currentCategory === "pure-extractions"
-      );
+      return pathname === "/products" && currentCategory === "pure-extractions";
     }
 
     // "atelier" (الأتيليه) is active when category query is atelier-oils
     if (link.key === "atelier") {
-      return (
-        pathname === "/products" &&
-        currentCategory === "atelier-oils"
-      );
+      return pathname === "/products" && currentCategory === "atelier-oils";
     }
 
     return false;
   }
 
   return (
-    <nav aria-label="Primary" className="hidden flex-1 items-center gap-2 lg:flex">
+    <nav
+      aria-label="Primary"
+      className="hidden flex-1 items-center gap-2 lg:flex"
+    >
       {nav.map((link) => {
         const active = isLinkActive(link);
 

@@ -129,11 +129,11 @@ describe("the wa.me link", () => {
     expect(getWhatsAppNumber()).toBe("201111111111");
   });
 
-  it("is undefined when the number is unset or too short", () => {
+  it("falls back to the store's placeholder line when unset or too short", () => {
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER = "";
-    expect(getWhatsAppNumber()).toBeUndefined();
+    expect(getWhatsAppNumber()).toBe("201111111111");
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER = "123";
-    expect(getWhatsAppNumber()).toBeUndefined();
+    expect(getWhatsAppNumber()).toBe("201111111111");
   });
 
   it("encodes the message so the line breaks survive", () => {
@@ -142,8 +142,8 @@ describe("the wa.me link", () => {
     expect(url).toBe("https://wa.me/201111111111?text=a%0Ab");
   });
 
-  it("produces no link at all without a number", () => {
+  it("still produces a link without a configured number", () => {
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER = "";
-    expect(buildWhatsAppUrl("x")).toBeUndefined();
+    expect(buildWhatsAppUrl("x")).toBe("https://wa.me/201111111111?text=x");
   });
 });

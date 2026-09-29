@@ -31,11 +31,14 @@ export type ProductDetailsActionsContext = {
 type ProductDetailsPageProps = {
   productId: string;
   actions?: (context: ProductDetailsActionsContext) => ReactNode;
+  /** Full-width content between the details and the related products. */
+  afterDetails?: (product: Product) => ReactNode;
 };
 
 export function ProductDetailsPage({
   productId,
   actions,
+  afterDetails,
 }: ProductDetailsPageProps) {
   const productQuery = useProduct(productId);
   const product = productQuery.data ?? undefined;
@@ -97,6 +100,8 @@ export function ProductDetailsPage({
           <ScentAnatomy product={product} />
         </div>
       </div>
+
+      {afterDetails?.(product)}
 
       <RelatedProducts productId={product.id} />
     </article>

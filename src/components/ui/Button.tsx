@@ -15,8 +15,7 @@ const variantClassName: Record<ButtonVariant, string> = {
     "border border-line bg-surface text-ink shadow-xs hover:border-gold hover:bg-shell/80 hover:shadow-sm active:scale-[0.98] disabled:text-[#b8b2aa]",
   ghost:
     "text-muted hover:bg-shell/70 hover:text-ink active:scale-[0.98] disabled:text-[#b8b2aa]",
-  gold:
-    "bg-gold text-[#faf8f5] shadow-sm hover:bg-[#b8996f] hover:shadow-md active:scale-[0.98] disabled:bg-[#d8c7ad] disabled:shadow-none",
+  gold: "bg-gold text-[#faf8f5] shadow-sm hover:bg-[#b8996f] hover:shadow-md active:scale-[0.98] disabled:bg-[#d8c7ad] disabled:shadow-none",
 };
 
 const sizeClassName: Record<ButtonSize, string> = {
