@@ -135,7 +135,7 @@ export function Footer() {
               <p className="text-[11px]">
                 {dict.footer.designedBy}{" "}
                 <a
-                  href="https://portfolio-komys-projects.vercel.app/"
+                  href="https://mohamed-elkomy.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-gold underline underline-offset-4 opacity-90 transition-opacity hover:opacity-100"
