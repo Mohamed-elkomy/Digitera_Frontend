@@ -45,3 +45,14 @@ to code in [`FEATURE_OWNERSHIP.md`](FEATURE_OWNERSHIP.md).
 | Backup and recovery                                       | `pnpm backup` / `pnpm restore` in `dashboard/` (full dataset export and import), per-document revision history in Sanity, one-click rollback of any deployment on Vercel, and the code in Git                                                                                                                                                                                       |
 | WhatsApp works on mobile (app) and desktop (WhatsApp Web) | `wa.me` universal links, opened inside the click so browsers do not block them                                                                                                                                                                                                                                                                                                      |
 | No online payment data                                    | No card fields anywhere; payment is only a choice of method, settled on WhatsApp                                                                                                                                                                                                                                                                                                    |
+
+## Beyond the brief
+
+The client did not ask for these; they were already part of the build and are
+kept, wired to the same backend, without changing anything the brief requires.
+
+| Extra                          | How it stays within the brief                                                                                           |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Customer accounts              | Optional — checkout never asks for one. Real accounts (hashed passwords, httpOnly session) link orders to the customer. |
+| Arabic / English               | Every page in both languages with full RTL; the owner can edit each product's Arabic copy in the dashboard.             |
+| Order records in the dashboard | Confirmation, payment and delivery stay manual on WhatsApp; the owner only moves a status.                              |

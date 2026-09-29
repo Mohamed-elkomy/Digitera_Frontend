@@ -5,7 +5,9 @@ import {
   validateCheckout,
   verifyOrder,
 } from "@/features/checkout";
+import { getSessionUser } from "@/features/auth/server";
 import { productsService, type Product } from "@/features/products";
+import { sanityFetch } from "@/lib/sanity/client";
 import { isSanityConfigured, sanityCreate } from "@/lib/sanity/client";
 
 /**
@@ -42,6 +44,7 @@ export async function POST(request: Request) {
   }
 
   const { lines, shippingAddress: customer, ...totals } = verified.order;
+  const account = await getSessionUser();
   try {
     await sanityCreate(
       {
@@ -50,6 +53,13 @@ export async function POST(request: Request) {
         orderNumber: order.id,
         status: "new",
         placedAt: totals.placedAt,
+        // Linked to the account when a signed-in customer placed it.
+        ...(account
+          ? {
+              account: { _type: "reference", _ref: account.id, _weak: true },
+              ownerEmail: account.email,
+            }
+          : {}),
         paymentMethod: totals.paymentMethod,
         customer,
         items: lines.map((line) => ({
@@ -74,4 +84,28 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json({ ok: true }, { status: 201 });
+}
+
+/** The signed-in customer's orders, newest first, in the storefront's shape. */
+const MY_ORDERS = `*[_type == "order" && account._ref == $id] | order(placedAt desc) {
+  "id": orderNumber,
+  "ownerEmail": coalesce(ownerEmail, ""),
+  placedAt, subtotal, shipping, giftWrapping, total, paymentMethod,
+  "shippingAddress": customer,
+  "lines": items[]{
+    "id": _key, "productId": productSlug, "variantId": "",
+    name, "variantLabel": size, quantity, unitPrice,
+    "giftWrapping": coalesce(giftWrapping, false)
+  }
+}`;
+
+export async function GET() {
+  if (!isSanityConfigured()) return NextResponse.json([], { status: 503 });
+  const account = await getSessionUser();
+  if (!account) return NextResponse.json([], { status: 401 });
+  try {
+    return NextResponse.json(await sanityFetch(MY_ORDERS, { id: account.id }));
+  } catch {
+    return NextResponse.json({ error: "unavailable" }, { status: 503 });
+  }
 }

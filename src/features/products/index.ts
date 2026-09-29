@@ -5,6 +5,7 @@ export { ProductCard } from "@/features/products/components/ProductCard";
 export { useProducts } from "@/features/products/hooks/useProducts";
 export { productPaths } from "@/features/products/paths";
 export { productsService } from "@/features/products/services/products.service";
+export { parseProductListQuery } from "@/features/products/utils/product.query";
 export {
   prefetchProduct,
   prefetchProductList,

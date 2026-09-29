@@ -70,7 +70,26 @@
       "category": "pure-extractions",
       "scentFamily": "floral",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "فلور دو لون",
+        "notes": "زهري / ياسمين ومسك أبيض",
+        "description": "يستقر فلور دو لون على البشرة كضوء القمر على الكتان. يفتتح بحمضيات مضيئة، ثم ينفتح على قلب من الياسمين، وينتهي إلى مسك أبيض ناعم.",
+        "scentNotes": {
+          "top": [
+            "نيرولي كالابري",
+            "ماندرين أخضر"
+          ],
+          "heart": [
+            "ياسمين سامباك",
+            "زهر البرتقال"
+          ],
+          "base": [
+            "مسك أبيض",
+            "خشب أرز فاتح"
+          ]
+        }
+      }
     },
     {
       "id": "santal-parchment",
@@ -126,7 +145,27 @@
       "category": "pure-extractions",
       "scentFamily": "woody",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "سانتال بارشمنت",
+        "notes": "خشبي / صندل وهيل",
+        "description": "يلتف سانتال بارشمنت حول البشرة كورق الرقّ العتيق. يفتتح بنوتات عليا مشرقة، ثم ينتقل إلى بردي نقي وصندل دافئ غني، ليجف على هيل وعنبر.",
+        "scentNotes": {
+          "top": [
+            "برغموت صقلي",
+            "فلفل وردي"
+          ],
+          "heart": [
+            "ياسمين سامباك مصري",
+            "بردي"
+          ],
+          "base": [
+            "صندل هندي غربي",
+            "هيل",
+            "عنبر"
+          ]
+        }
+      }
     },
     {
       "id": "noir-cocoon",
@@ -178,7 +217,26 @@
       "category": "private-reserve",
       "scentFamily": "oriental",
       "occasion": "wedding",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "نوار كوكون",
+        "notes": "شرقي / تبغ وعنبر",
+        "description": "يقرّب نوار كوكون المساء إليك. تبغ مدخّن يفسح المجال لقلب من الكاكاو، قبل أن يستقر في أثر عنبري راتنجي طويل.",
+        "scentNotes": {
+          "top": [
+            "ورق التبغ",
+            "زنجبيل متبّل"
+          ],
+          "heart": [
+            "خلاصة الكاكاو",
+            "حبة التونكا"
+          ],
+          "base": [
+            "عنبر رمادي",
+            "أخشاب جافة"
+          ]
+        }
+      }
     },
     {
       "id": "sol-dor",
@@ -230,7 +288,26 @@
       "category": "pure-extractions",
       "scentFamily": "fresh",
       "occasion": "personal-use",
-      "availability": "made-to-order"
+      "availability": "made-to-order",
+      "ar": {
+        "name": "سول دور",
+        "notes": "منعش / برغموت وملح البحر",
+        "description": "يحتفظ سول دور بآخر ساعة من ضوء النهار على الساحل. برغموت مملّح يفتتح على خشب طافٍ معدني، قبل خاتمة من العنبر المشمس.",
+        "scentNotes": {
+          "top": [
+            "برغموت كالابري",
+            "ملح البحر"
+          ],
+          "heart": [
+            "خشب طافٍ معدني",
+            "زهر البرتقال"
+          ],
+          "base": [
+            "مسك أبيض",
+            "عنبر مشمس"
+          ]
+        }
+      }
     },
     {
       "id": "atelier-oud",
@@ -282,7 +359,26 @@
       "category": "atelier-oils",
       "scentFamily": "woody",
       "occasion": "gift-sets",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "أتيليه عود",
+        "notes": "خشبي / عود فاخر وزعفران",
+        "description": "أتيليه عود هو الدار في أكثر حالاتها تركيزًا. زعفران وورد دمشقي يفتتحان على عود غني، وينغلقان على جلد مدخّن وقطران البتولا.",
+        "scentNotes": {
+          "top": [
+            "زعفران",
+            "ورد دمشقي"
+          ],
+          "heart": [
+            "عود لاوسي",
+            "لبان"
+          ],
+          "base": [
+            "جلد مدخّن",
+            "قطران البتولا"
+          ]
+        }
+      }
     },
     {
       "id": "rose-absolute",
@@ -334,7 +430,26 @@
       "category": "private-reserve",
       "scentFamily": "floral",
       "occasion": "birthday",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "روز أبسوليوت",
+        "notes": "زهري / ورد دمشقي وأرز",
+        "description": "روز أبسوليوت ورد بلا حلاوة. خضرة ندية ترفع قلبًا دمشقيًا يستقر على الأرز والباتشولي الترابي.",
+        "scentNotes": {
+          "top": [
+            "فلفل وردي",
+            "خضرة ندية"
+          ],
+          "heart": [
+            "ورد دمشقي",
+            "جيرانيوم"
+          ],
+          "base": [
+            "أرز فرجيني",
+            "باتشولي"
+          ]
+        }
+      }
     },
     {
       "id": "iris-cendre",
@@ -386,7 +501,26 @@
       "category": "pure-extractions",
       "scentFamily": "floral",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "إيريس سandré",
+        "notes": "زهري / سوسن ورماد",
+        "description": "يحمل إيريس سندريه هدوء ما بعد النار. سوسن مبودر فوق ورق البنفسج، يستقر على خشب كشميري بارد.",
+        "scentNotes": {
+          "top": [
+            "برغموت",
+            "بذور الجزر"
+          ],
+          "heart": [
+            "سوسن فلورنسي",
+            "ورق البنفسج"
+          ],
+          "base": [
+            "خشب كشميري",
+            "مسك رمادي"
+          ]
+        }
+      }
     },
     {
       "id": "fleur-de-sel",
@@ -438,7 +572,26 @@
       "category": "pure-extractions",
       "scentFamily": "fresh",
       "occasion": "birthday",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "فلور دو سيل",
+        "notes": "منعش / ملح البحر وتين",
+        "description": "فلور دو سيل ساحل في أواخر الصيف. ملح وبرتقال مرّ يفتتحان على ورق التين وخشب طافٍ جفّفته الشمس.",
+        "scentNotes": {
+          "top": [
+            "ملح البحر",
+            "برتقال مرّ"
+          ],
+          "heart": [
+            "ورق التين",
+            "مستكة"
+          ],
+          "base": [
+            "خشب طافٍ",
+            "مسك أبيض"
+          ]
+        }
+      }
     },
     {
       "id": "cedre-blanc",
@@ -490,7 +643,26 @@
       "category": "pure-extractions",
       "scentFamily": "woody",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "سيدر بلان",
+        "notes": "خشبي / أرز أبيض وسوسن",
+        "description": "سيدر بلان كتان جُفّف في الهواء الطلق. ليمون وعرعر يفسحان المجال لأرز أطلسي فوق قاعدة سوسن ناعمة.",
+        "scentNotes": {
+          "top": [
+            "ليمون صقلي",
+            "عرعر"
+          ],
+          "heart": [
+            "أرز أطلسي",
+            "جذر السوسن"
+          ],
+          "base": [
+            "أخشاب فاتحة",
+            "أمبريت"
+          ]
+        }
+      }
     },
     {
       "id": "jardin-clos",
@@ -542,7 +714,26 @@
       "category": "pure-extractions",
       "scentFamily": "floral",
       "occasion": "gift-sets",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "جاردان كلو",
+        "notes": "زهري / مسك الليل وأوراق خضراء",
+        "description": "جاردان كلو حديقة مسوّرة بعد المطر. جلبانوم أخضر يفتتح على مسك الليل وينغلق على صندل دافئ.",
+        "scentNotes": {
+          "top": [
+            "جلبانوم",
+            "ماندرين أخضر"
+          ],
+          "heart": [
+            "مسك الليل المطلق",
+            "ياسمين"
+          ],
+          "base": [
+            "صندل",
+            "حبة التونكا"
+          ]
+        }
+      }
     },
     {
       "id": "muguet-d-hiver",
@@ -594,7 +785,26 @@
       "category": "pure-extractions",
       "scentFamily": "floral",
       "occasion": "wedding",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "موغيه ديفير",
+        "notes": "زهري / زنبق الوادي ومسك",
+        "description": "موغيه ديفير باقة تُحمل إلى الداخل. بخور مريم وزنبق الوادي يستقران على مسك ناعم وأرز فاتح.",
+        "scentNotes": {
+          "top": [
+            "ماندرين أخضر",
+            "بخور مريم"
+          ],
+          "heart": [
+            "زنبق الوادي",
+            "فاوانيا بيضاء"
+          ],
+          "base": [
+            "مسك ناعم",
+            "أرز فاتح"
+          ]
+        }
+      }
     },
     {
       "id": "neroli-dore",
@@ -646,7 +856,26 @@
       "category": "pure-extractions",
       "scentFamily": "floral",
       "occasion": "gift-sets",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "نيرولي دوريه",
+        "notes": "زهري / نيرولي وعنبر معسّل",
+        "description": "نيرولي دوريه زهر البرتقال في منتصف النهار. نيرولي تونسي وبيتي جرين يدفآن إلى عنبر معسّل.",
+        "scentNotes": {
+          "top": [
+            "نيرولي تونسي",
+            "بيتي جرين"
+          ],
+          "heart": [
+            "زهر البرتقال",
+            "زهر العسل"
+          ],
+          "base": [
+            "عنبر معسّل",
+            "مسك ناعم"
+          ]
+        }
+      }
     },
     {
       "id": "velours-noir",
@@ -698,7 +927,26 @@
       "category": "private-reserve",
       "scentFamily": "oriental",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "فيلور نوار",
+        "notes": "شرقي / بخور وجلد",
+        "description": "ينسدل فيلور نوار كستارة في آخر المساء. بخور بارد يفتتح على جلد سويدي مصقول، قبل خاتمة طويلة من اللبدانوم.",
+        "scentNotes": {
+          "top": [
+            "فلفل أسود",
+            "إليمي"
+          ],
+          "heart": [
+            "لبان",
+            "جلد سويدي"
+          ],
+          "base": [
+            "لبدانوم",
+            "باتشولي"
+          ]
+        }
+      }
     },
     {
       "id": "bois-de-minuit",
@@ -750,7 +998,26 @@
       "category": "private-reserve",
       "scentFamily": "woody",
       "occasion": "wedding",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "بوا دو مينوي",
+        "notes": "خشبي / نجيل ودخان",
+        "description": "بوا دو مينوي غابة بعد حلول الظلام. هيل أخضر يرفع النجيل الهايتي، قبل أن يسحب دخان البتولا الليل إليك.",
+        "scentNotes": {
+          "top": [
+            "هيل أخضر",
+            "قشر جريب فروت"
+          ],
+          "heart": [
+            "نجيل هايتي",
+            "سرو"
+          ],
+          "base": [
+            "دخان البتولا",
+            "عنبر جاف"
+          ]
+        }
+      }
     },
     {
       "id": "nuit-persane",
@@ -802,7 +1069,26 @@
       "category": "private-reserve",
       "scentFamily": "oriental",
       "occasion": "wedding",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "نوي بيرسان",
+        "notes": "شرقي / زعفران وورد",
+        "description": "نوي بيرسان ورد في أوج فخامته. زعفران وبرقوق مسكّر يلتفّان حول قلب دمشقي، قبل خاتمة من العود والبنزوين.",
+        "scentNotes": {
+          "top": [
+            "زعفران",
+            "برقوق مسكّر"
+          ],
+          "heart": [
+            "ورد دمشقي",
+            "زيت الورد التركي"
+          ],
+          "base": [
+            "تركيبة العود",
+            "بنزوين"
+          ]
+        }
+      }
     },
     {
       "id": "oud-royal",
@@ -854,7 +1140,26 @@
       "category": "private-reserve",
       "scentFamily": "woody",
       "occasion": "gift-sets",
-      "availability": "made-to-order"
+      "availability": "made-to-order",
+      "ar": {
+        "name": "عود رويال",
+        "notes": "خشبي / عود كمبودي وجلد",
+        "description": "عود رويال هو الدار بأعلى صوتها. زعفران وجوزة الطيب يفتتحان على عود كمبودي وجلد مدخّن.",
+        "scentNotes": {
+          "top": [
+            "زعفران",
+            "جوزة الطيب"
+          ],
+          "heart": [
+            "عود كمبودي",
+            "جلد مدخّن"
+          ],
+          "base": [
+            "خشب العود",
+            "عنبر رمادي"
+          ]
+        }
+      }
     },
     {
       "id": "rose-poudree",
@@ -906,7 +1211,26 @@
       "category": "private-reserve",
       "scentFamily": "floral",
       "occasion": "birthday",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "روز بودريه",
+        "notes": "زهري / ورد مبودر وبنفسج",
+        "description": "روز بودريه ورد يُرى من خلف البودرة. ورد مايو والبنفسج يستقران على زبدة السوسن ومسك نظيف.",
+        "scentNotes": {
+          "top": [
+            "ورق التوت",
+            "فلفل وردي"
+          ],
+          "heart": [
+            "ورد مايو",
+            "بنفسج"
+          ],
+          "base": [
+            "زبدة السوسن",
+            "مسك أبيض"
+          ]
+        }
+      }
     },
     {
       "id": "ambre-solaire",
@@ -958,7 +1282,26 @@
       "category": "atelier-oils",
       "scentFamily": "oriental",
       "occasion": "gift-sets",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "أمبر سولير",
+        "notes": "شرقي / عنبر وبنزوين",
+        "description": "يحتفظ أمبر سولير بآخر دفء النهار. برتقال دموي يذوب في البنزوين وأثر عنبري ذهبي بطيء.",
+        "scentNotes": {
+          "top": [
+            "برتقال دموي",
+            "فلفل وردي"
+          ],
+          "heart": [
+            "بنزوين سيامي",
+            "إيمورتيل"
+          ],
+          "base": [
+            "عنبر ذهبي",
+            "فانيليا مطلقة"
+          ]
+        }
+      }
     },
     {
       "id": "papier-vetiver",
@@ -1010,7 +1353,26 @@
       "category": "atelier-oils",
       "scentFamily": "woody",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "بابييه فيتيفير",
+        "notes": "خشبي / نجيل وورق",
+        "description": "بابييه فيتيفير برائحة مكتبة قديمة. برغموت يرفع النجيل الجاوي فوق البردي وقاعدة فانيليا هادئة.",
+        "scentNotes": {
+          "top": [
+            "برغموت",
+            "حبّ الفلفل الوردي"
+          ],
+          "heart": [
+            "نجيل جاوي",
+            "بردي"
+          ],
+          "base": [
+            "خشب الأرز",
+            "فانيليا بوربون"
+          ]
+        }
+      }
     },
     {
       "id": "miel-fume",
@@ -1062,7 +1424,26 @@
       "category": "atelier-oils",
       "scentFamily": "oriental",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "مييل فومي",
+        "notes": "شرقي / عسل وتبغ",
+        "description": "مييل فومي دفء بلا حلاوة. عسل وورق تبغ يستقران على التونكا وقاعدة عنبر جافة.",
+        "scentNotes": {
+          "top": [
+            "برتقال مرّ",
+            "قشر القرفة"
+          ],
+          "heart": [
+            "عسل مطلق",
+            "ورق التبغ"
+          ],
+          "base": [
+            "حبة التونكا",
+            "عنبر جاف"
+          ]
+        }
+      }
     },
     {
       "id": "encens-blanc",
@@ -1114,7 +1495,26 @@
       "category": "atelier-oils",
       "scentFamily": "oriental",
       "occasion": "wedding",
-      "availability": "made-to-order"
+      "availability": "made-to-order",
+      "ar": {
+        "name": "أنسان بلان",
+        "notes": "شرقي / لبان ومُرّ",
+        "description": "أنسان بلان بخور بلا دخان. لبان عُماني ومُرّ فوق قاعدة من العنبر الفاتح والصندل.",
+        "scentNotes": {
+          "top": [
+            "إليمي",
+            "فلفل وردي"
+          ],
+          "heart": [
+            "لبان عُماني",
+            "مُرّ"
+          ],
+          "base": [
+            "عنبر أبيض",
+            "صندل"
+          ]
+        }
+      }
     },
     {
       "id": "eau-de-brume",
@@ -1166,7 +1566,26 @@
       "category": "discovery-vault",
       "scentFamily": "fresh",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "أو دو بروم",
+        "notes": "منعش / ضباب وشاي أخضر",
+        "description": "أو دو بروم هواء الصباح فوق الماء. يوزو وندى يفسحان المجال لشاي أخضر وخاتمة نقية تكاد تكون بلا وزن.",
+        "scentNotes": {
+          "top": [
+            "يوزو",
+            "تركيبة الندى"
+          ],
+          "heart": [
+            "شاي أخضر",
+            "فريزيا بيضاء"
+          ],
+          "base": [
+            "أخشاب فاتحة",
+            "مسك نظيف"
+          ]
+        }
+      }
     },
     {
       "id": "baie-rose",
@@ -1218,7 +1637,26 @@
       "category": "discovery-vault",
       "scentFamily": "fresh",
       "occasion": "birthday",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "باي روز",
+        "notes": "منعش / فلفل وردي وحمضيات",
+        "description": "باي روز أول دقيقة مشرقة من الصباح. فلفل وردي وجريب فروت فوق راوند ومسك نظيف.",
+        "scentNotes": {
+          "top": [
+            "فلفل وردي",
+            "جريب فروت دموي"
+          ],
+          "heart": [
+            "راوند",
+            "نيرولي"
+          ],
+          "base": [
+            "مسك أبيض",
+            "أرز خفيف"
+          ]
+        }
+      }
     },
     {
       "id": "brise-marine",
@@ -1270,7 +1708,26 @@
       "category": "discovery-vault",
       "scentFamily": "fresh",
       "occasion": "personal-use",
-      "availability": "in-stock"
+      "availability": "in-stock",
+      "ar": {
+        "name": "بريز مارين",
+        "notes": "منعش / نسمة بحرية وخشب طافٍ",
+        "description": "بريز مارين ريح من عرض البحر. رذاذ بحري وبرغموت فوق قاعدة معدنية من الخشب الطافي والمسك.",
+        "scentNotes": {
+          "top": [
+            "رذاذ بحري",
+            "برغموت كالابري"
+          ],
+          "heart": [
+            "تركيبة بحرية",
+            "إكليل الجبل"
+          ],
+          "base": [
+            "خشب طافٍ",
+            "مسك معدني"
+          ]
+        }
+      }
     }
   ],
   "reviews": [

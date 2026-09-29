@@ -29,7 +29,11 @@ export function ResetPasswordPage() {
     if (!isValidEmail(trimmed)) return setError("emailInvalid");
 
     setError(undefined);
-    submit(() => setSentTo(trimmed));
+    void submit(async () => {
+      // Sending a reset email needs an email service; see the README.
+      await new Promise((resolve) => setTimeout(resolve, 700));
+      setSentTo(trimmed);
+    });
   }
 
   return (
@@ -90,7 +94,7 @@ export function ResetPasswordPage() {
             icon={<MailIcon size={16} />}
           />
 
-          <AuthDemoNotice />
+          <AuthDemoNotice reset />
         </form>
       )}
     </AuthShell>

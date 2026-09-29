@@ -35,6 +35,16 @@ export type Product = {
   scentFamily: string;
   occasion: string;
   availability: ProductAvailability;
+  /**
+   * Arabic copy entered by the owner in the dashboard. When absent, the
+   * storefront falls back to its built-in translations, then to English.
+   */
+  ar?: {
+    name: string;
+    notes: string;
+    description: string;
+    scentNotes: ScentNotes;
+  };
 };
 
 export type ProductSort = "name-asc" | "name-desc" | "price-asc" | "price-desc";

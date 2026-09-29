@@ -19,6 +19,7 @@ export const structure: StructureResolver = (S) =>
             .defaultOrdering([{field: 'placedAt', direction: 'desc'}]),
         ),
       S.documentTypeListItem('order').title('All orders'),
+      S.documentTypeListItem('customer').title('Customers'),
       S.divider(),
       S.documentTypeListItem('product').title('Products'),
       S.listItem()

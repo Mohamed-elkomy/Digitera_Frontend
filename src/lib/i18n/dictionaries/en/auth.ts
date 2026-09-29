@@ -49,6 +49,12 @@ export const auth = {
     strengthWeak: "Weak",
     strengthFair: "Fair",
     strengthStrong: "Strong",
+    invalidCredentials: "That email and password don't match an account.",
+    emailTaken: "An account with this email already exists. Try signing in.",
+    serverError: "Something went wrong on our side. Please try again.",
+    resetByConcierge:
+      "Reset emails are not switched on yet. Message us on WhatsApp from the contact page and we will reset your password for you.",
+    accountSubtitleLive: "Your details, saved to your account.",
     demoNotice:
       "This is a design demonstration. Nothing is checked and nothing is sent anywhere — your session is kept in this browser only, so use a placeholder password.",
     loginSuccess:

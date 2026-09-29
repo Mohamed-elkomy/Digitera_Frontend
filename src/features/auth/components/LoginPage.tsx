@@ -18,7 +18,8 @@ import type {
   LoginField,
   LoginValues,
 } from "@/features/auth/types/auth.types";
-import { nameFromEmail } from "@/features/auth/utils/auth.identity";
+import { authService } from "@/features/auth/services/auth.service";
+import { AuthFormError } from "@/features/auth/components/AuthFormError";
 import {
   hasErrors,
   validateLogin,
@@ -39,7 +40,7 @@ export function LoginPage() {
   const [errors, setErrors] = useState<FieldErrors<LoginField>>({});
   const [submitted, setSubmitted] = useState(false);
 
-  const { status, submit } = useAuthSubmit();
+  const { status, error, submit } = useAuthSubmit();
 
   function update(field: LoginField, value: string) {
     const next = { ...values, [field]: value };
@@ -56,9 +57,8 @@ export function LoginPage() {
     setErrors(found);
     if (hasErrors(found)) return;
 
-    submit(() => {
-      const email = values.email.trim();
-      signIn({ email, name: nameFromEmail(email) });
+    void submit(async () => {
+      signIn(await authService.login(values));
       router.replace(returnPath);
     });
   }
@@ -125,6 +125,7 @@ export function LoginPage() {
           icon={<LogInIcon size={16} />}
         />
 
+        <AuthFormError code={error} />
         <AuthDemoNotice />
       </form>
     </AuthShell>

@@ -1,10 +1,27 @@
 import { NextResponse } from "next/server";
-import { normalizeReview, validateReview } from "@/features/reviews";
+import {
+  listApprovedReviews,
+  normalizeReview,
+  validateReview,
+} from "@/features/reviews";
 import {
   isSanityConfigured,
   sanityCreate,
   sanityFetch,
 } from "@/lib/sanity/client";
+
+/** Approved reviews for one product. */
+export async function GET(request: Request) {
+  const productId = new URL(request.url).searchParams.get("productId") ?? "";
+  if (!isSanityConfigured() || !productId) {
+    return NextResponse.json([], { status: isSanityConfigured() ? 400 : 503 });
+  }
+  try {
+    return NextResponse.json(await listApprovedReviews(productId));
+  } catch {
+    return NextResponse.json({ error: "unavailable" }, { status: 503 });
+  }
+}
 
 /**
  * Stores a customer review as hidden. It appears on the product page only

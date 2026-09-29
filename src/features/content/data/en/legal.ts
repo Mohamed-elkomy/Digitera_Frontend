@@ -39,25 +39,34 @@ export const legalPages: ContentPage[] = [
     eyebrow: "Legal",
     title: "Privacy Policy",
     intro:
-      "The short version: this site has no backend, so there is nowhere for your data to be sent.",
+      "What we keep, where, who can see it, and how to have it removed. No payment details are ever collected on this site.",
     sections: [
       {
-        heading: "What is stored",
+        heading: "In your browser",
         body: [
-          "Your bag, your session and any orders you place are kept in this browser's local storage. Your language and theme preference are kept in a cookie so the page renders correctly on the server.",
-          "That is the entire list. There is no database, no analytics, no advertising and no third-party script collecting anything.",
+          "Your bag, your wishlist and a copy of your recent orders are kept in this browser's local storage. Your language and theme are kept in a cookie so pages render correctly.",
+          "If you have an account, a signed, httpOnly session cookie keeps you signed in. Scripts on the page cannot read it.",
+        ],
+      },
+      {
+        heading: "On our side",
+        body: [
+          "When you place an order we keep what the order needs: the items, your name, phone, delivery address, optional email and note. Messages from the contact form and reviews you write are kept too.",
+          "If you create an account we keep your name and email. Your password is stored only as a salted, one-way hash — nobody, including us, can read it back.",
+          "This data is held in a private database (Sanity) and the site is served over HTTPS. There is no analytics, no advertising and no third-party tracking script.",
         ],
       },
       {
         heading: "Who can see it",
         body: [
-          "Only you, and anyone with access to this browser profile. Nothing is readable by us, because there is no us — no server ever receives it.",
+          "Only the house's team, to confirm and deliver your order and answer your messages. Reviews appear on the site only after we approve them, with the name you chose.",
         ],
       },
       {
         heading: "Removing it",
         body: [
-          "Signing out clears the session. Clearing site data for this domain in your browser settings removes everything else, including the bag and the order history.",
+          "Signing out ends the session. Clearing site data in your browser removes everything kept there. To have your account, orders or messages deleted from our side, message us on WhatsApp or email from the contact page.",
+          "On the demo version of this site, with no database connected, nothing leaves your browser at all.",
         ],
       },
     ],

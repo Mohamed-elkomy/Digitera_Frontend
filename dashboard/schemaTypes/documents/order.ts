@@ -30,6 +30,15 @@ export const order = defineType({
     defineField({name: 'orderNumber', type: 'string', readOnly: true}),
     defineField({name: 'placedAt', title: 'Placed', type: 'datetime', readOnly: true}),
     defineField({
+      name: 'account',
+      title: 'Customer account',
+      description: 'Empty when the order was placed as a guest.',
+      type: 'reference',
+      to: [{type: 'customer'}],
+      weak: true,
+      readOnly: true,
+    }),
+    defineField({
       name: 'customer',
       type: 'object',
       readOnly: true,

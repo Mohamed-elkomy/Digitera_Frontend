@@ -8,6 +8,8 @@ HTTP API.
 From the dashboard the owner can:
 
 - see **new orders** placed on the website and move them New → Confirmed → Delivered
+- see the **customers** who created an account (passwords are stored only as hashes and never shown)
+- edit the **Arabic copy** of each product (the *العربية* tab)
 - add, edit and remove products, change prices per bottle size
 - mark a product (or a single size) as available or out of stock
 - read and manage contact-form **inquiries** (New → Replied → Closed)
@@ -18,8 +20,9 @@ From the dashboard the owner can:
 Run everything from this `dashboard/` folder.
 
 1. **Create the project.** Sign in at [sanity.io/manage](https://www.sanity.io/manage),
-   click **Create project**, name it `Odoratus`, and keep the `production`
-   dataset **public**. Copy the **Project ID**.
+   click **Create project**, name it `Odoratus`. Then, under **Datasets**, make
+   the `production` dataset **Private** — it holds customers, orders and
+   messages. Copy the **Project ID**.
 
 2. **Point the dashboard at it.** Copy `.env.example` to `.env` and paste the id:
 
@@ -33,8 +36,8 @@ Run everything from this `dashboard/` folder.
    pnpm install
    npx sanity login
    pnpm seed        # 24 products with photos, taxonomies, approved reviews
-   pnpm cors        # lets localhost:3000 and the Vercel site read the data
-   pnpm token       # prints a write token — copy it, it is shown only once
+   pnpm cors        # lets the dashboard run locally on localhost:3333
+   pnpm token       # prints the server token — copy it, it is shown only once
    ```
 
 4. **Publish the dashboard.**
@@ -54,13 +57,26 @@ Run everything from this `dashboard/` folder.
    | `NEXT_PUBLIC_SANITY_PROJECT_ID` | your project id              |
    | `NEXT_PUBLIC_SANITY_DATASET`    | `production`                 |
    | `SANITY_API_WRITE_TOKEN`        | the token from step 3        |
+   | `AUTH_SECRET`                   | 32+ random characters (below) |
+
+   Make the secret with:
+   `node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"`
 
    Then **Deployments → ⋯ → Redeploy**. Public variables are baked in at build
    time, so the redeploy is required.
 
-6. **Check it.** Place an order, send the contact form and write a review on the
-   live site — each one appears in the dashboard under *New orders*,
-   *New inquiries* and *Reviews awaiting approval*.
+6. **Check it.** Create an account, place an order, send the contact form and
+   write a review on the live site — they appear in the dashboard under
+   *Customers*, *New orders*, *New inquiries* and *Reviews awaiting approval*,
+   and the order shows on the account page from any device.
+
+The browser never talks to Sanity directly: every read and write goes through
+the website's own `/api` routes, which hold the token. That is why the dataset
+can stay private and why no CORS entry is needed for the live site.
+
+**Password reset emails** are not switched on — they need an email service
+(for example Resend). Until then the reset page asks customers to message the
+shop on WhatsApp.
 
 ## Backup and recovery
 

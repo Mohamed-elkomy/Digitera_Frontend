@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { env } from "@/config/env";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AlertIcon, ArrowRightIcon } from "@/components/icons";
@@ -15,12 +16,12 @@ import { PaymentMethodPicker } from "@/features/checkout/components/PaymentMetho
 import { buildOrder } from "@/features/checkout/components/CheckoutPage/build-order";
 import { EmptyCheckout } from "@/features/checkout/components/CheckoutPage/EmptyCheckout";
 import { ShippingFields } from "@/features/checkout/components/CheckoutPage/ShippingFields";
+import { useCheckoutValues } from "@/features/checkout/hooks/useCheckoutValues";
 import { useInvoice } from "@/features/checkout/hooks/useInvoice";
 import { useOrders } from "@/features/checkout/hooks/useOrders";
 import { checkoutPaths } from "@/features/checkout/paths";
 import type {
   CheckoutErrors,
-  CheckoutValues,
   ShippingField,
 } from "@/features/checkout/types/checkout.types";
 import {
@@ -41,17 +42,7 @@ export function CheckoutPage() {
   const { placeOrder } = useOrders();
   const { buildUrl } = useInvoice();
 
-  // The signed-in visitor's details are the obvious starting point.
-  const [values, setValues] = useState<CheckoutValues>({
-    fullName: user?.name ?? "",
-    email: user?.email ?? "",
-    phone: "",
-    address: "",
-    city: "",
-    postalCode: "",
-    notes: "",
-    paymentMethod: "cash-on-delivery",
-  });
+  const [values, setValues] = useCheckoutValues(user);
   const [errors, setErrors] = useState<CheckoutErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [placing, setPlacing] = useState(false);
@@ -185,7 +176,9 @@ export function CheckoutPage() {
 
           <p className="mt-3 flex items-start gap-2 text-[11px] leading-relaxed text-muted">
             <AlertIcon size={13} className="mt-0.5 shrink-0 text-gold" />
-            {dict.checkout.demoNotice}
+            {env.useMockApi
+              ? dict.checkout.demoNotice
+              : dict.checkout.liveNotice}
           </p>
         </OrderSummaryPanel>
       </form>

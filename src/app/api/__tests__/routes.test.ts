@@ -9,6 +9,10 @@ jest.mock("@/lib/sanity/client", () => ({
   sanityImageUrl: () => null,
 }));
 
+jest.mock("@/features/auth/server", () => ({
+  getSessionUser: async () => null,
+}));
+
 import { POST as postOrder } from "@/app/api/orders/route";
 import { POST as postInquiry } from "@/app/api/inquiries/route";
 import { POST as postReview } from "@/app/api/reviews/route";

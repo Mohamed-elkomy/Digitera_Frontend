@@ -16,7 +16,9 @@ import type { Product } from "@/features/products/types/product.types";
  */
 export function useProductCopy(product: Product): ProductCopy {
   const { locale } = useI18n();
-  const translated = productCopy[locale]?.[product.id];
+  // Arabic typed in the dashboard wins over the built-in translation.
+  const fromDashboard = locale === "ar" ? product.ar : undefined;
+  const translated = fromDashboard ?? productCopy[locale]?.[product.id];
 
   return (
     translated ?? {

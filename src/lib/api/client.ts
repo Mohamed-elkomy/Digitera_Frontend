@@ -11,8 +11,8 @@ export class ApiError extends Error {
 }
 
 /**
- * Minimal HTTP helper for feature services.
- * There is no backend yet — this is used only when mock data is disabled.
+ * Minimal HTTP helper for feature services. Talks to this app's own /api
+ * route handlers unless NEXT_PUBLIC_API_BASE_URL points elsewhere.
  */
 export async function apiGet<T>(path: string): Promise<T> {
   if (!env.apiBaseUrl) {

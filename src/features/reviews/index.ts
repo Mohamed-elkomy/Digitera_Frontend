@@ -5,3 +5,4 @@ export {
   normalizeReview,
   validateReview,
 } from "@/features/reviews/utils/review.validation";
+export { listApprovedReviews } from "@/features/reviews/services/reviews.sanity";

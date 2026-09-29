@@ -12,11 +12,14 @@ backlog of epics and user stories.
 family, price) and sort the catalogue · pick a bottle size and gift wrapping ·
 manage a bag · check out **as a guest** and send the order through WhatsApp ·
 save fragrances to a wishlist · read client reviews and ratings · read the FAQ
-· reach the house by WhatsApp, phone, email or the contact form.
+· reach the house by WhatsApp, phone, email or the contact form · optionally
+create an account to see their orders on any device · use the whole site in
+Arabic or English.
 
 **What the owner can do** (in the Sanity dashboard, `dashboard/`): add, edit and
 remove products · change prices per size · mark products or single sizes as
-available / out of stock · manage contact-form inquiries · approve reviews.
+available / out of stock · edit the Arabic copy · see new orders and customers ·
+manage contact-form inquiries · approve reviews.
 
 **Live:** [https://digiterafrontend.vercel.app/](https://digiterafrontend.vercel.app/)
 
@@ -169,16 +172,27 @@ Nothing from the browser is trusted: an order's prices and stock are re-checked
 against the live catalogue and its totals recomputed on the server, and new
 reviews stay hidden until the owner approves them.
 
-**Only the account and payment are simulated.**
-Sign-in accepts anything, orders are written to browser storage, and no payment
-is taken. Rather than hide that, the auth and checkout screens state it plainly
-and tell people not to enter a real password. `/pages/privacy` lists everything
-that is stored and where.
+**The dataset is private; the browser only ever talks to our own API.**
+Customers, orders and messages live in Sanity, so the dataset is private and
+every read and write goes through route handlers in `src/app/api/` that hold
+the token: `products`, `reviews`, `orders`, `inquiries` and `auth`. Pages are
+rendered on the server with their data already in them.
 
-**Known limitation:** because the session lives in `localStorage`, it is not
-real authentication — anyone can edit it in the devtools. That is acceptable for
-a front-end demonstration and would be replaced by a server-issued, httpOnly
-session cookie in a real build.
+**Accounts are optional but real.** Guests can order without one, as the brief
+asks. With an account, the password is stored only as a salted scrypt hash, the
+session is a signed, httpOnly, SameSite cookie (`AUTH_SECRET`), sign-in answers
+the same way for an unknown email and a wrong password, and orders placed while
+signed in are linked to the account and listed on the account page from any
+device. Password-reset emails need an email service and are not switched on;
+the reset page tells people to message the shop instead.
+
+**No payment is taken.** Payment is a choice of method, settled on WhatsApp; no
+card details exist anywhere in the code. `/pages/privacy` lists everything that
+is stored and where.
+
+**Demo mode.** With `NEXT_PUBLIC_USE_MOCK_API=true` (the default) there is no
+database: the catalogue is in the repo, accounts and orders stay in the
+browser, and the sign-in screens say so plainly.
 
 ---
 

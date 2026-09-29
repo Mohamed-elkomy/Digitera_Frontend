@@ -1,4 +1,4 @@
-import { apiGet } from "@/lib/api/client";
+import { ApiError, apiGet } from "@/lib/api/client";
 import type {
   Product,
   ProductListQuery,
@@ -35,14 +35,19 @@ function toQueryString(query: ProductListQuery): string {
   return serialized ? `?${serialized}` : "";
 }
 
-/** HTTP catalog client. Not used while NEXT_PUBLIC_USE_MOCK_API is true. */
+/** The browser's view of the catalogue, through our own /api routes. */
 export const httpProductsService: ProductsService = {
   async list(query) {
     return apiGet<ProductListResult>(`/products${toQueryString(query)}`);
   },
 
   async getById(id) {
-    return apiGet<Product>(`/products/${id}`);
+    try {
+      return await apiGet<Product>(`/products/${encodeURIComponent(id)}`);
+    } catch (error) {
+      if (error instanceof ApiError && error.status === 404) return null;
+      throw error;
+    }
   },
 
   async listRelated(id, limit = 4) {

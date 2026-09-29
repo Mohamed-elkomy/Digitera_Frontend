@@ -38,6 +38,8 @@ export const checkout = {
     backToBag: "Back to your bag",
     emptyTitle: "Your bag is empty",
     emptyBody: "Add a fragrance before placing an order.",
+    liveNotice:
+      "No payment is taken on the website. We confirm your order, payment and delivery with you on WhatsApp.",
     demoNotice:
       "This is a design demonstration. No payment is taken and no order is really sent — everything is kept in this browser.",
 

@@ -15,6 +15,7 @@ export const product = defineType({
     {name: 'stock', title: 'Prices & stock'},
     {name: 'scent', title: 'Scent'},
     {name: 'media', title: 'Images'},
+    {name: 'arabic', title: 'العربية'},
   ],
   fields: [
     defineField({name: 'name', type: 'string', group: 'details', validation: (r) => r.required()}),
@@ -79,6 +80,25 @@ export const product = defineType({
       type: 'object',
       group: 'scent',
       fields: [noteList('top', 'Top notes'), noteList('heart', 'Heart notes'), noteList('base', 'Base notes')],
+    }),
+    defineField({
+      name: 'ar',
+      title: 'Arabic copy (النص العربي)',
+      description: 'What Arabic-language visitors read. Leave empty to use the built-in translation.',
+      type: 'object',
+      group: 'arabic',
+      options: {collapsible: false},
+      fields: [
+        defineField({name: 'name', title: 'الاسم', type: 'string'}),
+        defineField({name: 'notes', title: 'سطر الكارت', type: 'string'}),
+        defineField({name: 'description', title: 'الوصف', type: 'text', rows: 4}),
+        defineField({
+          name: 'scentNotes',
+          title: 'هرم الرائحة',
+          type: 'object',
+          fields: [noteList('top', 'المقدمة'), noteList('heart', 'القلب'), noteList('base', 'القاعدة')],
+        }),
+      ],
     }),
     defineField({
       name: 'images',

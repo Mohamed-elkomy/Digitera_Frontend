@@ -18,7 +18,12 @@ export type ProductsService = {
 
 export function createProductsService(): ProductsService {
   if (env.useMockApi) return mockProductsService;
-  return isSanityConfigured() ? sanityProductsService : httpProductsService;
+  // On the server we read Sanity directly; in the browser we go through our
+  // own /api routes, because the dataset is private.
+  const onServer = typeof window === "undefined";
+  return onServer && isSanityConfigured()
+    ? sanityProductsService
+    : httpProductsService;
 }
 
 export const productsService = createProductsService();

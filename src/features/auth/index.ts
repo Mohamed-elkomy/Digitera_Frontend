@@ -11,3 +11,9 @@ export type {
   SignupValues,
   PasswordStrength,
 } from "@/features/auth/types/auth.types";
+export {
+  hasErrors,
+  isValidEmail,
+  MIN_NAME_LENGTH,
+  validateSignup,
+} from "@/features/auth/utils/auth.validation";

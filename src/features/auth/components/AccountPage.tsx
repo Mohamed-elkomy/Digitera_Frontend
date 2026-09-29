@@ -6,6 +6,12 @@ import { LockIcon, MailIcon, UserIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { useSession } from "@/features/auth/hooks/useSession";
 import { ProfileEditor } from "@/features/auth/components/ProfileEditor";
+import { AuthFormError } from "@/features/auth/components/AuthFormError";
+import {
+  AuthError,
+  authService,
+  type AuthErrorCode,
+} from "@/features/auth/services/auth.service";
 import type { AuthUser } from "@/features/auth/types/auth.types";
 import { getInitials } from "@/features/auth/utils/auth.identity";
 import { cartPaths } from "@/features/cart";
@@ -18,13 +24,19 @@ export function AccountPage() {
   const { user, signIn, signOut } = useSession();
   const [editing, setEditing] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState<AuthErrorCode | null>(null);
 
   if (!user) return null;
 
-  function handleSave(next: AuthUser) {
-    signIn(next);
-    setEditing(false);
-    setSaved(true);
+  async function handleSave(next: AuthUser) {
+    setSaveError(null);
+    try {
+      signIn(await authService.updateProfile(next));
+      setEditing(false);
+      setSaved(true);
+    } catch (error) {
+      setSaveError(error instanceof AuthError ? error.code : "serverError");
+    }
   }
 
   const details = [
@@ -57,7 +69,9 @@ export function AccountPage() {
               {dict.auth.accountTitle}
             </h1>
             <p className="mt-1 truncate text-[13px] text-muted">
-              {dict.auth.accountSubtitle}
+              {authService.live
+                ? dict.auth.accountSubtitleLive
+                : dict.auth.accountSubtitle}
             </p>
           </div>
         </header>
@@ -69,6 +83,9 @@ export function AccountPage() {
               onSave={handleSave}
               onCancel={() => setEditing(false)}
             />
+            <div className="mt-3">
+              <AuthFormError code={saveError} />
+            </div>
           </div>
         ) : (
           <>

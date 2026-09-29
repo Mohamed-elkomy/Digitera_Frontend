@@ -12,6 +12,8 @@ import { AuthShell } from "@/features/auth/components/AuthShell";
 import { AuthSubmitButton } from "@/features/auth/components/AuthSubmitButton";
 import { PasswordStrengthMeter } from "@/features/auth/components/PasswordStrengthMeter";
 import { useAuthSubmit } from "@/features/auth/hooks/useAuthSubmit";
+import { authService } from "@/features/auth/services/auth.service";
+import { AuthFormError } from "@/features/auth/components/AuthFormError";
 import { useReturnPath } from "@/features/auth/hooks/useReturnPath";
 import { useSession } from "@/features/auth/hooks/useSession";
 import { authPaths } from "@/features/auth/paths";
@@ -45,7 +47,7 @@ export function SignupPage() {
   const [errors, setErrors] = useState<FieldErrors<SignupField>>({});
   const [submitted, setSubmitted] = useState(false);
 
-  const { status, submit } = useAuthSubmit();
+  const { status, error, submit } = useAuthSubmit();
 
   function update(field: SignupField, value: string) {
     const next = { ...values, [field]: value };
@@ -67,8 +69,8 @@ export function SignupPage() {
     setErrors(found);
     if (hasErrors(found)) return;
 
-    submit(() => {
-      signIn({ name: values.name.trim(), email: values.email.trim() });
+    void submit(async () => {
+      signIn(await authService.register(values));
       router.replace(returnPath);
     });
   }
@@ -157,6 +159,7 @@ export function SignupPage() {
           icon={<UserPlusIcon size={16} />}
         />
 
+        <AuthFormError code={error} />
         <AuthDemoNotice />
       </form>
     </AuthShell>

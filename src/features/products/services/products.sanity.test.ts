@@ -27,6 +27,21 @@ const complete = {
 };
 
 describe("toProduct", () => {
+  it("carries the Arabic copy from the dashboard when it has a name", () => {
+    const withArabic = toProduct({
+      ...complete,
+      ar: {
+        name: "فلور دي لون",
+        notes: "زهري",
+        description: "…",
+        scentNotes: { top: ["نيرولي"] },
+      },
+    });
+    expect(withArabic?.ar?.name).toBe("فلور دي لون");
+    expect(withArabic?.ar?.scentNotes.heart).toEqual([]);
+    expect(toProduct({ ...complete, ar: { name: "" } })?.ar).toBeUndefined();
+  });
+
   it("maps a dashboard document onto the storefront's product shape", () => {
     const product = toProduct(complete);
     expect(product?.id).toBe("fleur-de-lune");

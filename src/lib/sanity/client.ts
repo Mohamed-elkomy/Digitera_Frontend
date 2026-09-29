@@ -12,8 +12,9 @@ function apiUrl(path: string, cdn: boolean): string {
 }
 
 /**
- * Runs a GROQ query over Sanity's HTTP API. Plain `fetch` keeps the storefront
- * free of an SDK dependency; the dataset is public, so no token is needed.
+ * Runs a GROQ query over Sanity's HTTP API. Server-only: the dataset is
+ * private (it holds customers, orders and inquiries), so every read carries
+ * the server token and nothing is ever queried from the browser.
  */
 export async function sanityFetch<T>(
   query: string,
@@ -28,13 +29,45 @@ export async function sanityFetch<T>(
     search.set(`$${key}`, JSON.stringify(value));
   }
 
-  const response = await fetch(`${apiUrl("query", true)}?${search}`);
+  const token = serverToken();
+  const response = await fetch(`${apiUrl("query", false)}?${search}`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error(`Sanity query failed: ${response.status}`);
   }
 
   const body = (await response.json()) as { result: T };
   return body.result;
+}
+
+/** The Editor token that reads and writes the private dataset. */
+export function serverToken(): string | undefined {
+  return process.env.SANITY_API_WRITE_TOKEN || undefined;
+}
+
+type Mutation =
+  | { create: Record<string, unknown> }
+  | { patch: { id: string; set: Record<string, unknown> } };
+
+/** Applies mutations in one transaction. Server-only. */
+export async function sanityMutate(mutations: Mutation[]): Promise<void> {
+  const token = serverToken();
+  if (!token) throw new Error("SANITY_API_WRITE_TOKEN is not set.");
+
+  const response = await fetch(apiUrl("mutate", false), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ mutations }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Sanity mutation failed: ${response.status}`);
+  }
 }
 
 /** Creates one document. Server-only: it needs a write token. */

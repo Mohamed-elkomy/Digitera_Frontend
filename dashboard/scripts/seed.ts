@@ -61,6 +61,7 @@ async function seed() {
       description: product.description,
       notes: product.notes,
       scentNotes: product.scentNotes,
+      ...('ar' in product && product.ar ? {ar: product.ar} : {}),
       availability: product.availability,
       giftWrappingAvailable: product.giftWrappingAvailable,
       variants: product.variants.map(({id, ...variant}) => ({

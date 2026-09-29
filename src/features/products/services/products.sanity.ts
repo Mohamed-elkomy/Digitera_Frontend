@@ -20,10 +20,19 @@ const PRODUCTS_QUERY = `*[_type == "product" && defined(slug.current)] | order(n
   "category": category->slug.current,
   "scentFamily": scentFamily->slug.current,
   "occasion": occasion->slug.current,
-  availability
+  availability,
+  ar
 }`;
 
-type SanityProduct = Omit<Partial<Product>, "images" | "variants"> & {
+type SanityArabic = {
+  name?: string | null;
+  notes?: string | null;
+  description?: string | null;
+  scentNotes?: Partial<Product["scentNotes"]> | null;
+} | null;
+
+type SanityProduct = Omit<Partial<Product>, "images" | "variants" | "ar"> & {
+  ar?: SanityArabic;
   images?: (string | null)[] | null;
   variants?: Partial<ProductVariant>[] | null;
 };
@@ -75,6 +84,18 @@ export function toProduct(document: SanityProduct): Product | null {
     category: document.category ?? "",
     scentFamily: document.scentFamily ?? "",
     occasion: document.occasion ?? "",
+    ar: document.ar?.name
+      ? {
+          name: document.ar.name,
+          notes: document.ar.notes ?? "",
+          description: document.ar.description ?? "",
+          scentNotes: {
+            top: document.ar.scentNotes?.top ?? [],
+            heart: document.ar.scentNotes?.heart ?? [],
+            base: document.ar.scentNotes?.base ?? [],
+          },
+        }
+      : undefined,
     availability: AVAILABILITY.includes(document.availability!)
       ? document.availability!
       : "in-stock",
