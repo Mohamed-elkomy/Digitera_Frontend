@@ -18,9 +18,11 @@ import {
 
 type ProductCardProps = {
   product: Product;
+  /** Load the photo eagerly — for cards in the first visible row. */
+  priority?: boolean;
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, priority = false }: ProductCardProps) {
   const { addItem } = useCart();
   const { dict, fill } = useI18n();
   const copy = useProductCopy(product);
@@ -45,7 +47,8 @@ export function ProductCard({ product }: ProductCardProps) {
             src={image}
             alt={fill(dict.product.bottleAlt, { name: copy.name })}
             fill
-            loading="lazy"
+            priority={priority}
+            loading={priority ? undefined : "lazy"}
             className="rounded object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
             sizes="(min-width: 1280px) 28vw, (min-width: 640px) 45vw, 100vw"
           />

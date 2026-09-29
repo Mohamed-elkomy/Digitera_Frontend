@@ -49,3 +49,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Database backups hold customer data — never commit them
+/backups

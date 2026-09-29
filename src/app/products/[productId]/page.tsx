@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { HydrationBoundary } from "@tanstack/react-query";
 import { ProductDetailsWithCart } from "@/app/products/[productId]/product-details-with-cart";
-import { productsService } from "@/features/products";
+import { prefetchProduct, productsService } from "@/features/products";
 
 type ProductRouteProps = {
   params: Promise<{ productId: string }>;
@@ -31,5 +32,9 @@ export default async function ProductDetailsRoute({
   params,
 }: ProductRouteProps) {
   const { productId } = await params;
-  return <ProductDetailsWithCart productId={productId} />;
+  return (
+    <HydrationBoundary state={await prefetchProduct(productId)}>
+      <ProductDetailsWithCart productId={productId} />
+    </HydrationBoundary>
+  );
 }

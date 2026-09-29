@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "cors": "sanity cors add http://localhost:3000 --credentials && sanity cors add https://digiterafrontend.vercel.app --credentials",
     "token": "sanity tokens add \"Website\" --role=editor",
-    "deploy-dashboard": "sanity deploy"
+    "deploy-dashboard": "sanity deploy",
+    "backup": "sanity dataset export production ../backups/odoratus-backup.tar.gz --overwrite",
+    "restore": "sanity dataset import ../backups/odoratus-backup.tar.gz production --replace"
   },
   "dependencies": {
     "@sanity/icons": "5.2.2",

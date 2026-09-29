@@ -62,6 +62,20 @@ Run everything from this `dashboard/` folder.
    live site — each one appears in the dashboard under *New orders*,
    *New inquiries* and *Reviews awaiting approval*.
 
+## Backup and recovery
+
+```bash
+pnpm backup    # whole dataset (documents + images) -> ../backups/odoratus-backup.tar.gz
+pnpm restore   # puts that backup back, replacing what is there
+```
+
+Run `pnpm backup` before any bulk change and on a regular schedule, and keep
+copies outside the project folder (`/backups` is git-ignored because it holds
+customer orders). Besides that, Sanity keeps a revision history for every
+document (restore a single product from its *History* panel), Vercel can roll
+the website back to any previous deployment in one click, and the code itself
+lives in Git.
+
 ## Who can open the dashboard
 
 The dashboard address is public, but only members of the Sanity project can

@@ -5,6 +5,10 @@ export { ProductCard } from "@/features/products/components/ProductCard";
 export { useProducts } from "@/features/products/hooks/useProducts";
 export { productPaths } from "@/features/products/paths";
 export { productsService } from "@/features/products/services/products.service";
+export {
+  prefetchProduct,
+  prefetchProductList,
+} from "@/features/products/server/prefetch";
 export type {
   Product,
   ProductId,

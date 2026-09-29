@@ -1,5 +1,8 @@
 # Feature ownership
 
+For how each client requirement (functional and non-functional) is met, see
+[`REQUIREMENTS-COVERAGE.md`](REQUIREMENTS-COVERAGE.md).
+
 Features should own their implementation. Shared code should remain minimal and genuinely reusable.
 
 ## Features

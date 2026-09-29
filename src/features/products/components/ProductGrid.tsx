@@ -53,7 +53,7 @@ export function ProductGrid({
           className="animate-[fade-up_0.5s_cubic-bezier(0.22,1,0.36,1)_both]"
           style={{ animationDelay: `${index * 60}ms` }}
         >
-          <ProductCard product={product} />
+          <ProductCard product={product} priority={index < 2} />
         </div>
       ))}
     </div>
