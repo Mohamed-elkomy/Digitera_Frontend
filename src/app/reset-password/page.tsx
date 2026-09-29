@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AuthGuard, ResetPasswordPage, authPaths } from "@/features/auth";
 
 export const metadata: Metadata = {
-  title: "Reset your password | Odoratus",
+  title: "Reset your password",
   description: "Set a new password for your Odoratus account.",
 };
 

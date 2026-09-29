@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
       locale === "ar"
-        ? "تواصل معنا والاستفسارات المباشرة | Odoratus"
-        : "Contact & Concierge | Odoratus",
+        ? "تواصل معنا والاستفسارات المباشرة"
+        : "Contact & Concierge",
     description:
       locale === "ar"
         ? "تواصل مباشر مع دار Odoratus والكونسيرج العطري عبر الواتساب والبريد المباشر."

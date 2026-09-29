@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AccountPage, AuthGuard } from "@/features/auth";
 
 export const metadata: Metadata = {
-  title: "Your account | Odoratus",
+  title: "Your account",
   description: "Your Odoratus account details.",
 };
 
