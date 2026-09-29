@@ -169,7 +169,7 @@ export function ContactHubView() {
               </h2>
             </div>
             <a
-              href="https://portfolio-beige-pi-ymybq0xpfb.vercel.app/"
+              href="https://portfolio-komys-projects.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-2 text-[12px] font-semibold text-gold transition-all duration-300 hover:bg-gold hover:text-night"
