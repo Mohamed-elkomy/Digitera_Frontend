@@ -9,7 +9,7 @@
     "seed": "sanity exec scripts/seed.ts --with-user-token",
     "typecheck": "tsc --noEmit",
     "cors": "sanity cors add http://localhost:3333 --credentials",
-    "token": "sanity tokens add \"Website\" --role=editor",
+    "api-token": "sanity tokens add \"Website\" --role=editor",
     "deploy-dashboard": "sanity deploy",
     "backup": "sanity dataset export production ../backups/odoratus-backup.tar.gz --overwrite",
     "restore": "sanity dataset import ../backups/odoratus-backup.tar.gz production --replace"

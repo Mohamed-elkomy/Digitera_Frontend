@@ -6,5 +6,5 @@ export default defineCliConfig({
   // The dashboard's public address: https://odoratus-dashboard.sanity.studio
   // (change it here if that name is taken when you run `pnpm deploy-dashboard`).
   studioHost: 'odoratus-dashboard',
-  deployment: {autoUpdates: true},
+  deployment: {autoUpdates: true, appId: 'g959xnax1pljp7zce3wa62c0'},
 })

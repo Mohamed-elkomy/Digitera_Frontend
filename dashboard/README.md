@@ -37,7 +37,7 @@ Run everything from this `dashboard/` folder.
    npx sanity login
    pnpm seed        # 24 products with photos, taxonomies, approved reviews
    pnpm cors        # lets the dashboard run locally on localhost:3333
-   pnpm token       # prints the server token — copy it, it is shown only once
+   pnpm api-token   # prints the server token — copy it, it is shown only once
    ```
 
 4. **Publish the dashboard.**
@@ -56,7 +56,7 @@ Run everything from this `dashboard/` folder.
    | `NEXT_PUBLIC_USE_MOCK_API`      | `false`                      |
    | `NEXT_PUBLIC_SANITY_PROJECT_ID` | your project id              |
    | `NEXT_PUBLIC_SANITY_DATASET`    | `production`                 |
-   | `SANITY_API_WRITE_TOKEN`        | the token from step 3        |
+   | `SANITY_API_WRITE_TOKEN`        | the token from `pnpm api-token`        |
    | `AUTH_SECRET`                   | 32+ random characters (below) |
 
    Make the secret with:
