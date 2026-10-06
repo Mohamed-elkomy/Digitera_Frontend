@@ -8,6 +8,7 @@ import {
   startSession,
   updateCustomer,
 } from "@/features/auth/server";
+import { isDemoAccount } from "@/lib/auth/demo";
 
 export async function GET() {
   const unavailable = authUnavailable();
@@ -26,6 +27,9 @@ export async function PATCH(request: Request) {
 
   const user = await getSessionUser();
   if (!user) return NextResponse.json({ error: "signedOut" }, { status: 401 });
+  if (isDemoAccount(user.email)) {
+    return NextResponse.json({ error: "demoLocked" }, { status: 403 });
+  }
 
   const body = await readJson(request);
   const name = text(body.name, 80).trim();

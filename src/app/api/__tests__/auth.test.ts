@@ -9,6 +9,8 @@ type Customer = {
 };
 const customers = new Map<string, Customer>();
 const startSession = jest.fn();
+const updateCustomer = jest.fn();
+let sessionUser: { id: string; name: string; email: string } | null = null;
 
 jest.mock("@/lib/sanity/client", () => ({
   isSanityConfigured: () => true,
@@ -28,9 +30,12 @@ jest.mock("@/features/auth/server", () => ({
     return record;
   },
   startSession: (...args: unknown[]) => startSession(...args),
+  getSessionUser: async () => sessionUser,
+  updateCustomer: (...args: unknown[]) => updateCustomer(...args),
 }));
 
 import { POST as login } from "@/app/api/auth/login/route";
+import { PATCH as updateProfile } from "@/app/api/auth/me/route";
 import { POST as register } from "@/app/api/auth/register/route";
 
 const post = (body: unknown) =>
@@ -101,5 +106,35 @@ describe("accounts", () => {
     );
     expect(wrong.status).toBe(401);
     expect(await wrong.json()).toEqual(await unknown.json());
+  });
+});
+
+describe("shared demo account", () => {
+  const patch = (body: unknown) =>
+    new Request("http://localhost/api", {
+      method: "PATCH",
+      body: JSON.stringify(body),
+    });
+
+  it("refuses to rename the demo account", async () => {
+    sessionUser = { id: "demo", name: "Demo", email: "demo@odoratus.test" };
+    const response = await updateProfile(
+      patch({ name: "Taken", email: "mine@example.com" }),
+    );
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({ error: "demoLocked" });
+    expect(updateCustomer).not.toHaveBeenCalled();
+  });
+
+  it("still lets a normal customer edit their profile", async () => {
+    sessionUser = { id: "c1", name: "Salma", email: "salma@example.com" };
+    const response = await updateProfile(
+      patch({ name: "Salma Hassan", email: "salma@example.com" }),
+    );
+    expect(response.status).toBe(200);
+    expect(updateCustomer).toHaveBeenCalledWith("c1", {
+      name: "Salma Hassan",
+      email: "salma@example.com",
+    });
   });
 });

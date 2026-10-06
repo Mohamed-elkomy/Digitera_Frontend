@@ -51,6 +51,8 @@ export const auth = {
     strengthStrong: "Strong",
     invalidCredentials: "That email and password don't match an account.",
     emailTaken: "An account with this email already exists. Try signing in.",
+    demoLocked:
+      "This is the shared demo account, so its name and email stay as they are. Create your own account to edit a profile.",
     serverError: "Something went wrong on our side. Please try again.",
     resetByConcierge:
       "Reset emails are not switched on yet. Message us on WhatsApp from the contact page and we will reset your password for you.",

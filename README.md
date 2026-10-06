@@ -23,6 +23,17 @@ manage contact-form inquiries · approve reviews.
 
 **Live:** [https://digiterafrontend.vercel.app/](https://digiterafrontend.vercel.app/)
 
+**Try it with the demo account** — sign in at `/login`:
+
+| Email                | Password            |
+| -------------------- | ------------------- |
+| `demo@odoratus.test` | `OdoratusDemo2026!` |
+
+It is shared by everyone, so its name and email are locked, and anything you
+type there is visible to the next visitor — use made-up details. Orders open
+WhatsApp on a placeholder number, so nothing reaches the shop. The owner
+dashboard is private; screenshots and the walkthrough video show it.
+
 ---
 
 ## Running it

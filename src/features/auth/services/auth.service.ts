@@ -7,7 +7,8 @@ import type {
 import { nameFromEmail } from "@/features/auth/utils/auth.identity";
 
 /** Why the server said no — each code has a sentence in both languages. */
-export type AuthErrorCode = "invalidCredentials" | "emailTaken" | "serverError";
+export type AuthErrorCode =
+  "invalidCredentials" | "emailTaken" | "demoLocked" | "serverError";
 
 export class AuthError extends Error {
   constructor(readonly code: AuthErrorCode) {
@@ -66,7 +67,11 @@ async function call(
 
   if (response.ok) return body.user ?? null;
   if (response.status === 401 && path === "me") return null;
-  if (body.error === "invalidCredentials" || body.error === "emailTaken") {
+  if (
+    body.error === "invalidCredentials" ||
+    body.error === "emailTaken" ||
+    body.error === "demoLocked"
+  ) {
     throw new AuthError(body.error);
   }
   throw new AuthError("serverError");
